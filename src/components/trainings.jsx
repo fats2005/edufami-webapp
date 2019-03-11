@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getTrainings } from "../services/fakeTrainingService";
-import ico from "../images/badgets/icons-gray/ico_gray_1.png"; // Tell Webpack this JS file uses this image
-import medal from "../images/badgets/flags/ico_flag_1.png"; // Tell Webpack this JS file uses this image
+// import ico from "../images/badgets/icons-gray/ico_gray_1.png"; // Tell Webpack this JS file uses this image
+// import medal from "../images/badgets/flags/ico_flag_1.png"; // Tell Webpack this JS file uses this image
 import { getProgress } from "../services/fakeProgressService";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,6 @@ class Trainings extends Component {
                       <div className="card card-training">
                         <img
                           className="mx-auto"
-                          src={ico}
                           alt={training.name}
                           width="40%"
                         />
@@ -62,13 +61,7 @@ class Trainings extends Component {
               <div className="card-body">
                 <h4>Progreso</h4>
                 {progress.map(p => (
-                  <img
-                    key={p.id}
-                    className="m-1"
-                    src={medal}
-                    alt={p.name}
-                    width="60px"
-                  />
+                  <img key={p.id} className="m-1" alt={p.name} width="60px" />
                 ))}
               </div>
             </div>
