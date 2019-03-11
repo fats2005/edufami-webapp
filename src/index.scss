@@ -1,3 +1,5 @@
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
 @font-face {
   font-family: Muli;
   src: url(./fonts/Muli-Regular.ttf);
@@ -20,9 +22,4 @@ h4,
 h5,
 h6 {
   font-family: "Muli", sans-serif;
-}
-
-/* NavBar */
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 1);
 }

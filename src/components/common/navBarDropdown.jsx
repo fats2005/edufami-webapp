@@ -21,8 +21,8 @@ const NavBarDropdown = ({ label }) => {
         <NavBarLink className="dropdown-item" label="Mi Perfil" to="/profile" />
         <NavBarLink
           className="dropdown-item"
-          label="Mis capacitaciones"
-          to="/trainings"
+          label="Configuración"
+          to="/settings"
         />
         <div className="dropdown-divider" />
         <NavBarLink
