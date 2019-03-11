@@ -61,6 +61,7 @@
 }
 
 .card-training .btn-primary {
+  margin-top: 10px;
   background-color: #4a6572;
   border-color: #4a6572;
   text-transform: uppercase;
@@ -69,5 +70,4 @@
 .card-training .btn-primary:hover {
   background-color: #ff9800;
   border-color: #ff9800;
-  text-transform: uppercase;
 }

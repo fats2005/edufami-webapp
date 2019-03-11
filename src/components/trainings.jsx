@@ -31,10 +31,10 @@ class Trainings extends Component {
                         />
                         <div className="card-body">
                           <h6 className="card-title">{training.name}</h6>
-                          <p className="card-text">
-                            <div class="progress">
+                          <div className="card-text">
+                            <div className="progress">
                               <div
-                                class="progress-bar progress-bar-striped bg-warning"
+                                className="progress-bar progress-bar-striped bg-warning"
                                 role="progressbar"
                                 style={{ width: training.progress + "%" }}
                                 aria-valuenow={training.progress}
@@ -42,7 +42,7 @@ class Trainings extends Component {
                                 aria-valuemax="100"
                               />
                             </div>
-                          </p>
+                          </div>
                           <Link
                             to={"/trainings/" + training.id}
                             className="btn btn-primary"

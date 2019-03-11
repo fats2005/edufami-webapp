@@ -5,7 +5,7 @@ import Products from "./components/products";
 import Posts from "./components/posts";
 import Home from "./components/home";
 import Dashboard from "./components/admin/dashboard";
-import ProductDetails from "./components/productDetails";
+import Training from "./components/training";
 import NotFound from "./components/notFound";
 import "./App.css";
 import Trainings from "./components/trainings";
@@ -17,7 +17,7 @@ class App extends Component {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route path="/trainings/:id" component={ProductDetails} />
+            <Route path="/trainings/:id" component={Training} />
             <Route path="/trainings" component={Trainings} />
             <Route
               path="/products"
