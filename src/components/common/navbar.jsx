@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container">
         <Link className="navbar-brand" to="/">
           Edufami
@@ -23,19 +23,14 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/trainings">
-                Aprenda con Edufami
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/progress">
+              <NavLink className="nav-link" to="/progress">
                 Progreso
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                Sobre Edufami
-              </Link>
+              <NavLink className="nav-link" to="/about">
+                ¿Qué es Edufami?
+              </NavLink>
             </li>
           </ul>
           <ul className="navbar-nav">
