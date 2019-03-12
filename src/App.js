@@ -8,11 +8,18 @@ import Progress from "./components/progress";
 import NotFound from "./components/notFound";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUserCircle,
+  faMedal,
+  faCertificate,
+  faShare,
+  faTasks,
+  faDownload
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./App.scss";
 
-library.add(faUserCircle);
+library.add(faUserCircle, faMedal, faCertificate, faShare, faTasks, faDownload);
 
 class App extends Component {
   render() {

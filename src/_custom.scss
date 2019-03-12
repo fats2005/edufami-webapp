@@ -1,3 +1,7 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
 @font-face {
   font-family: Roboto;
   src: url(./fonts/roboto/Roboto-Regular.ttf);
@@ -10,9 +14,29 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+}
+
 $theme-colors: (
-  primary: #ff9800
+  primary: #ff9800,
+  secondary: #4a6572,
+  gray: #eceeef,
+  gray-dark: #e4e4e4
 );
+
+$primary: #ff9800;
+$primary-light: #ffc947;
+$primary-dark: #c66900;
+$primary-text-color: #000000;
+$secondary: #4a6572;
+$secondary-light: #7793a1;
+$secondary-dark: #203b47;
+$secondary-text-color: #ffffff;
+$gray: #eceeef;
+$gray-dark: #e4e4e4;
 
 $font-family-sans-serif: "Roboto", -apple-system, system-ui, BlinkMacSystemFont,
   "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
