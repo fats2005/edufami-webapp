@@ -20,13 +20,7 @@
   font-weight: bold;
 }
 
-$theme-colors: (
-  primary: #ff9800,
-  secondary: #4a6572,
-  gray: #eceeef,
-  gray-dark: #e4e4e4
-);
-
+// Edifami Theme
 $primary: #ff9800;
 $primary-light: #ffc947;
 $primary-dark: #c66900;
@@ -37,6 +31,37 @@ $secondary-dark: #203b47;
 $secondary-text-color: #ffffff;
 $gray: #eceeef;
 $gray-dark: #e4e4e4;
+
+// Climafami Theme
+/* $primary: #00acc1;
+$primary-light: #5ddef4;
+$primary-dark: #007c91;
+$primary-text-color: #000000;
+$secondary: #6d4641;
+$secondary-light: #9d726c;
+$secondary-dark: #401e1a;
+$secondary-text-color: #ffffff;
+$gray: #eceeef;
+$gray-dark: #e4e4e4; */
+
+// Equifami Theme
+/* $primary: #7b1fad;
+$primary-light: #ae52d4;
+$primary-dark: #4a0072;
+$primary-text-color: #ffffff;
+$secondary: #ffe437;
+$secondary-light: #ffff6e;
+$secondary-dark: #c8b200;
+$secondary-text-color: #000000;
+$gray: #eceeef;
+$gray-dark: #e4e4e4; */
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  gray: $gray,
+  gray-dark: $gray-dark
+);
 
 $font-family-sans-serif: "Roboto", -apple-system, system-ui, BlinkMacSystemFont,
   "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;

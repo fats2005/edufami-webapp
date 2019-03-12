@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/common/navBar";
+import Footer from "./components/common/Footer";
 import Training from "./components/training";
 import Trainings from "./components/trainings";
 import About from "./components/about";
@@ -36,6 +37,7 @@ class App extends Component {
             <Redirect path="/" exact to="/trainings" />
             <Redirect to="/not-found" />
           </Switch>
+          <Footer />
         </div>
       </div>
     );
