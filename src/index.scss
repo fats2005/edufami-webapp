@@ -1,18 +1,8 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
-@font-face {
-  font-family: Muli;
-  src: url(./fonts/Muli-Regular.ttf);
-}
-
-@font-face {
-  font-family: Muli-Light;
-  src: url(./fonts/Muli-Light.ttf);
-}
 
 body {
   background: #f5f5f5;
-  font-family: "Muli", sans-serif;
 }
 
 h1,
@@ -21,5 +11,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Muli", sans-serif;
+  font-family: $font-family-second;
 }

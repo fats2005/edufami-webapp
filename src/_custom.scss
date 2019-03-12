@@ -1,4 +1,24 @@
-/* change the primary theme color to red */
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/roboto/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
+}
+
 $theme-colors: (
   primary: #ff9800
 );
+
+$font-family-sans-serif: "Roboto", -apple-system, system-ui, BlinkMacSystemFont,
+  "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-family-second: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont,
+  "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
