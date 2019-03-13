@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./cardTraining.scss";
 
 const CardTraining = ({ col, data }) => {
-  console.log(data);
   return (
     <div className={"card-training col col-" + col}>
       <Link to={`/trainings/${data.id}`}>

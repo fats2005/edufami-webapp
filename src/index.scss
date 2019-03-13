@@ -16,6 +16,9 @@ h6 {
   font-weight: bold;
 }
 
+.btn {
+  border-radius: 2rem;
+}
 /* NavBar */
 
 .navbar-dark .navbar-nav .nav-link {
@@ -138,6 +141,18 @@ footer {
 
 .bg-primary {
   background-color: $primary;
+}
+
+.bg-primary-light {
+  background-color: $primary-light;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark;
+}
+
+.primary-text-color {
+  color: $primary-text-color;
 }
 
 .bg-secondary {

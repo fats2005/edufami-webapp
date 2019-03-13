@@ -1,20 +1,20 @@
 import React, { Component } from "react";
+import { getUnit } from "../services/fakeUnitService";
 import BoxAchievements from "./common/boxAchievements";
-import BoxUnits from "./common/boxUnits";
-import { getTraining } from "../services/fakeTrainingService";
+import BoxLessons from "./common/boxLessons";
 
-class Training extends Component {
+class Unit extends Component {
   state = {
-    training: getTraining(this.props.match.params.trainingId)
+    unit: getUnit(this.props.match.params.unitId)
   };
 
   render() {
-    const { training } = this.state;
+    const { unit } = this.state;
     return (
       <div className="trainings">
         <div className="row">
           <div className="col col-9">
-            <BoxUnits training={training} />
+            <BoxLessons unit={unit} />
           </div>
           <div className="col col-3">
             <BoxAchievements />
@@ -25,4 +25,4 @@ class Training extends Component {
   }
 }
 
-export default Training;
+export default Unit;

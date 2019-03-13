@@ -98,7 +98,7 @@ export function getUnits() {
 }
 
 export function getUnit(id) {
-  return Units.find(m => m.id === id);
+  return Units.find(u => u.id === id);
 }
 
 export function getUnitsByTrainingId(id) {

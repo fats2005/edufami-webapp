@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/common/navBar";
 import Footer from "./components/common/Footer";
-import Training from "./components/training";
 import Trainings from "./components/trainings";
+import Training from "./components/training";
+import Unit from "./components/unit";
 import About from "./components/about";
 import Progress from "./components/progress";
 import NotFound from "./components/notFound";
@@ -29,7 +30,8 @@ class App extends Component {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route path="/trainings/:id" component={Training} />
+            <Route path="/trainings/:trainingId/:unitId" component={Unit} />
+            <Route path="/trainings/:trainingId" component={Training} />
             <Route path="/trainings" component={Trainings} />
             <Route path="/about" component={About} />
             <Route path="/progress" component={Progress} />
