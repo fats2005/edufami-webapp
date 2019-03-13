@@ -1,68 +1,95 @@
+import _ from "lodash";
+
 const Units = [
   {
     id: "1",
-    title: "Terminator",
-    genre: { id: "8", name: "Action" },
-    numberInStock: 6,
-    dailyRentalRate: 2.5,
-    publishDate: "2018-01-03T19:04:28.809Z",
-    liked: true
+    name: "Alimentación Saludable",
+    trainingId: "1",
+    description: "",
+    image: "nu1.png",
+    numberOfLessons: 4,
+    lessonsFinished: 4,
+    order: 1
   },
   {
     id: "2",
-    title: "Die Hard",
-    genre: { id: "8", name: "Action" },
-    numberInStock: 5,
-    dailyRentalRate: 2.5
+    name: "Combinaciones Saludables",
+    trainingId: "1",
+    description: "",
+    image: "nu2.png",
+    numberOfLessons: 5,
+    lessonsFinished: 2,
+    order: 2
+  },
+  {
+    id: "3",
+    name: "Mujeres Embarazadas, Lactantes y sus Bebés",
+    trainingId: "1",
+    description: "",
+    image: "nu3.png",
+    numberOfLessons: 4,
+    lessonsFinished: 0,
+    order: 3
+  },
+  {
+    id: "4",
+    name: "Manejo adecuado de los alimentos",
+    trainingId: "1",
+    description: "",
+    image: "nu4.png",
+    numberOfLessons: 5,
+    lessonsFinished: 0,
+    order: 4
+  },
+  {
+    id: "5",
+    name: "Hábitos Saludables",
+    trainingId: "1",
+    description: "",
+    image: "nu5.png",
+    numberOfLessons: 4,
+    lessonsFinished: 0,
+    order: 4
+  },
+  {
+    id: "6",
+    name: "Airplane",
+    trainingId: 2,
+    description: "",
+    image: "nu1.png",
+    numberOfLessons: 5,
+    lessonsFinished: 0,
+    order: 4
   },
   {
     id: "7",
-    title: "Get Out",
-    genre: { id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
-    numberInStock: 8,
-    dailyRentalRate: 3.5
+    name: "Wedding Crashers",
+    trainingId: 2,
+    description: "",
+    image: "nu1.png",
+    numberOfLessons: 5,
+    lessonsFinished: 2,
+    order: 4
+  },
+  {
+    id: "8",
+    name: "Gone Girl",
+    trainingId: 3,
+    description: "",
+    image: "nu1.png",
+    numberOfLessons: 5,
+    lessonsFinished: 2,
+    order: 4
   },
   {
     id: "9",
-    title: "Trip to Italy",
-    genre: { id: "4", name: "Comedy" },
-    numberInStock: 7,
-    dailyRentalRate: 3.5
-  },
-  {
-    id: "a",
-    title: "Airplane",
-    genre: { id: "4", name: "Comedy" },
-    numberInStock: 7,
-    dailyRentalRate: 3.5
-  },
-  {
-    id: "b",
-    title: "Wedding Crashers",
-    genre: { id: "4", name: "Comedy" },
-    numberInStock: 7,
-    dailyRentalRate: 3.5
-  },
-  {
-    id: "e",
-    title: "Gone Girl",
-    genre: { id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
-    numberInStock: 7,
-    dailyRentalRate: 4.5
-  },
-  {
-    id: "f",
-    title: "The Sixth Sense",
-    genre: { id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
-    numberInStock: 4,
-    dailyRentalRate: 3.5
-  },
-  {
-    id: "5b21ca3eeb7f6fbccd471821",
-    title: "The Avengers",
-    genre: { id: "8", name: "Action" },
-    numberInStock: 7,
-    dailyRentalRate: 3.5
+    name: "The Sixth Sense",
+    trainingId: 3,
+    description: "",
+    image: "nu1.png",
+    numberOfLessons: 5,
+    lessonsFinished: 2,
+    order: 4
   }
 ];
 
@@ -72,4 +99,13 @@ export function getUnits() {
 
 export function getUnit(id) {
   return Units.find(m => m.id === id);
+}
+
+export function getUnitsByTrainingId(id) {
+  const filtered = Units.filter(u => u.trainingId === id);
+  const sorted = _.orderBy(filtered, "order", "asc");
+  return sorted;
+  /* filtered = Units.filter(u =>
+    u.id.startsWith(searchQuery.toLowerCase())
+  ); */
 }

@@ -136,55 +136,22 @@ footer {
   }
 }
 
-.card {
-  border-radius: 0 3rem;
-  border: none;
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.bg-secondary-light {
+  background-color: $secondary-light;
+}
+
+.bg-secondary-dark {
+  background-color: $secondary-dark;
+}
+
+.secondary-text-color {
   color: $secondary-text-color;
-  position: relative;
-  cursor: pointer;
-  img {
-    border-top-right-radius: inherit;
-  }
-  .card-body {
-    background-color: $secondary;
-    padding: 15px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius: inherit;
-    position: relative;
-    z-index: 3;
-    .card-text {
-      text-align: center;
-    }
-  }
-
-  .card-app {
-    position: absolute;
-    right: 0.5rem;
-    bottom: 3.5rem;
-    z-index: 4;
-  }
-
-  .card-bottom,
-  .card-bottom-2 {
-    background-color: $secondary-light;
-    border-bottom-left-radius: inherit;
-    bottom: -0.4rem;
-    height: 3rem;
-    left: 2%;
-    position: absolute;
-    width: 92%;
-    z-index: 2;
-  }
-
-  .card-bottom-2 {
-    background-color: $secondary-dark;
-    bottom: -0.8rem;
-    left: 4%;
-    position: absolute;
-    width: 86%;
-    z-index: 1;
-  }
 }

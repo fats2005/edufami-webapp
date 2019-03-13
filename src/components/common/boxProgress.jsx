@@ -15,7 +15,7 @@ const BoxProgress = () => {
               Climafami para Todos <br />
               <div className="progress">
                 <div
-                  className="progress-bar"
+                  className="progress-bar bg-warning"
                   role="progressbar"
                   style={{ width: "75%" }}
                   aria-valuenow="75"
@@ -30,7 +30,7 @@ const BoxProgress = () => {
               Equifami para Todos <br />
               <div className="progress">
                 <div
-                  className="progress-bar"
+                  className="progress-bar bg-warning"
                   role="progressbar"
                   style={{ width: "50%" }}
                   aria-valuenow="50"
@@ -46,7 +46,7 @@ const BoxProgress = () => {
               Nutrifami para Todos <br />
               <div className="progress">
                 <div
-                  className="progress-bar"
+                  className="progress-bar bg-warning"
                   role="progressbar"
                   style={{ width: "25%" }}
                   aria-valuenow="25"
