@@ -8,7 +8,7 @@ const BoxAchievements = ({ label }) => {
     <div className="box">
       <div className="box-title">
         <div className="box-title-background-2">
-          <h4>Lina Estrella</h4>
+          <h4>Usuario</h4>
         </div>
       </div>
       <BoxMedals />

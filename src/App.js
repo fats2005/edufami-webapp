@@ -5,6 +5,7 @@ import Footer from "./components/common/Footer";
 import Trainings from "./components/trainings";
 import Training from "./components/training";
 import Unit from "./components/unit";
+import Step from "./components/step";
 import About from "./components/about";
 import Progress from "./components/progress";
 import NotFound from "./components/notFound";
@@ -30,6 +31,10 @@ class App extends Component {
         <NavBar />
         <div className="container">
           <Switch>
+            <Route
+              path="/trainings/:trainingId/:unitId/:stepId"
+              component={Step}
+            />
             <Route path="/trainings/:trainingId/:unitId" component={Unit} />
             <Route path="/trainings/:trainingId" component={Training} />
             <Route path="/trainings" component={Trainings} />

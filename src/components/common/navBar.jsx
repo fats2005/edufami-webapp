@@ -6,7 +6,7 @@ import Language from "../Language";
 
 class NavBar extends Component {
   state = {
-    user: "Alejo"
+    user: "Usuario"
   };
 
   profileItems = {};

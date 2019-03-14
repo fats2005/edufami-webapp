@@ -2,6 +2,7 @@
   height: 220px;
   border-radius: 3rem 5px 5px 5px !important;
   align-content: space-around;
+  text-align: center;
   .card-lesson-img-top {
     width: 95px;
   }
@@ -13,6 +14,10 @@
     margin: 0;
     h5 {
       margin: 0;
+      width: 100%;
     }
+  }
+  &:hover {
+    color: #ffffff;
   }
 }

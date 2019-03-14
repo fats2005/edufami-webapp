@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getUnitsByTrainingId } from "../../services/fakeUnitService";
+import { getLessonsByUnitId } from "../../services/fakeLessonService";
 import CardLesson from "./cardLesson";
 
 class BoxLessons extends Component {
@@ -9,7 +9,7 @@ class BoxLessons extends Component {
 
   componentDidMount() {
     const { unit } = this.props;
-    const lessons = getUnitsByTrainingId(unit.id);
+    const lessons = getLessonsByUnitId(unit.id);
     this.setState({ lessons });
   }
   render() {
