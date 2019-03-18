@@ -6,9 +6,12 @@ import "./cardTraining.scss";
 const CardTraining = ({ col, data }) => {
   return (
     <div className={"card-training col col-" + col}>
-      <Link className="card secondary-text-color" to={`/trainings/${data.id}`}>
+      <Link
+        className="card secondary-text-color bg-secondary"
+        to={`/trainings/${data.id}`}
+      >
         <img
-          src={require("../../images/" + data.image)}
+          src={`/images/${data.image}`}
           className="card-img-top"
           alt={data.name}
         />
@@ -17,7 +20,7 @@ const CardTraining = ({ col, data }) => {
         </div>
         <div className="card-app">
           <img
-            src={require(`../../images/${data.app}_small_logo.svg`)}
+            src={`/images/${data.app}_small_logo.svg`}
             alt={data.app}
             width="50"
           />

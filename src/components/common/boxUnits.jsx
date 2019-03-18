@@ -19,7 +19,7 @@ class BoxUnits extends Component {
       <div className="box">
         <div className="box-title" style={{ backgroundColor: "#ffffff" }}>
           <div className="box-title-background-2">
-            <h4>{training.name} / Unidades</h4>
+            {/* <h4>{training.name} / Unidades</h4> */}
           </div>
           <div className="box-body">
             <div className="row">

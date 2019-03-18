@@ -6,14 +6,7 @@ export const trainings = [
     app: "equfami",
     progress: 0,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis lobortis velit at finibus. Donec euismod maximus eleifend.",
-    units: {
-      "1": "1",
-      "2": "2",
-      "3": "2",
-      "4": "3",
-      "5": "4"
-    }
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis lobortis velit at finibus. Donec euismod maximus eleifend."
   },
   {
     id: "5",
