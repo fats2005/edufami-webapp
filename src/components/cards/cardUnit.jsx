@@ -11,7 +11,7 @@ const CardUnit = ({ col, unit, trainingId }) => {
         to={`/trainings/${trainingId}/${unit.id}`}
       >
         <img
-          src={require(`../../images/${unit.image}`)}
+          src={`/images/${unit.image}`}
           className="card-img-left"
           alt={unit.name}
         />

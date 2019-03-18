@@ -10,20 +10,17 @@ const Language = ({ label }) => {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <img src={require("../images/flags/es.svg")} width="20" alt="" /> ES
-        (Español)
+        <img src={"/images/flags/es.svg"} width="20" alt="" /> ES (Español)
       </button>
       <div
         className="dropdown-menu dropdown-menu-lg-right"
         aria-labelledby="languageDropdown"
       >
         <button className="dropdown-item">
-          <img src={require("../images/flags/en.svg")} width="20" alt="" /> EN
-          (English)
+          <img src={"/images/flags/en.svg"} width="20" alt="" /> EN (English)
         </button>
         <button className="dropdown-item">
-          <img src={require("../images/flags/fr.svg")} width="20" alt="" /> FR
-          (Français)
+          <img src={"/images/flags/fr.svg"} width="20" alt="" /> FR (Français)
         </button>
       </div>
     </div>

@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import _ from "lodash";
 import trainingService from "../services/trainingService";
 
-import BoxAchievements from "../components/common/boxAchievements";
-import BoxTrainings from "../components/common/boxTrainings";
+import BoxAchievements from "../components/boxes/boxAchievements";
+import BoxTrainings from "../components/boxes/boxTrainings";
 
 class Trainings extends Component {
   state = {
     trainings: []
   };
+
   async componentDidMount() {
     const { data } = await trainingService.getTrainings();
     const trainings = _.orderBy(data, "created", "desc");

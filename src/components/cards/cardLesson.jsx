@@ -4,16 +4,15 @@ import { Link } from "react-router-dom";
 import "./cardLesson.scss";
 
 const CardLesson = ({ col, trainingId, unitId, lesson }) => {
-  console.log(col, trainingId, unitId, lesson.id);
   return (
     <div className={"col col-" + col}>
       <Link
-        className="card card-lesson text-center bg-primary secondary-text-color"
+        className="card card-lesson text-center bg-secondary primary-text-color"
         to={`/trainings/${trainingId}/${unitId}/${lesson.id}`}
       >
-        <div class="card-body">
+        <div className="card-body">
           <img
-            src={require(`../../images/${lesson.image}`)}
+            src={`/images/ico_gray_${lesson.order}.png`}
             className="card-lesson-img-top"
             alt={lesson.name}
           />

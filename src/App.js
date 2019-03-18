@@ -10,11 +10,11 @@ import {
   faDownload
 } from "@fortawesome/free-solid-svg-icons";
 
-import Trainings from "./pages/trainings";
 import NavBar from "./components/common/navBar";
 import Footer from "./components/common/Footer";
-import Training from "./components/training";
-import Unit from "./components/unit";
+import Trainings from "./pages/trainings";
+import Training from "./pages/training";
+import Unit from "./pages/unit";
 import Step from "./components/step";
 import About from "./components/about";
 import Progress from "./components/progress";
@@ -32,7 +32,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             <Route
-              path="/trainings/:trainingId/:unitId/:stepId"
+              path="/trainings/:trainingId/:unitId/:lessonId/:stepId"
               component={Step}
             />
             <Route path="/trainings/:trainingId/:unitId" component={Unit} />

@@ -1,20 +1,9 @@
 import React, { Component } from "react";
-import { getLessonsByUnitId } from "../../services/fakeLessonService";
-import CardLesson from "./cardLesson";
+import CardLesson from "../cards/cardLesson";
 
 class BoxLessons extends Component {
-  state = {
-    lessons: []
-  };
-
-  componentDidMount() {
-    const { unit } = this.props;
-    const lessons = getLessonsByUnitId(unit.id);
-    this.setState({ lessons });
-  }
   render() {
-    const { lessons } = this.state;
-    const { unit } = this.props;
+    const { unit, lessons } = this.props;
     return (
       <div className="box">
         <div className="box-title" style={{ backgroundColor: "#ffffff" }}>

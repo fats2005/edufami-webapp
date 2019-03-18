@@ -1,5 +1,5 @@
 import React from "react";
-import CardTraining from "./cardTraining";
+import CardTraining from "../cards/cardTraining";
 
 const BoxTrainings = ({ trainings }) => {
   return (

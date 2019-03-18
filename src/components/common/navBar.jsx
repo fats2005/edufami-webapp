@@ -15,10 +15,7 @@ class NavBar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <Link className="navbar-brand" to="/">
-          <img
-            src={require("../../images/logo_edufami.svg")}
-            alt="Logo de Edufami"
-          />
+          <img src={"/images/logo_edufami.svg"} alt="Logo de Edufami" />
         </Link>
         <button
           className="navbar-toggler"
