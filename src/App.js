@@ -15,6 +15,7 @@ import Footer from "./components/common/Footer";
 import Trainings from "./pages/trainings";
 import Training from "./pages/training";
 import Unit from "./pages/unit";
+import Lesson from "./pages/lesson";
 import Step from "./components/step";
 import About from "./components/about";
 import Progress from "./components/progress";
@@ -31,12 +32,10 @@ class App extends Component {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route
-              path="/trainings/:trainingId/:unitId/:lessonId/:stepId"
-              component={Step}
-            />
-            <Route path="/trainings/:trainingId/:unitId" component={Unit} />
-            <Route path="/trainings/:trainingId" component={Training} />
+            <Route path="/step/:orderId(\d+)" component={Step} />
+            <Route path="/lesson/:lessonId(\d+)" component={Lesson} />
+            <Route path="/unit/:unitId(\d+)" component={Unit} />
+            <Route path="/trainings/:trainingId(\d+)" component={Training} />
             <Route path="/trainings" component={Trainings} />
             <Route path="/about" component={About} />
             <Route path="/progress" component={Progress} />

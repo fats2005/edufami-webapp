@@ -12,12 +12,9 @@ class Training extends Component {
   };
 
   async componentDidMount() {
-    const { data: training } = await trainingService.getTraining(
-      this.props.match.params.trainingId
-    );
-    const { data: units } = await trainingService.getUnitsbyTraining(
-      training.id
-    );
+    const id = this.props.match.params.trainingId;
+    const training = trainingService.getTraining(id);
+    const units = trainingService.getUnitsByTraining(id);
     this.setState({ training, units });
   }
 

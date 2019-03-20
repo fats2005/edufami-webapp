@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import unitService from "../services/unitService";
+import trainingService from "../services/trainingService";
 import BoxAchievements from "../components/boxes/boxAchievements";
 import BoxLessons from "../components/boxes/boxLessons";
 
@@ -10,11 +10,10 @@ class Unit extends Component {
   };
 
   async componentDidMount() {
-    const { data: unit } = await unitService.getUnit(
-      this.props.match.params.unitId
-    );
+    const unitId = this.props.match.params.unitId;
+    const unit = trainingService.getUnit(unitId);
+    const lessons = trainingService.getLessonsByUnit(unitId);
 
-    const { data: lessons } = await unitService.getLessonsbyUnit(unit.id);
     this.setState({ unit, lessons });
   }
 

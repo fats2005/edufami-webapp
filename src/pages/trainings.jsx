@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import _ from "lodash";
 import trainingService from "../services/trainingService";
 
 import BoxAchievements from "../components/boxes/boxAchievements";
@@ -11,8 +10,8 @@ class Trainings extends Component {
   };
 
   async componentDidMount() {
-    const { data } = await trainingService.getTrainings();
-    const trainings = _.orderBy(data, "created", "desc");
+    await trainingService.getTrainingsData();
+    const trainings = trainingService.getTrainings();
     this.setState({ trainings });
   }
   render() {

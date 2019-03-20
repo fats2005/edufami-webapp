@@ -8,7 +8,7 @@ const CardLesson = ({ col, trainingId, unitId, lesson }) => {
     <div className={"col col-" + col}>
       <Link
         className="card card-lesson text-center bg-secondary primary-text-color"
-        to={`/trainings/${trainingId}/${unitId}/${lesson.id}`}
+        to={`/lesson/${lesson.id}`}
       >
         <div className="card-body">
           <img

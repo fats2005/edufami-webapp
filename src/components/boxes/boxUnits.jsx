@@ -19,7 +19,7 @@ class BoxUnits extends Component {
           <div className="box-body">
             <div className="row">
               {units.map(item => (
-                <CardUnit key={item.id} unit={item} trainingId={training.id} />
+                <CardUnit key={item.id} unit={item} />
               ))}
             </div>
           </div>
