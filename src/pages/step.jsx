@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import trainingService from "../services/trainingService";
+import Questions from "../components/questions/question";
 
 class Step extends Component {
   state = {
@@ -12,9 +13,7 @@ class Step extends Component {
   componentDidMount() {}
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(nextProps.match.params.orderId, prevState.orderId);
     if (nextProps.match.params.orderId !== prevState.orderId) {
-      console.log("entra");
       const { orderId } = nextProps.match.params;
       const { currentStep, nextStep } = trainingService.getCurrentSteps(
         orderId
@@ -24,21 +23,15 @@ class Step extends Component {
     return null;
   }
 
+  handleFinishLesson() {
+    trainingService.finishLesson();
+    window.location = "/lesson/end";
+  }
+
   render() {
     const { currentStep, nextStep } = this.state;
-    console.log(nextStep);
-    return (
-      <div>
-        <h3>currentStep</h3>
-        <p>{currentStep.question}</p>
-        <h3>nextStep</h3>
-        <p>
-          {nextStep && (
-            <Link to={`/step/${nextStep.order}`}>Ir al siguiente paso</Link>
-          )}
-        </p>
-      </div>
-    );
+    if (!currentStep) return <Redirect to="/" />;
+    return <Questions currentStep={currentStep} nextStep={nextStep} />;
   }
 }
 

@@ -7,7 +7,8 @@ import {
   faCertificate,
   faShare,
   faTasks,
-  faDownload
+  faDownload,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./components/common/navBar";
@@ -16,14 +17,23 @@ import Trainings from "./pages/trainings";
 import Training from "./pages/training";
 import Unit from "./pages/unit";
 import Lesson from "./pages/lesson";
-import Step from "./components/step";
+import Step from "./pages/step";
+import LessonEnd from "./pages/lessonEnd";
 import About from "./components/about";
 import Progress from "./components/progress";
 import NotFound from "./components/notFound";
 
 import "./App.scss";
 
-library.add(faUserCircle, faMedal, faCertificate, faShare, faTasks, faDownload);
+library.add(
+  faUserCircle,
+  faMedal,
+  faCertificate,
+  faShare,
+  faTasks,
+  faDownload,
+  faTimes
+);
 
 class App extends Component {
   render() {
@@ -33,6 +43,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             <Route path="/step/:orderId(\d+)" component={Step} />
+            <Route path="/lesson/end" component={LessonEnd} />
             <Route path="/lesson/:lessonId(\d+)" component={Lesson} />
             <Route path="/unit/:unitId(\d+)" component={Unit} />
             <Route path="/trainings/:trainingId(\d+)" component={Training} />

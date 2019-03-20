@@ -5,7 +5,8 @@ const trainingKey = "trainings";
 const unitsKey = "units";
 const lessonsKey = "lessons";
 const stepsKey = "steps";
-const lessonInProgressKey = "lessonInProgress";
+const stepsOfLessonKey = "stepsOfLesson";
+const isLessonInProgressKey = "lessonInProgress";
 
 export async function getTrainingsData() {
   if (false) {
@@ -57,19 +58,28 @@ export function getStepsByLesson(id) {
   const steps = JSON.parse(localStorage.getItem(stepsKey));
   const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id));
   const stepsOrdered = _.orderBy(stepsFiltered, "order", "asc");
-  startLesson(stepsOrdered);
+  localStorage.setItem(stepsOfLessonKey, JSON.stringify(stepsOrdered));
   return stepsOrdered;
 }
 
-export function startLesson(steps) {
-  localStorage.setItem(lessonInProgressKey, JSON.stringify(steps));
-}
-
 export function getCurrentSteps(orderId) {
-  const steps = JSON.parse(localStorage.getItem(lessonInProgressKey));
+  const steps = JSON.parse(localStorage.getItem(stepsOfLessonKey));
   const currentStep = _.filter(steps, s => s.order === parseInt(orderId))[0];
   const nextStep = _.filter(steps, s => s.order === parseInt(orderId) + 1)[0];
   return { currentStep, nextStep };
+}
+
+export function startLesson() {
+  localStorage.setItem(isLessonInProgressKey, true);
+}
+
+export function finishLesson() {
+  localStorage.removeItem(isLessonInProgressKey);
+  localStorage.removeItem(stepsOfLessonKey);
+}
+
+export function isLessonInProgress() {
+  return localStorage.getItem(isLessonInProgressKey);
 }
 
 export default {
@@ -81,5 +91,8 @@ export default {
   getLessonsByUnit,
   getNumberOfLessonsByUnit,
   getStepsByLesson,
-  getCurrentSteps
+  getCurrentSteps,
+  startLesson,
+  finishLesson,
+  isLessonInProgress
 };

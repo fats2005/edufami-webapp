@@ -5,11 +5,12 @@ class Lesson extends Component {
   componentDidMount() {
     const lessonId = this.props.match.params.lessonId;
     const nextStep = trainingService.getStepsByLesson(lessonId)[0];
-    this.props.history.replace(`/step/${nextStep.order}`);
+    trainingService.startLesson();
+    window.location = `/step/${nextStep.order}`;
   }
 
   render() {
-    return <h1>Lesson</h1>;
+    return <p />;
   }
 }
 
