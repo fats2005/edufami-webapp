@@ -94,7 +94,7 @@ class QuestionMultipleOptions extends Component {
       <div className="row">
         <div className="col col-lg-4">
           <img
-            src={`/images/options/${currentStep.image}.svg`}
+            src={`/images/${currentStep.image}`}
             className="card-img-left"
             alt="Opcion"
           />

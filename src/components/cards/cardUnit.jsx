@@ -26,7 +26,7 @@ class CardUnit extends Component {
           to={`/unit/${unit.id}`}
         >
           <img
-            src={`/images/${unit.id}.svg`}
+            src={`/images/${unit.image}`}
             className="card-img-left"
             alt={unit.name}
           />
