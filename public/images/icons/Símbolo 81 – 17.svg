@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48.115" height="48.115" viewBox="0 0 48.115 48.115">
+  <g id="Símbolo_81_17" data-name="Símbolo 81 – 17" transform="translate(-1372 -74)">
+    <g id="Grupo_1931" data-name="Grupo 1931" transform="translate(1372 74)">
+      <ellipse id="Elipse_109" data-name="Elipse 109" cx="24.058" cy="24.058" rx="24.058" ry="24.058" transform="translate(0)" fill="#203b47"/>
+      <g id="icons_chevron" data-name="icons/chevron" transform="translate(0.83 47.595) rotate(-90)">
+        <rect id="back" width="46.765" height="46.765" fill="none"/>
+      </g>
+    </g>
+    <g id="Icon_Close_Filled" data-name="Icon / Close / Filled" transform="translate(1193 -1097)">
+      <rect id="Box" width="30" height="30" transform="translate(188 1180)" fill="none"/>
+      <path id="Trazado_954" data-name="Trazado 954" d="M17.5-12.25,15.75-14l-7,7-7-7L0-12.25l7,7-7,7L1.75,3.5l7-7,7,7L17.5,1.75l-7-7Z" transform="translate(194.25 1200.25)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

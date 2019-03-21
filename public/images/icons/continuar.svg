@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="126.595" height="46.765" viewBox="0 0 126.595 46.765">
+  <g id="continuar" transform="translate(-1241 -497)">
+    <g id="Grupo_1943" data-name="Grupo 1943" transform="translate(649.738 62)">
+      <path id="Trazado_2082" data-name="Trazado 2082" d="M26.262,0h82.6a20,20,0,0,1,0,40h-82.6a20,20,0,0,1,0-40Z" transform="translate(585 438)" fill="#203b47"/>
+      <text id="Continuar-2" data-name="Continuar" transform="translate(609 464)" fill="#fff" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Continuar</tspan></text>
+    </g>
+    <g id="icons_chevron" data-name="icons/chevron" transform="translate(1320.83 543.765) rotate(-90)">
+      <rect id="back" width="46.765" height="46.765" fill="none"/>
+      <rect id="line" width="15.588" height="3.897" rx="1.949" transform="translate(16.394 16.493) rotate(45)" fill="#fff"/>
+      <rect id="line-2" data-name="line" width="15.588" height="3.897" rx="1.949" transform="translate(22.018 27.516) rotate(-45)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

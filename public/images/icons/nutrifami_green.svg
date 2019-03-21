@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="nutrifami_green" transform="translate(-614 -281)">
+    <rect id="Rectángulo_610" data-name="Rectángulo 610" width="50" height="50" rx="10" transform="translate(614 281)" fill="#479e6a"/>
+    <g id="nutrifami_simbol" transform="translate(-1191.405 -346)">
+      <g id="Grupo_11" data-name="Grupo 11" transform="translate(1817.405 632)">
+        <g id="Grupo_9" data-name="Grupo 9" transform="translate(0.984 16.808)">
+          <path id="Trazado_2037" data-name="Trazado 2037" d="M686.173,391.358c0-3.145-1.232-4.922-4.112-4.922-3.7,0-6.489,3.918-6.489,6.653v9.75h-7.539V380.057H671c2.88,0,4.57.456,4.57,3.418v1.549a11.337,11.337,0,0,1,9.23-5.376c8.134,0,8.911,6.332,8.911,12.667V402.84h-2.971c-2.924,0-4.57-1.139-4.57-3.872Z" transform="translate(-668.033 -379.648)" fill="#fff"/>
+        </g>
+        <g id="Grupo_10" data-name="Grupo 10">
+          <path id="Trazado_2038" data-name="Trazado 2038" d="M693.126,362.01c2.158-.045,2.181-.022,2.112,2.074a13.034,13.034,0,0,1-13.428,12.6c-1.076-.02-1.4-.372-1.426-1.419A12.954,12.954,0,0,1,693.126,362.01Z" transform="translate(-667.637 -362)" fill="#fbe100"/>
+          <path id="Trazado_2039" data-name="Trazado 2039" d="M675.993,375.73c.215.99-.306,1.289-1.365,1.238a8.073,8.073,0,0,1-7.62-7.437c-.067-1.036.243-1.438,1.357-1.423A7.875,7.875,0,0,1,675.993,375.73Z" transform="translate(-667 -362.291)" fill="#f9e000"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.838" height="63.838" viewBox="0 0 63.838 63.838">
+  <g id="play_yellow" transform="translate(-600 -240)">
+    <g id="logo" transform="translate(600 240)">
+      <path id="Ellipse" d="M31.919,0A31.919,31.919,0,1,1,0,31.919,31.919,31.919,0,0,1,31.919,0Z" fill="#fec846" opacity="0.144"/>
+      <path id="Ellipse-2" data-name="Ellipse" d="M25.75,0A25.849,25.849,0,0,1,46.681,10.749a25.415,25.415,0,0,1,4.818,15A25.75,25.75,0,1,1,25.75,0Z" transform="translate(6.169 6.169)" fill="#fec847" opacity="0.29"/>
+      <circle id="Ellipse-3" data-name="Ellipse" cx="18.776" cy="18.776" r="18.776" transform="translate(13.143 13.143)" fill="#ffc947" opacity="0.995"/>
+    </g>
+    <g id="Icon_Arrow_Right_Filled" data-name="Icon / Arrow Right / Filled" transform="translate(37.398 -1075)">
+      <rect id="Box" width="27.563" height="27.563" transform="translate(581 1333.437)" fill="none"/>
+      <path id="Icon_Arrow_Drop_Down" data-name="Icon / Arrow Drop Down" d="M0,0,7.891,10.164,15.783,0Z" transform="translate(590.485 1355.259) rotate(-90)" fill="#fff" opacity="0.995"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122.602" height="40" viewBox="0 0 122.602 40">
+  <g id="calificar" transform="translate(-1109 -500)">
+    <g id="Grupo_1943" data-name="Grupo 1943" transform="translate(517.738 62)">
+      <path id="Trazado_2082" data-name="Trazado 2082" d="M26.262,0h82.6a20,20,0,0,1,0,40h-82.6a20,20,0,0,1,0-40Z" transform="translate(585 438)" fill="#c66900"/>
+      <text id="Calificar-2" data-name="Calificar" transform="translate(609 464)" fill="#fff" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Calificar</tspan></text>
+    </g>
+    <g id="evalueate" transform="translate(-25.262 37)">
+      <rect id="Box" width="29.124" height="29.124" transform="translate(1213 468.425)" fill="none"/>
+      <path id="shape" d="M66.776-33.038H53.427a2.416,2.416,0,0,0-2.415,2.427L51-13.621a2.426,2.426,0,0,0,2.427,2.427H70.416a2.434,2.434,0,0,0,2.427-2.427V-30.61a2.434,2.434,0,0,0-2.427-2.427H66.776Zm3.641,19.416H53.427V-30.61H70.416Z" transform="translate(1165.423 506.354)" fill="#fff"/>
+      <g id="Grupo_1945" data-name="Grupo 1945" transform="translate(1222.537 480.652)">
+        <path id="Trazado_2226" data-name="Trazado 2226" d="M8118.032,1467.28h5.949" transform="translate(-8118.032 -1467.28)" fill="none" stroke="#fff" stroke-width="1"/>
+        <path id="Trazado_2227" data-name="Trazado 2227" d="M8118.032,1467.28h5.949" transform="translate(-8118.032 -1463.856)" fill="none" stroke="#fff" stroke-width="1"/>
+        <path id="Trazado_2228" data-name="Trazado 2228" d="M8118.032,1467.28h9.773" transform="translate(-8118.032 -1459.943)" fill="none" stroke="#fff" stroke-width="1"/>
+      </g>
+      <g id="Grupo_1944" data-name="Grupo 1944" transform="translate(1230.121 470.023)">
+        <rect id="Rectángulo_631" data-name="Rectángulo 631" width="9.389" height="5.007" transform="translate(1.128 9.142) rotate(-45)" fill="#fff"/>
+        <path id="Rectángulo_632" data-name="Rectángulo 632" d="M0,0H1.13a2,2,0,0,1,2,2V3.007a2,2,0,0,1-2,2H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(8.057 2.213) rotate(-45)" fill="#fff"/>
+        <path id="Trazado_2229" data-name="Trazado 2229" d="M8208.879,1474.6l-.873,3.912,3.946-.838Z" transform="translate(-8208.006 -1464.53)" fill="#fff"/>
+      </g>
+      <g id="Elipse_110" data-name="Elipse 110" transform="translate(1224.738 469.479)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="2.709" cy="2.709" r="2.709" stroke="none"/>
+        <circle cx="2.709" cy="2.709" r="1.709" fill="none"/>
+      </g>
+      <rect id="Rectángulo_633" data-name="Rectángulo 633" width="10.158" height="4.063" rx="2" transform="translate(1222.292 472.188)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495.27" height="80.271" viewBox="0 0 495.27 80.271">
+  <g id="progress_bar" transform="translate(-594.001 -164)">
+    <path id="Trazado_2053" data-name="Trazado 2053" d="M-90.349,0H339.878a8.8,8.8,0,1,1,0,17.6H-90.349a8.8,8.8,0,0,1-8.8-8.8A8.8,8.8,0,0,1-90.349,0Z" transform="translate(693.152 195)" fill="#c66900"/>
+    <g id="Grupo_2007" data-name="Grupo 2007" transform="translate(232)">
+      <g id="Grupo_1919" data-name="Grupo 1919" transform="translate(777 164)">
+        <g id="logo" transform="translate(0)">
+          <path id="Ellipse" d="M40.135,0A40.135,40.135,0,1,1,0,40.135,40.135,40.135,0,0,1,40.135,0Z" fill="#c66900" opacity="0.144"/>
+          <path id="Ellipse-2" data-name="Ellipse" d="M32.378,0A32.5,32.5,0,0,1,58.7,13.516a31.958,31.958,0,0,1,6.059,18.862A32.378,32.378,0,1,1,32.378,0Z" transform="translate(7.757 7.757)" fill="#c66900" opacity="0.29"/>
+          <circle id="Ellipse-3" data-name="Ellipse" cx="23.609" cy="23.609" r="23.609" transform="translate(16.526 16.526)" fill="#c66900" opacity="0.995"/>
+        </g>
+      </g>
+      <g id="Icon_Done_Filled" data-name="Icon / Done / Filled" transform="translate(800 186)">
+        <rect id="Box" width="35.528" height="35.528" transform="translate(0)" fill="none"/>
+        <path id="Icon_Done_Black" data-name="Icon / Done / Black" d="M10.27.674,4.1-5.5,2-3.406l8.27,8.27L28.039-12.9l-2.1-2.1Z" transform="translate(2.441 25.363)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

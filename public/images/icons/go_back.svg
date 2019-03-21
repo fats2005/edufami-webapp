@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="123.007" height="46.765" viewBox="0 0 123.007 46.765">
+  <g id="go_back" transform="translate(-888 -780)">
+    <path id="Trazado_2082" data-name="Trazado 2082" d="M26.262,0h82.6a20,20,0,0,1,0,40h-82.6a20,20,0,0,1,0-40Z" transform="translate(882.143 783)" fill="#203b47"/>
+    <text id="Regresar" transform="translate(928 809)" fill="#fff" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Regresar</tspan></text>
+    <rect id="back" width="46.765" height="46.765" transform="translate(934.765 780) rotate(90)" fill="none"/>
+    <rect id="line" width="15.588" height="3.897" rx="1.949" transform="translate(918.272 796.394) rotate(135)" fill="#fff"/>
+    <rect id="line-2" data-name="line" width="15.588" height="3.897" rx="1.949" transform="translate(907.249 802.018) rotate(45)" fill="#fff"/>
+  </g>
+</svg>

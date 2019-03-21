@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="55.05" height="55.05" viewBox="0 0 55.05 55.05">
+  <g id="try_again" transform="translate(-1348.986 -669.735)">
+    <g id="Grupo_1931" data-name="Grupo 1931" transform="translate(1404.036 677.262) rotate(99)">
+      <ellipse id="Elipse_109" data-name="Elipse 109" cx="24.058" cy="24.058" rx="24.058" ry="24.058" transform="translate(0)" fill="#203b47"/>
+      <g id="icons_chevron" data-name="icons/chevron" transform="translate(0.83 47.595) rotate(-90)">
+        <rect id="back" width="46.765" height="46.765" fill="none"/>
+      </g>
+    </g>
+    <g id="Elipse_111" data-name="Elipse 111" transform="translate(1391.432 686.519) rotate(99)" fill="none" stroke="#fff" stroke-width="2">
+      <circle cx="13" cy="13" r="13" stroke="none"/>
+      <circle cx="13" cy="13" r="12" fill="none"/>
+    </g>
+    <rect id="Rectángulo_642" data-name="Rectángulo 642" width="10" height="11" transform="translate(1389.77 684.231) rotate(99)" fill="#203b47"/>
+    <g id="icons_chevron-2" data-name="icons/chevron" transform="translate(1722.18 1273.526) rotate(179)">
+      <rect id="back-2" data-name="back" width="24" height="24" transform="translate(311 572)" fill="none"/>
+      <rect id="line" width="8" height="2" rx="1" transform="translate(319.414 580.464) rotate(45)" fill="#fff"/>
+      <rect id="line-2" data-name="line" width="8" height="2" rx="1" transform="translate(322.3 586.121) rotate(-45)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

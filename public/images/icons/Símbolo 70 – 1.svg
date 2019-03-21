@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.838" height="63.838" viewBox="0 0 63.838 63.838">
+  <g id="Símbolo_70_1" data-name="Símbolo 70 – 1" transform="translate(-712.162 -176.162)">
+    <g id="logo" transform="translate(712.162 176.162)">
+      <path id="Ellipse" d="M31.919,0A31.919,31.919,0,1,1,0,31.919,31.919,31.919,0,0,1,31.919,0Z" fill="#40241a" opacity="0.144"/>
+      <circle id="Ellipse-2" data-name="Ellipse" cx="25.75" cy="25.75" r="25.75" transform="translate(6.169 6.169)" fill="#40241a" opacity="0.29"/>
+      <circle id="Ellipse-3" data-name="Ellipse" cx="18.776" cy="18.776" r="18.776" transform="translate(13.143 13.143)" fill="#40241a" opacity="0.995"/>
+    </g>
+    <g id="Icon_Done_Filled" data-name="Icon / Done / Filled" transform="translate(-227.838 -1154)">
+      <rect id="Box" width="32" height="32" transform="translate(956 1344)" fill="none"/>
+      <path id="Icon_Done_Black" data-name="Icon / Done / Black" d="M9.449-.883,3.887-6.444,2-4.557,9.449,2.892l16-16L23.566-15Z" transform="translate(958 1368.333)" fill="#00acc1"/>
+    </g>
+  </g>
+</svg>

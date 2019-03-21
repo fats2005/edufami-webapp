@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="75.552" viewBox="0 0 88 75.552">
+  <g id="incorrect" transform="translate(-1608 -648)">
+    <g id="Grupo_1949" data-name="Grupo 1949" transform="translate(469.929 218.584)">
+      <path id="shape" d="M97.412-33.038H58.14a7.108,7.108,0,0,0-7.1,7.14L51,24.085a7.138,7.138,0,0,0,7.14,7.14h49.982a7.161,7.161,0,0,0,7.14-7.14V-25.9a7.161,7.161,0,0,0-7.14-7.14H97.412Zm10.71,57.122H58.14V-25.9h49.982Z" transform="translate(1087.071 473.743)" fill="#fff"/>
+      <g id="Grupo_1945" data-name="Grupo 1945" transform="translate(1156.058 462.288)">
+        <path id="Trazado_2226" data-name="Trazado 2226" d="M8118.032,1467.28h17.5" transform="translate(-8118.032 -1467.28)" fill="none" stroke="#fff" stroke-width="3"/>
+        <path id="Trazado_2227" data-name="Trazado 2227" d="M8118.032,1467.28h17.5" transform="translate(-8118.032 -1457.208)" fill="none" stroke="#fff" stroke-width="3"/>
+        <path id="Trazado_2228" data-name="Trazado 2228" d="M8118.032,1467.28h28.754" transform="translate(-8118.032 -1445.697)" fill="none" stroke="#fff" stroke-width="3"/>
+      </g>
+      <g id="Elipse_110" data-name="Elipse 110" transform="translate(1162.532 429.416)" fill="none" stroke="#fff" stroke-width="5">
+        <ellipse cx="7.969" cy="7.969" rx="7.969" ry="7.969" stroke="none"/>
+        <ellipse cx="7.969" cy="7.969" rx="5.469" ry="5.469" fill="none"/>
+      </g>
+      <rect id="Rectángulo_633" data-name="Rectángulo 633" width="29.884" height="11.953" rx="2" transform="translate(1155.338 437.385)" fill="#fff"/>
+    </g>
+    <g id="Icon_Close_Filled" data-name="Icon / Close / Filled" transform="translate(1452 -529.416)">
+      <rect id="Box" width="56" height="56" transform="translate(188 1180)" fill="none"/>
+      <path id="Trazado_954" data-name="Trazado 954" d="M32.667-10.733,29.4-14,16.333-.933,3.267-14,0-10.733,13.067,2.333,0,15.4l3.267,3.267L16.333,5.6,29.4,18.667,32.667,15.4,19.6,2.333Z" transform="translate(199.667 1205.667)" fill="red" stroke="red" stroke-width="1" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

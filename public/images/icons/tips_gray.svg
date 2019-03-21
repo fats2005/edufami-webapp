@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46.834" height="46.833" viewBox="0 0 46.834 46.833">
+  <g id="tips_gray" transform="translate(-1349 -267)">
+    <g id="tips_yellow" transform="translate(192 65)">
+      <g id="logo" transform="translate(1157 202)">
+        <path id="Ellipse" d="M23.417,0A23.417,23.417,0,1,1,0,23.417,23.417,23.417,0,0,1,23.417,0Z" fill="#4a6572" opacity="0.144"/>
+        <path id="Ellipse-2" data-name="Ellipse" d="M18.891,0A18.964,18.964,0,0,1,34.247,7.886a18.645,18.645,0,0,1,3.535,11.005A18.891,18.891,0,1,1,18.891,0Z" transform="translate(4.526 4.526)" fill="#4a6572" opacity="0.29"/>
+        <ellipse id="Ellipse-3" data-name="Ellipse" cx="13.775" cy="13.775" rx="13.775" ry="13.775" transform="translate(9.642 9.642)" fill="#4a6572" opacity="0.995"/>
+      </g>
+      <g id="Icon_Search_Filled" data-name="Icon / Search / Filled" transform="translate(695 304)">
+        <rect id="Box" width="24" height="24" transform="translate(473 -91)" fill="none"/>
+      </g>
+    </g>
+    <g id="Grupo_1992" data-name="Grupo 1992" transform="translate(1363.639 280.405)">
+      <path id="Trazado_2230" data-name="Trazado 2230" d="M8742.8,1495.047c.341-1.292-2.759-3.5-2.334-6.089a4.585,4.585,0,0,1,4.626-4.075,4.438,4.438,0,0,1,4.542,4.075c.424,2.589-2.844,4.626-2.419,6.089" transform="translate(-8736.132 -1480.748)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2231" data-name="Trazado 2231" d="M8826.34,1880.506h4.148s.033,1.75,0,2.107a2.018,2.018,0,0,1-1.917,1.872,2.079,2.079,0,0,1-2.231-1.872C8826.343,1881.945,8826.34,1880.506,8826.34,1880.506Z" transform="translate(-8819.504 -1864.656)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2232" data-name="Trazado 2232" d="M8634.054,1779.2l1.469-.787" transform="translate(-8632.911 -1765.582)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2233" data-name="Trazado 2233" d="M8595.463,1650.158H8597" transform="translate(-8595.463 -1641.13)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2234" data-name="Trazado 2234" d="M8634.054,1500.567l1.436.816" transform="translate(-8632.911 -1495.968)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2235" data-name="Trazado 2235" d="M8746.512,1392l.719,1.223" transform="translate(-8742.04 -1390.615)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2236" data-name="Trazado 2236" d="M8897.076,1345.253v1.661" transform="translate(-8888.144 -1345.253)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2237" data-name="Trazado 2237" d="M9023.053,1392l-.9,1.289" transform="translate(-9009.514 -1390.615)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2238" data-name="Trazado 2238" d="M9115.03,1500.567l-1.371.783" transform="translate(-9098.313 -1495.968)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2239" data-name="Trazado 2239" d="M9144.058,1650.158h-1.732" transform="translate(-9126.133 -1641.13)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+      <path id="Trazado_2240" data-name="Trazado 2240" d="M9117.171,1778.127l-1.3-.82" transform="translate(-9100.456 -1764.513)" fill="none" stroke="#ffc947" stroke-linecap="round" stroke-width="1.3"/>
+    </g>
+  </g>
+</svg>

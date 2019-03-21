@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.838" height="63.838" viewBox="0 0 63.838 63.838">
+  <g id="chek_yellow" transform="translate(-601 -681)">
+    <g id="Grupo_1919" data-name="Grupo 1919" transform="translate(0.398 407)">
+      <g id="logo" transform="translate(600.602 274)">
+        <path id="Ellipse" d="M31.919,0A31.919,31.919,0,1,1,0,31.919,31.919,31.919,0,0,1,31.919,0Z" fill="#fec947" opacity="0.144"/>
+        <path id="Ellipse-2" data-name="Ellipse" d="M25.75,0A25.849,25.849,0,0,1,46.681,10.749a25.415,25.415,0,0,1,4.818,15A25.75,25.75,0,1,1,25.75,0Z" transform="translate(6.169 6.169)" fill="#fec947" opacity="0.29"/>
+        <circle id="Ellipse-3" data-name="Ellipse" cx="18.776" cy="18.776" r="18.776" transform="translate(13.143 13.143)" fill="#ffc947" opacity="0.995"/>
+      </g>
+    </g>
+    <g id="Icon_Done_Filled" data-name="Icon / Done / Filled" transform="translate(-336.602 -647.093)">
+      <rect id="Box" width="28.255" height="28.255" transform="translate(956 1344)" fill="none"/>
+      <path id="Icon_Done_Black" data-name="Icon / Done / Black" d="M8.577-2.535,3.666-7.446,2-5.779,8.577.8,22.709-13.334,21.042-15Z" transform="translate(957.532 1367.241)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63.838" height="63.838" viewBox="0 0 63.838 63.838">
+  <g id="learn_yellow" transform="translate(-601 -1143)">
+    <g id="Grupo_1921" data-name="Grupo 1921" transform="translate(0 396)">
+      <g id="Grupo_1919" data-name="Grupo 1919" transform="translate(0.398 473)">
+        <g id="logo" transform="translate(600.602 274)">
+          <path id="Ellipse" d="M31.919,0A31.919,31.919,0,1,1,0,31.919,31.919,31.919,0,0,1,31.919,0Z" fill="#fec947" opacity="0.144"/>
+          <path id="Ellipse-2" data-name="Ellipse" d="M25.75,0A25.849,25.849,0,0,1,46.681,10.749a25.415,25.415,0,0,1,4.818,15A25.75,25.75,0,1,1,25.75,0Z" transform="translate(6.169 6.169)" fill="#fec947" opacity="0.29"/>
+          <circle id="Ellipse-3" data-name="Ellipse" cx="18.776" cy="18.776" r="18.776" transform="translate(13.143 13.143)" fill="#fec947" opacity="0.995"/>
+        </g>
+      </g>
+    </g>
+    <g id="book-open" transform="translate(9.604 0.371)">
+      <path id="Trazado_26" data-name="Trazado 26" d="M2,3H6.8a3.2,3.2,0,0,1,3.2,3.2V17.388a2.4,2.4,0,0,0-2.4-2.4H2Z" transform="translate(613.396 1164.629)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Trazado_27" data-name="Trazado 27" d="M19.993,3H15.2A3.2,3.2,0,0,0,12,6.2V17.388a2.4,2.4,0,0,1,2.4-2.4h5.6Z" transform="translate(611.389 1164.629)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="174" height="40" viewBox="0 0 174 40">
+  <g id="try_again_long" transform="translate(-1448 -504)">
+    <rect id="Rectángulo_688" data-name="Rectángulo 688" width="174" height="40" rx="20" transform="translate(1448 504)" fill="#203b47"/>
+    <text id="Volver_a_intentar" data-name="Volver a intentar" transform="translate(1459.738 529)" fill="#fff" font-size="16" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Volver a intentar</tspan></text>
+    <g id="Grupo_2003" data-name="Grupo 2003" transform="translate(32.366 71.283)">
+      <g id="Elipse_111" data-name="Elipse 111" transform="translate(1576.164 443.335) rotate(99)" fill="none" stroke="#fff" stroke-width="2">
+        <circle cx="11.565" cy="11.565" r="11.565" stroke="none"/>
+        <circle cx="11.565" cy="11.565" r="10.565" fill="none"/>
+      </g>
+      <rect id="Rectángulo_642" data-name="Rectángulo 642" width="8.896" height="9.786" transform="translate(1574.685 441.3) rotate(99)" fill="#203b47"/>
+      <g id="icons_chevron" data-name="icons/chevron" transform="translate(1584.893 461.592) rotate(179)">
+        <rect id="back" width="21.351" height="21.351" transform="translate(0 0)" fill="none"/>
+        <rect id="line" width="7.117" height="1.779" rx="0.89" transform="translate(7.485 7.53) rotate(45)" fill="#fff"/>
+        <rect id="line-2" data-name="line" width="7.117" height="1.779" rx="0.89" transform="translate(10.053 12.563) rotate(-45)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

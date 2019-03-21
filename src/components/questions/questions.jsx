@@ -16,23 +16,31 @@ class Questions extends Component {
   }
 
   chooseQuestion(type) {
-    const { currentStep } = this.props;
+    const { currentStep, onGoNext } = this.props;
     switch (parseInt(type)) {
       case 1:
-        return <h1>Type1</h1>;
+        return onGoNext();
       case 2:
-        return <h1>Type2</h1>;
+        return (
+          <QuestionMultipleOptions
+            currentStep={currentStep}
+            onGoNext={onGoNext}
+          />
+        );
       case 3:
-        return <h1>Type3</h1>;
+        return (
+          <QuestionMultipleOptions
+            currentStep={currentStep}
+            onGoNext={onGoNext}
+          />
+        );
       case 4:
         return (
           <QuestionMultipleOptions
             currentStep={currentStep}
-            onGoNext={this.props.onGoNext}
+            onGoNext={onGoNext}
           />
         );
-      case 5:
-        return <h1>Type5</h1>;
       default:
         return <h1>Error</h1>;
     }
