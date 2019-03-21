@@ -10,7 +10,7 @@ const isLessonInProgressKey = "lessonInProgress";
 const optionsKey = "options";
 
 export async function getTrainingsData() {
-  if (false) {
+  if (true) {
     const { data: trainings } = await http.get("/trainings");
     const trainingsFiltrered = _.filter(trainings, t => t.status === "Public");
     localStorage.setItem(trainingKey, JSON.stringify(trainingsFiltrered));
