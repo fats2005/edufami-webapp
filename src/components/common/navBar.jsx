@@ -14,11 +14,7 @@ class NavBar extends Component {
   componentDidMount() {
     const isLessonInProgress = trainingService.isLessonInProgress();
     if (isLessonInProgress) {
-      console.log("no mostrar");
       this.setState({ showNavBar: false });
-    } else {
-      console.log("mostrar");
-      this.setState({ showNavBar: true });
     }
   }
 

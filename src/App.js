@@ -8,7 +8,8 @@ import {
   faShare,
   faTasks,
   faDownload,
-  faTimes
+  faTimes,
+  faClipboardCheck
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./components/common/navBar";
@@ -32,7 +33,8 @@ library.add(
   faShare,
   faTasks,
   faDownload,
-  faTimes
+  faTimes,
+  faClipboardCheck
 );
 
 class App extends Component {

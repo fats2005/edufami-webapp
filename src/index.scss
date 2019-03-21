@@ -36,6 +36,10 @@ h6 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
+.progress {
+  border-radius: 10px;
+}
+
 /* End - NavBar */
 
 /* Footer */
@@ -155,7 +159,7 @@ footer {
 }
 
 .primary-text-color {
-  color: $primary-text-color;
+  color: $primary-text-color !important;
 }
 
 .bg-secondary {
@@ -171,5 +175,5 @@ footer {
 }
 
 .secondary-text-color {
-  color: $secondary-text-color;
+  color: $secondary-text-color !important;
 }

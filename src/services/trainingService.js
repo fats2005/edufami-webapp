@@ -7,6 +7,7 @@ const lessonsKey = "lessons";
 const stepsKey = "steps";
 const stepsOfLessonKey = "stepsOfLesson";
 const isLessonInProgressKey = "lessonInProgress";
+const optionsKey = "options";
 
 export async function getTrainingsData() {
   if (false) {
@@ -22,6 +23,9 @@ export async function getTrainingsData() {
 
     const { data: steps } = await http.get("/steps");
     localStorage.setItem(stepsKey, JSON.stringify(steps));
+
+    const { data: options } = await http.get("/options");
+    localStorage.setItem(optionsKey, JSON.stringify(options));
   }
 }
 
@@ -62,11 +66,21 @@ export function getStepsByLesson(id) {
   return stepsOrdered;
 }
 
+export function getNumberOfStepsofCurrentLesson() {
+  return JSON.parse(localStorage.getItem(stepsOfLessonKey)).length + 1;
+}
+
 export function getCurrentSteps(orderId) {
   const steps = JSON.parse(localStorage.getItem(stepsOfLessonKey));
   const currentStep = _.filter(steps, s => s.order === parseInt(orderId))[0];
   const nextStep = _.filter(steps, s => s.order === parseInt(orderId) + 1)[0];
   return { currentStep, nextStep };
+}
+
+export function getOptionsByStep(stepId) {
+  const options = JSON.parse(localStorage.getItem(optionsKey));
+  const optionsFiltered = _.filter(options, o => o.stepId === parseInt(stepId));
+  return optionsFiltered;
 }
 
 export function startLesson() {
@@ -91,7 +105,9 @@ export default {
   getLessonsByUnit,
   getNumberOfLessonsByUnit,
   getStepsByLesson,
+  getNumberOfStepsofCurrentLesson,
   getCurrentSteps,
+  getOptionsByStep,
   startLesson,
   finishLesson,
   isLessonInProgress
