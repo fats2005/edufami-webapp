@@ -12,7 +12,7 @@ const CardTraining = ({ col, data }) => {
         className="card secondary-text-color bg-secondary"
         to={`/trainings/${data.id}`}
       >
-        <Img srcName={data.image} className="card-img-top" alt={data.name} />
+        <Img src={data.image} className="card-img-top" alt={data.name} />
         <div className="card-body bg-secondary">
           <p className="card-text">{data.name}</p>
         </div>

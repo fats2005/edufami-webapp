@@ -12,16 +12,21 @@ const optionsKey = "options";
 
 export async function getTrainingsData() {
   const versions = await getVersions();
+  console.log(versions);
   const localVersion = JSON.parse(localStorage.getItem(versionKey));
 
   const endpoints = ["trainings", "units", "lessons", "steps", "options"];
 
   await endpoints.forEach(async endpoint => {
     if (!(localVersion && versions[endpoint] === localVersion[endpoint])) {
-      console.log("deberia descargar");
+      console.log("Download " + endpoint);
       const { data } = await http.get(`/${endpoint}`);
-      const dataFiltered = _.filter(data, t => t.status === "published");
-      localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+      if (endpoint === "options") {
+        localStorage.setItem(endpoint, JSON.stringify(data));
+      } else {
+        const dataFiltered = _.filter(data, t => t.status === "published");
+        localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+      }
     }
   });
 

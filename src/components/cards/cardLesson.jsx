@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import Img from "../common/Img";
+
 import "./cardLesson.scss";
 
 class CardLesson extends Component {
@@ -13,8 +15,8 @@ class CardLesson extends Component {
           to={`/lesson/${lesson.id}`}
         >
           <div className="card-body">
-            <img
-              src={`/images/ico_gray_${lesson.order}.png`}
+            <Img
+              src={lesson.image}
               className="card-lesson-img-top"
               alt={lesson.name}
             />

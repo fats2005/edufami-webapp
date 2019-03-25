@@ -27,7 +27,7 @@ class CardUnit extends Component {
           className="card-unit bg-secondary-light secondary-text-color"
           to={`/unit/${unit.id}`}
         >
-          <Img srcName={unit.image} className="card-img-left" alt={unit.name} />
+          <Img src={unit.image} className="card-img-left" alt={unit.name} />
           <div className="card-body">
             <p className="card-text">{unit.name}</p>
             <div className="card-progress">

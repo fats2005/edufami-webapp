@@ -53,7 +53,7 @@ class Questions extends Component {
         <div className="col col-lg-12">
           <div className="box bg-primary">
             <button className="btn btn-secondary btn-exit" onClick={onExit}>
-              <FontAwesomeIcon icon="times" size="lg" />
+              <FontAwesomeIcon icon="times" />
             </button>
             <div className="box-title" style={{ backgroundColor: "#ffffff" }}>
               <div className="box-title-background-2">
@@ -68,7 +68,7 @@ class Questions extends Component {
                 <span>{`${currentStep.order}/${totalQuestions}`}</span>
                 <div className="progress">
                   <div
-                    className="progress-bar bg-warning"
+                    className="progress-bar bg-secondary"
                     role="progressbar"
                     style={{
                       width: (currentStep.order / totalQuestions) * 100 + "%"

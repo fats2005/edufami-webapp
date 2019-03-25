@@ -1,0 +1,30 @@
+.feedback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  visibility: hidden;
+  padding: 1rem 1rem 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  &.isVisible {
+    visibility: visible;
+  }
+  h5,
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  .progress {
+    width: 60%;
+    margin: 0 20%;
+    height: 5px;
+  }
+
+  .btn {
+    width: 300px;
+  }
+}

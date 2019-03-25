@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from "lodash";
+
+import Feedback from "./feedback";
 import trainingService from "../../services/trainingService";
+import Img from "../common/Img";
 
 class QuestionMultipleOptions extends Component {
   state = {
@@ -9,15 +12,12 @@ class QuestionMultipleOptions extends Component {
     state: "initial",
     canEvaluate: false,
     feedback: {
-      show: false,
-      isGood: false
+      show: false
     }
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log("getDerivedStateFromProps");
     if (prevState.state === "initial") {
-      console.log("recargaPreguntas");
       const options = trainingService.getOptionsByStep(
         nextProps.currentStep.id
       );
@@ -45,33 +45,28 @@ class QuestionMultipleOptions extends Component {
 
   handleEvaluate = () => {
     const { options } = this.state;
+    // Counting the wrong answers
     const { false: wrongAnswers } = _.countBy(
       options,
       op => op.isCorrect === (op.selected ? true : false)
     );
-
-    const feedback = this.updateFeedback(wrongAnswers ? true : false);
+    // Parse to boolean
+    const feedback = this.updateFeedback(!Boolean(wrongAnswers));
 
     this.setState({ feedback });
   };
 
-  updateFeedback = isWrong => {
+  updateFeedback = isOk => {
+    const { options } = this.state;
+    // Filtring the options to extract the feedbacks
+    const filtered = _.filter(options, o => o.isCorrect === isOk && o.selected);
+
     let feedback = {
       show: true,
-      label: "¡Correcto!",
-      text: "text",
-      buttonText: "Continuar",
-      icon: "step_correct.svg",
-      isGood: true
+      text: filtered[0].feedback, // CHoosing the first feedback
+      status: isOk ? "good" : "bad"
     };
 
-    if (isWrong) {
-      feedback.label = "¡Intentar de Nuevo!";
-      feedback.text = "Feedback Negativo";
-      feedback.buttonText = "Volver a Intentar";
-      feedback.icon = "step_incorrect.svg";
-      feedback.isGood = false;
-    }
     return feedback;
   };
 
@@ -79,7 +74,7 @@ class QuestionMultipleOptions extends Component {
     const { feedback } = this.state;
     feedback.show = false;
     this.setState({ state: "initial" });
-    if (feedback.isGood) {
+    if (feedback.status === "good") {
       this.props.onGoNext();
     }
 
@@ -93,11 +88,7 @@ class QuestionMultipleOptions extends Component {
     return (
       <div className="row">
         <div className="col col-lg-4">
-          <img
-            src={`/images/${currentStep.image}`}
-            className="card-img-left"
-            alt="Opcion"
-          />
+          <Img src={currentStep.image} className="card-img-left" alt="Opcion" />
         </div>
         <div className="col col-lg-8">
           <div className="question">
@@ -127,23 +118,10 @@ class QuestionMultipleOptions extends Component {
                 Calificar <FontAwesomeIcon icon="clipboard-check" size="lg" />
               </button>
             </div>
-            <div className={"feedback " + (feedback.show ? "isVisible" : "")}>
-              <h3>{feedback.label}</h3>
-              {/* <p>{feedback.text}</p> */}
-              <p>
-                <img
-                  src={`/images/icons/${feedback.icon}`}
-                  height="75px"
-                  alt="Opcion"
-                />
-              </p>
-              <button
-                className="btn btn-secondary btn-lg"
-                onClick={this.handleFeedbackButton}
-              >
-                {feedback.buttonText}
-              </button>
-            </div>
+            <Feedback
+              feedback={feedback}
+              buttonAction={this.handleFeedbackButton}
+            />
           </div>
         </div>
       </div>

@@ -9,7 +9,9 @@ import {
   faTasks,
   faDownload,
   faTimes,
-  faClipboardCheck
+  faClipboardCheck,
+  faAngleRight,
+  faRedo
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./components/common/navBar";
@@ -34,7 +36,9 @@ library.add(
   faTasks,
   faDownload,
   faTimes,
-  faClipboardCheck
+  faClipboardCheck,
+  faAngleRight,
+  faRedo
 );
 
 class App extends Component {
