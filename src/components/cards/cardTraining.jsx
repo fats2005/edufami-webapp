@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Img from "../common/Img";
+
 import "./cardTraining.scss";
 
 const CardTraining = ({ col, data }) => {
@@ -10,11 +12,7 @@ const CardTraining = ({ col, data }) => {
         className="card secondary-text-color bg-secondary"
         to={`/trainings/${data.id}`}
       >
-        <img
-          src={`/images/${data.image}`}
-          className="card-img-top"
-          alt={data.name}
-        />
+        <Img srcName={data.image} className="card-img-top" alt={data.name} />
         <div className="card-body bg-secondary">
           <p className="card-text">{data.name}</p>
         </div>

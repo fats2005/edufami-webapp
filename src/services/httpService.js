@@ -2,7 +2,7 @@ import axios from "axios";
 import logger from "./logService";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "http://edufami.org:3030/api";
+axios.defaults.baseURL = "http://localhost:3030/api";
 
 axios.interceptors.response.use(null, error => {
   const expectedError =

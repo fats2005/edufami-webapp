@@ -1,6 +1,7 @@
 import http from "./httpService";
 import _ from "lodash";
 
+const versionKey = "version";
 const trainingKey = "trainings";
 const unitsKey = "units";
 const lessonsKey = "lessons";
@@ -10,23 +11,26 @@ const isLessonInProgressKey = "lessonInProgress";
 const optionsKey = "options";
 
 export async function getTrainingsData() {
-  if (true) {
-    const { data: trainings } = await http.get("/trainings");
-    const trainingsFiltrered = _.filter(trainings, t => t.status === "Public");
-    localStorage.setItem(trainingKey, JSON.stringify(trainingsFiltrered));
+  const versions = await getVersions();
+  const localVersion = JSON.parse(localStorage.getItem(versionKey));
 
-    const { data: units } = await http.get("/units");
-    localStorage.setItem(unitsKey, JSON.stringify(units));
+  const endpoints = ["trainings", "units", "lessons", "steps", "options"];
 
-    const { data: lessons } = await http.get("/lessons");
-    localStorage.setItem(lessonsKey, JSON.stringify(lessons));
+  await endpoints.forEach(async endpoint => {
+    if (!(localVersion && versions[endpoint] === localVersion[endpoint])) {
+      console.log("deberia descargar");
+      const { data } = await http.get(`/${endpoint}`);
+      const dataFiltered = _.filter(data, t => t.status === "published");
+      localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+    }
+  });
 
-    const { data: steps } = await http.get("/steps");
-    localStorage.setItem(stepsKey, JSON.stringify(steps));
+  localStorage.setItem(versionKey, JSON.stringify(versions));
+}
 
-    const { data: options } = await http.get("/options");
-    localStorage.setItem(optionsKey, JSON.stringify(options));
-  }
+async function getVersions() {
+  const { data } = await http.get("/versions/1");
+  return data;
 }
 
 export function getTrainings() {

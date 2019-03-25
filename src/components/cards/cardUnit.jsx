@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import Img from "../common/Img";
+
 import trainingService from "../../services/trainingService";
 
 import "./cardUnit.scss";
@@ -25,11 +27,7 @@ class CardUnit extends Component {
           className="card-unit bg-secondary-light secondary-text-color"
           to={`/unit/${unit.id}`}
         >
-          <img
-            src={`/images/${unit.image}`}
-            className="card-img-left"
-            alt={unit.name}
-          />
+          <Img srcName={unit.image} className="card-img-left" alt={unit.name} />
           <div className="card-body">
             <p className="card-text">{unit.name}</p>
             <div className="card-progress">
