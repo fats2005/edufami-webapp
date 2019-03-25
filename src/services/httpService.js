@@ -2,7 +2,9 @@ import axios from "axios";
 import logger from "./logService";
 import { toast } from "react-toastify";
 
-axios.defaults.baseURL = "http://localhost:3030/api";
+import { apiUrl } from "../config.json";
+
+axios.defaults.baseURL = apiUrl;
 
 axios.interceptors.response.use(null, error => {
   const expectedError =
