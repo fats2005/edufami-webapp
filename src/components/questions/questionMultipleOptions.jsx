@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from "lodash";
 
 import Feedback from "./feedback";
@@ -115,7 +115,8 @@ class QuestionMultipleOptions extends Component {
                 onClick={this.handleEvaluate}
                 disabled={!canEvaluate}
               >
-                Calificar <FontAwesomeIcon icon="clipboard-check" size="lg" />
+                Calificar
+                <img src={`/images/icons/evaluate.svg`} height="25px" alt="." />
               </button>
             </div>
             <Feedback

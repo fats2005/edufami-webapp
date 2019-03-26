@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuestionMultipleOptions from "./questionMultipleOptions";
+import QuestionInfo from "./questionInfo";
 import trainingService from "../../services/trainingService";
 import "./questions.scss";
 
@@ -19,7 +20,7 @@ class Questions extends Component {
     const { currentStep, onGoNext } = this.props;
     switch (parseInt(type)) {
       case 1:
-        return onGoNext();
+        return <QuestionInfo currentStep={currentStep} onGoNext={onGoNext} />;
       case 2:
         return (
           <QuestionMultipleOptions
@@ -42,7 +43,7 @@ class Questions extends Component {
           />
         );
       default:
-        return <h1>Error</h1>;
+        return onGoNext();
     }
   }
   render() {

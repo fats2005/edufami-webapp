@@ -1,5 +1,5 @@
 {
   "apiUrl": "http://api.edufami.org/api",
-  "imagesUrl": "/trainings/",
-  "imagesUrl2": "https://s3.amazonaws.com/edufami/trainings/"
+  "apiUrlLocal": "http://localhost:3030/api",
+  "imagesUrl": "https://s3.amazonaws.com/edufami/trainings/"
 }

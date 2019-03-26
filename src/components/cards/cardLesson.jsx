@@ -14,7 +14,7 @@ class CardLesson extends Component {
           className="card card-lesson text-center bg-secondary primary-text-color"
           to={`/lesson/${lesson.id}`}
         >
-          <div className="card-body">
+          <div className="card-body secondary-text-color">
             <Img
               src={lesson.image}
               className="card-lesson-img-top"
