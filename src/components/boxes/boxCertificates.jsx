@@ -12,18 +12,12 @@ const Certificates = () => {
         <ul>
           <li>
             <Link to="/trainings">
-              Climafami para Todos <FontAwesomeIcon icon="download" size="lg" />
+              Climafami <FontAwesomeIcon icon="download" size="lg" />
             </Link>
           </li>
           <li>
             <Link to="/trainings">
-              Equifami para Todos <FontAwesomeIcon icon="download" size="lg" />
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/trainings">
-              Nutrifami para Todos <FontAwesomeIcon icon="download" size="lg" />
+              Equfami <FontAwesomeIcon icon="download" size="lg" />
             </Link>
           </li>
         </ul>

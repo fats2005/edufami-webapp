@@ -12,7 +12,7 @@ const BoxProgress = () => {
         <ul>
           <li>
             <Link to="/trainings">
-              Climafami para Todos <br />
+              Climafami <br />
               <div className="progress">
                 <div
                   className="progress-bar bg-warning"
@@ -27,29 +27,13 @@ const BoxProgress = () => {
           </li>
           <li>
             <Link to="/trainings">
-              Equifami para Todos <br />
+              Equfami <br />
               <div className="progress">
                 <div
                   className="progress-bar bg-warning"
                   role="progressbar"
                   style={{ width: "50%" }}
                   aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                />
-              </div>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/trainings">
-              Nutrifami para Todos <br />
-              <div className="progress">
-                <div
-                  className="progress-bar bg-warning"
-                  role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
                   aria-valuemin="0"
                   aria-valuemax="100"
                 />

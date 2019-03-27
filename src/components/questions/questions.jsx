@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import QuestionMultipleOptions from "./questionMultipleOptions";
 import QuestionInfo from "./questionInfo";
+import QuestionMultipleOptions from "./questionMultipleOptions";
+import QuestionPairs from "./questionPairs";
 import trainingService from "../../services/trainingService";
 import "./questions.scss";
 
@@ -42,6 +43,8 @@ class Questions extends Component {
             onGoNext={onGoNext}
           />
         );
+      case 5:
+        return <QuestionPairs currentStep={currentStep} onGoNext={onGoNext} />;
       default:
         return onGoNext();
     }

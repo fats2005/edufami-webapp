@@ -9,7 +9,7 @@ const BoxMedals = () => {
           <FontAwesomeIcon icon="medal" size="lg" /> Mis Medallas
         </h4>
         <ul>
-          <li>Climafami para Todos</li>
+          <li>Climafami</li>
           <ul>
             <li className="medal">
               <FontAwesomeIcon icon="medal" size="lg" />
@@ -21,17 +21,11 @@ const BoxMedals = () => {
               <FontAwesomeIcon icon="medal" size="lg" />
             </li>
           </ul>
-          <li>Equifami para todos</li>
+          <li>Equfami</li>
           <ul>
             <li className="medal">
               <FontAwesomeIcon icon="medal" size="lg" />
             </li>
-            <li className="medal">
-              <FontAwesomeIcon icon="medal" size="lg" />
-            </li>
-          </ul>
-          <li>Nutrifami para todos</li>
-          <ul>
             <li className="medal">
               <FontAwesomeIcon icon="medal" size="lg" />
             </li>

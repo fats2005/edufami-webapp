@@ -76,7 +76,7 @@ export function getStepsByLesson(id) {
 }
 
 export function getNumberOfStepsofCurrentLesson() {
-  return JSON.parse(localStorage.getItem(stepsOfLessonKey)).length + 1;
+  return JSON.parse(localStorage.getItem(stepsOfLessonKey)).length;
 }
 
 export function getCurrentSteps(orderId) {
