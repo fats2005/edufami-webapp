@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import BoxAchievements from "../components/boxes/boxAchievements";
+import trainingService from "../services/trainingService";
 
 import "./lessonEnd.scss";
 
 class LessonEnd extends Component {
-  state = {};
+  state = {
+    lesson: {}
+  };
   componentDidMount() {
-    // trainingService.finishLesson();
+    const lesson = trainingService.getCurrentLesson();
+    console.log(lesson);
+    this.setState({ lesson });
   }
   render() {
     return (
@@ -31,7 +36,7 @@ class LessonEnd extends Component {
             </h5>
             <h5>¡Adelante!</h5>
             <Link
-              to={"/"}
+              to={`/unit/${this.state.lesson.unitId}`}
               className="btn btn-secondary bg-secondary-dark secondary-text-color"
             >
               Continuar <FontAwesomeIcon icon="angle-right" size="lg" />

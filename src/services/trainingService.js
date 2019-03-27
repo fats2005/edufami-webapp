@@ -58,6 +58,11 @@ export function getUnit(id) {
   return _.filter(units, u => u.id === parseInt(id))[0];
 }
 
+export function getLesson(id) {
+  const lesson = JSON.parse(localStorage.getItem(lessonsKey));
+  return _.filter(lesson, l => l.id === parseInt(id))[0];
+}
+
 export function getLessonsByUnit(id) {
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
   return _.filter(lessons, l => l.unitId === parseInt(id));
@@ -72,11 +77,16 @@ export function getStepsByLesson(id) {
   const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id));
   const stepsOrdered = _.orderBy(stepsFiltered, "order", "asc");
   localStorage.setItem(stepsOfLessonKey, JSON.stringify(stepsOrdered));
+  localStorage.setItem("currentLesson", JSON.stringify(getLesson(id)));
   return stepsOrdered;
 }
 
 export function getNumberOfStepsofCurrentLesson() {
   return JSON.parse(localStorage.getItem(stepsOfLessonKey)).length;
+}
+
+export function getCurrentLesson() {
+  return JSON.parse(localStorage.getItem("currentLesson"));
 }
 
 export function getCurrentSteps(orderId) {
@@ -98,6 +108,7 @@ export function startLesson() {
 
 export function finishLesson() {
   localStorage.removeItem(isLessonInProgressKey);
+
   localStorage.removeItem(stepsOfLessonKey);
 }
 
@@ -115,6 +126,7 @@ export default {
   getNumberOfLessonsByUnit,
   getStepsByLesson,
   getNumberOfStepsofCurrentLesson,
+  getCurrentLesson,
   getCurrentSteps,
   getOptionsByStep,
   startLesson,

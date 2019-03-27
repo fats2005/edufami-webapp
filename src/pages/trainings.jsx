@@ -10,6 +10,7 @@ class Trainings extends Component {
   };
 
   async componentDidMount() {
+    trainingService.finishLesson();
     await trainingService.getTrainingsData();
     const trainings = trainingService.getTrainings();
     this.setState({ trainings });
