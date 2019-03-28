@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Img from "../common/Img";
 
-class QuestionMultipleOptions extends Component {
+class QuestionInfo extends Component {
   state = {
     options: [],
     state: "initial",
@@ -11,7 +11,8 @@ class QuestionMultipleOptions extends Component {
     disabledButton: false
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentDidMount() {
+    console.log("cmd");
     this.startTimer();
   }
 
@@ -74,4 +75,4 @@ class QuestionMultipleOptions extends Component {
   }
 }
 
-export default QuestionMultipleOptions;
+export default QuestionInfo;

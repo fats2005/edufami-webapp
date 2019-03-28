@@ -46,46 +46,48 @@
             height: 3rem;
             font-size: 0.8rem;
           }
+        }
 
-          &.pairs {
-            display: flex;
+        .pairs {
+          display: flex;
+
+          .options {
+            width: 50%;
+            margin-bottom: 5px;
+            &:first-child {
+              border-right: 1px solid #7793a1;
+            }
             .option {
               width: 85% !important;
             }
-          }
 
-          .column-a {
-            width: 50%;
-            border-right: 1px solid #7793a1;
-            margin-bottom: 5px;
-          }
-
-          .column-b {
-            width: 50%;
-            margin-bottom: 5px;
-          }
-
-          .order-1 {
-            background-color: #ff47ff;
-          }
-
-          .order-2 {
-            background-color: #47cdff;
-          }
-
-          .order-3 {
-            background-color: #ffff6e;
-          }
-          .order-4 {
-            background-color: #ffc947;
-          }
-          .order-5 {
-            background-color: #47ffc0;
-          }
-          .order-6 {
-            background-color: #ae52d4;
+            .order-1 {
+              background-color: #ff47ff;
+            }
+            .order-2 {
+              background-color: #47cdff;
+            }
+            .order-3 {
+              background-color: #ffff6e;
+            }
+            .order-4 {
+              background-color: #ffc947;
+            }
+            .order-5 {
+              background-color: #47ffc0;
+            }
+            .order-6 {
+              background-color: #ae52d4;
+            }
+            .order-7 {
+              background-color: #7793a1;
+            }
+            .order-6 {
+              background-color: #9d726c;
+            }
           }
         }
+
         .progress-info {
           width: 60%;
           margin: 0 20%;

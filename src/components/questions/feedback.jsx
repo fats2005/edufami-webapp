@@ -53,7 +53,7 @@ class Feedback extends Component {
         <h5>{status && this.state[status].label}</h5>
         <p>{text}</p>
         <img
-          src={`/images/icons/${status && this.state[status].icon}`}
+          src={`/images/icons/${this.state[status] && this.state[status].icon}`}
           height="75px"
           alt="Opcion"
         />
@@ -65,7 +65,7 @@ class Feedback extends Component {
               style={{
                 width: (timerPosition / 50) * 100 + "%"
               }}
-              aria-valuenow={timerPosition}
+              aria-valuenow={(timerPosition / 50) * 100}
               aria-valuemin="0"
               aria-valuemax="100"
             />
@@ -78,10 +78,9 @@ class Feedback extends Component {
             disabled={disabledButton}
           >
             {status && this.state[status].buttonText}{" "}
-            <FontAwesomeIcon
-              icon={status && this.state[status].iconButton}
-              size="lg"
-            />
+            {status && (
+              <FontAwesomeIcon icon={this.state[status].iconButton} size="lg" />
+            )}
           </button>
         </div>
       </div>
