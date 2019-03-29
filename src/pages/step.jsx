@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import trainingService from "../services/trainingService";
-import Questions from "../components/questions/questions";
+import QuestionBox from "../components/questions/questionBox";
 
 class Step extends Component {
   state = {
@@ -45,7 +45,7 @@ class Step extends Component {
     const { currentStep, nextStep } = this.state;
     if (!currentStep) return <Redirect to="/" />;
     return (
-      <Questions
+      <QuestionBox
         currentStep={currentStep}
         nextStep={nextStep}
         onExit={this.handleExit}

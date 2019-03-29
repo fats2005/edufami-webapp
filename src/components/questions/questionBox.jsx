@@ -6,7 +6,7 @@ import QuestionPairs from "./questionPairs";
 import trainingService from "../../services/trainingService";
 import "./questions.scss";
 
-class Questions extends Component {
+class QuestionBox extends Component {
   state = {
     totalQuestions: 0
   };
@@ -91,4 +91,4 @@ class Questions extends Component {
   }
 }
 
-export default Questions;
+export default QuestionBox;
