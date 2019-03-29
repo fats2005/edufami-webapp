@@ -11,6 +11,8 @@ class Question extends Component {
     state: "initial",
     canEvaluate: false,
     columnCounter: [0, 0],
+    timerPosition: 0,
+
     feedback: {
       show: false
     }

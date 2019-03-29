@@ -1,52 +1,45 @@
-import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-import Img from "../common/Img";
+import Question from "./question";
 
-class QuestionInfo extends Component {
-  state = {
-    options: [],
-    state: "initial",
-    timerPosition: 0,
-    disabledButton: false
-  };
-
+class QuestionInfo extends Question {
   componentDidMount() {
-    console.log("cmd");
     this.startTimer();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentStep !== this.props.currentStep) {
+      this.startTimer();
+    }
+  }
+
   startTimer() {
-    this.setState({ disabledButton: true });
     let number = 0;
     let miliseconds = 200;
     let interval = setInterval(() => {
       this.setState({ timerPosition: number++ });
       if (number > 50) {
         clearInterval(interval);
-        this.setState({ disabledButton: false });
+        this.setState({ canEvaluate: true });
       }
     }, miliseconds);
   }
 
-  handleContinue = () => {
+  handleEvaluate = () => {
+    this.setState({ state: "initial" });
     this.props.onGoNext();
   };
 
   render() {
     const { currentStep } = this.props;
-    const { disabledButton, timerPosition } = this.state;
+    const { timerPosition } = this.state;
 
     return (
       <div className="row">
-        <div className="col col-lg-4">
-          <Img src={currentStep.image} className="card-img-left" alt="Opcion" />
-        </div>
+        {this.renderImage(currentStep.image, currentStep.text)}
         <div className="col col-lg-8">
           <div className="question">
-            <div className="question-text">
-              <p>{currentStep.question}</p>
-            </div>
+            {this.renderQuestion(currentStep.question)}
             <div className="progress progress-info bg-secondary">
               <div
                 className="progress-bar bg-primary"
@@ -59,15 +52,7 @@ class QuestionInfo extends Component {
                 aria-valuemax="100"
               />
             </div>
-            <div className="evaluate">
-              <button
-                className="btn btn-secondary bg-secondary-dark secondary-text-color"
-                onClick={this.handleContinue}
-                disabled={disabledButton}
-              >
-                Continuar <FontAwesomeIcon icon="angle-right" size="lg" />
-              </button>
-            </div>
+            {this.renderEvaluate()}
           </div>
         </div>
       </div>
