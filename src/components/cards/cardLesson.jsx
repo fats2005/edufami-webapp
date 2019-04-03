@@ -7,9 +7,9 @@ import "./cardLesson.scss";
 
 class CardLesson extends Component {
   render() {
-    const { col, lesson } = this.props;
+    const { lesson } = this.props;
     return (
-      <div className={"col col-" + col}>
+      <div className="col-12 col-md-6 col-lg-4">
         <Link
           className="card card-lesson text-center bg-secondary primary-text-color"
           to={`/lesson/${lesson.id}`}
@@ -32,9 +32,5 @@ class CardLesson extends Component {
     );
   }
 }
-
-CardLesson.defaultProps = {
-  col: 4
-};
 
 export default CardLesson;

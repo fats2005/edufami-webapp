@@ -7,7 +7,7 @@ import "./cardTraining.scss";
 
 const CardTraining = ({ col, data }) => {
   return (
-    <div className={"card-training col col-" + col}>
+    <div className="card-training col-12 col-md-6 col-lg-4">
       <Link
         className="card secondary-text-color bg-secondary"
         to={`/trainings/${data.id}`}
@@ -28,10 +28,6 @@ const CardTraining = ({ col, data }) => {
       </Link>
     </div>
   );
-};
-
-CardTraining.defaultProps = {
-  col: 4
 };
 
 export default CardTraining;

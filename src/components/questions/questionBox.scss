@@ -4,6 +4,14 @@
   .question-box {
     border-radius: 0 50px 0px 100px;
     position: relative;
+    .question-info {
+      width: 180px;
+      position: absolute;
+      top: -13px;
+      border-radius: 13px;
+      padding: 13px 0;
+      z-index: 10;
+    }
     .btn-exit {
       position: absolute;
       right: 0;
@@ -20,10 +28,13 @@
         background-color: #eceeef;
         border-bottom-left-radius: inherit !important;
         border-top-right-radius: 50px;
-        height: 90px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+        h4 {
+          font-size: 1rem;
+        }
       }
 
       .row {
@@ -34,6 +45,10 @@
       .col {
         padding-right: 10px;
         padding-left: 10px;
+      }
+
+      .image {
+        display: flex;
       }
 
       .question {
@@ -54,10 +69,10 @@
         }
         .options {
           .option {
-            width: 80%;
+            width: 90%;
             margin-bottom: 0.5rem;
-            height: 3rem;
-            font-size: 0.8rem;
+            height: 3.5rem;
+            font-size: 0.9rem;
           }
         }
 
@@ -129,7 +144,7 @@
       text-align: center;
       .box-progress {
         width: 350px;
-        font-size: 10px;
+        font-size: 0.75rem;
         color: #fff;
         .progress {
           height: 14px;
@@ -139,6 +154,20 @@
   }
 }
 
+/* @media (min-width: 576px) {
+  .question-container {
+    .question-box {
+      .question-body {
+        .instruction {
+          height: 90px;
+          h4 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+} */
 /*
 .question-box {
   height: 100vh;

@@ -4,7 +4,7 @@ import QuestionInfo from "./questionInfo";
 import QuestionMultipleOptions from "./questionMultipleOptions";
 import QuestionPairs from "./questionPairs";
 import trainingService from "../../services/trainingService";
-import "./questions.scss";
+import "./questionBox.scss";
 
 class QuestionBox extends Component {
   state = {
@@ -54,8 +54,15 @@ class QuestionBox extends Component {
     const { totalQuestions } = this.state;
     return (
       <div className="row question-container">
-        <div className="col offset-lg-1 col-lg-10 col-md-12">
+        <div className="col-12">
           <div className="question-box bg-primary">
+            {/* <div className="question-info bg-secondary">
+              <Img
+                src={currentStep.image}
+                className="card-lesson-img-top"
+                alt={currentStep.name}
+              />
+            </div> */}
             <button className="btn btn-secondary btn-exit" onClick={onExit}>
               <FontAwesomeIcon icon="times" />
             </button>

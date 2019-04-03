@@ -36,8 +36,10 @@ class QuestionInfo extends Question {
 
     return (
       <div className="row">
-        {this.renderImage(currentStep.image, currentStep.text)}
-        <div className="col col-lg-7">
+        <div className="col-12 col-lg-4">
+          {this.renderImage(currentStep.image, currentStep.text)}
+        </div>
+        <div className="col-12 col-lg-8">
           <div className="question">
             {this.renderQuestion(currentStep.question)}
             {/* TODO -- Add audio and icon */}
@@ -53,7 +55,7 @@ class QuestionInfo extends Question {
                 aria-valuemax="100"
               />
             </div>
-            {this.renderEvaluate()}
+            {this.renderEvaluate("Continuar")}
           </div>
         </div>
       </div>

@@ -20,10 +20,10 @@ class Trainings extends Component {
     return (
       <div className="trainings">
         <div className="row">
-          <div className="col-9">
+          <div className="col-12 col-lg-9">
             <BoxTrainings trainings={trainings} />
           </div>
-          <div className="col-3">
+          <div className="col col-lg-3">
             <BoxAchievements />
           </div>
         </div>

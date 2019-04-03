@@ -57,11 +57,7 @@ class Question extends Component {
   };
 
   renderImage(image, alt) {
-    return (
-      <div className="col col-lg-5">
-        <Img src={image} className="card-img-left" alt={alt} />
-      </div>
-    );
+    return <Img src={image} className="card-img-left" alt={alt} />;
   }
 
   renderQuestion(text) {
@@ -94,7 +90,7 @@ class Question extends Component {
     );
   }
 
-  renderEvaluate() {
+  renderEvaluate(label = "Calificar") {
     return (
       <div className="evaluate">
         <button
@@ -102,7 +98,7 @@ class Question extends Component {
           onClick={this.handleEvaluate}
           disabled={!this.state.canEvaluate}
         >
-          Calificar
+          {label}
           <img src={`/images/icons/evaluate.svg`} height="25px" alt="." />
         </button>
       </div>

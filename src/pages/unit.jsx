@@ -22,10 +22,10 @@ class Unit extends Component {
     return (
       <div className="trainings">
         <div className="row">
-          <div className="col col-9">
+          <div className="col-12 col-lg-9">
             <BoxLessons unit={unit} lessons={lessons} />
           </div>
-          <div className="col col-3">
+          <div className="col-12 col-lg-3">
             <BoxAchievements />
           </div>
         </div>

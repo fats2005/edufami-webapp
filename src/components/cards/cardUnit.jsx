@@ -19,10 +19,10 @@ class CardUnit extends Component {
   }
 
   render() {
-    const { unit, col } = this.props;
+    const { unit } = this.props;
     const { numberOfLessons } = this.state;
     return (
-      <div className={"col col-" + col}>
+      <div className="col-12 col-md-6">
         <Link
           className="card-unit bg-secondary-light secondary-text-color"
           to={`/unit/${unit.id}`}
@@ -51,9 +51,5 @@ class CardUnit extends Component {
     );
   }
 }
-
-CardUnit.defaultProps = {
-  col: 6
-};
 
 export default CardUnit;
