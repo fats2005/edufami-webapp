@@ -37,12 +37,13 @@ class QuestionInfo extends Question {
     return (
       <div className="row">
         {this.renderImage(currentStep.image, currentStep.text)}
-        <div className="col col-lg-8">
+        <div className="col col-lg-7">
           <div className="question">
             {this.renderQuestion(currentStep.question)}
-            <div className="progress progress-info bg-secondary">
+            {/* TODO -- Add audio and icon */}
+            <div className="progress progress-info">
               <div
-                className="progress-bar bg-primary"
+                className="progress-bar bg-primary-light"
                 role="progressbar"
                 style={{
                   width: (timerPosition / 50) * 100 + "%"

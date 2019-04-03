@@ -58,7 +58,7 @@ class Question extends Component {
 
   renderImage(image, alt) {
     return (
-      <div className="col col-lg-4">
+      <div className="col col-lg-5">
         <Img src={image} className="card-img-left" alt={alt} />
       </div>
     );

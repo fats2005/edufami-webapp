@@ -53,21 +53,19 @@ class QuestionBox extends Component {
     const { currentStep, onExit } = this.props;
     const { totalQuestions } = this.state;
     return (
-      <div className="row question">
-        <div className="col col-lg-12">
-          <div className="box bg-primary">
+      <div className="row question-container">
+        <div className="col offset-lg-1 col-lg-10 col-md-12">
+          <div className="question-box bg-primary">
             <button className="btn btn-secondary btn-exit" onClick={onExit}>
               <FontAwesomeIcon icon="times" />
             </button>
-            <div className="box-title" style={{ backgroundColor: "#ffffff" }}>
-              <div className="box-title-background-2">
+            <div className="question-body">
+              <div className="instruction bg-secondary-light">
                 <h4>{currentStep.instruction}</h4>
               </div>
-              <div className="box-body">
-                {this.chooseQuestion(currentStep.type)}
-              </div>
+              {this.chooseQuestion(currentStep.type)}
             </div>
-            <div className="box-footer">
+            <div className="question-footer">
               <div className="box-progress">
                 <span>{`${currentStep.order}/${totalQuestions}`}</span>
                 <div className="progress">
