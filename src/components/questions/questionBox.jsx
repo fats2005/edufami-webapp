@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuestionInfo from "./questionInfo";
 import QuestionMultipleOptions from "./questionMultipleOptions";
 import QuestionPairs from "./questionPairs";
+import Modal from "../common/Modal";
 import trainingService from "../../services/trainingService";
 import "./questionBox.scss";
 
@@ -15,6 +16,30 @@ class QuestionBox extends Component {
     this.setState({
       totalQuestions: trainingService.getNumberOfStepsofCurrentLesson()
     });
+  }
+
+  renderModal() {
+    const { onExit } = this.props;
+    const modalButtons = [
+      {
+        label: "Salir",
+        className: "btn btn-secondary",
+        onClick: onExit
+      },
+      {
+        label: "Continuar",
+        className: "btn btn-primary",
+        "data-dismiss": "modal"
+      }
+    ];
+    return (
+      <Modal
+        title={"¿Está seguro de salir?"}
+        text={"Si sale perderá el progreso"}
+        closeButton={false}
+        buttons={modalButtons}
+      />
+    );
   }
 
   chooseQuestion(type) {
@@ -51,7 +76,7 @@ class QuestionBox extends Component {
   }
   render() {
     const { currentStep, onExit } = this.props;
-    const { totalQuestions } = this.state;
+    const { totalQuestions, modalButtons } = this.state;
     return (
       <div className="row question-container">
         <div className="col-12">
@@ -63,7 +88,12 @@ class QuestionBox extends Component {
                 alt={currentStep.name}
               />
             </div> */}
-            <button className="btn btn-secondary btn-exit" onClick={onExit}>
+            <button
+              type="button"
+              className="btn btn-secondary btn-exit"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
               <FontAwesomeIcon icon="times" />
             </button>
             <div className="question-body">
@@ -91,6 +121,7 @@ class QuestionBox extends Component {
             </div>
           </div>
         </div>
+        {this.renderModal()}
       </div>
     );
   }
