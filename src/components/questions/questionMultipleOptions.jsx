@@ -40,10 +40,10 @@ class QuestionMultipleOptions extends Question {
 
     return (
       <div className="row">
-        <div className="col col-lg-4">
+        <div className="col-12 col-md-4 col-lg-4">
           {this.renderImage(currentStep.image, currentStep.text)}
         </div>
-        <div className="col col-lg-8">
+        <div className="col-12 col-md-8 col-lg-8">
           <div className="question">
             {this.renderQuestion(currentStep.question)}
             {this.renderOptions(options)}
