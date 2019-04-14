@@ -1,9 +1,11 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import Joi from "joi-browser";
 import { toast } from "react-toastify";
+import Joi from "joi-browser";
 import Form from "../components/common/form";
 import auth from "../services/authService";
+
+import "./login.scss";
 
 class Login extends Form {
   state = {
@@ -45,13 +47,17 @@ class Login extends Form {
   render() {
     if (auth.getCurrentUser()) return <Redirect to="/" />;
     return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
-          {this.renderInput("password", "Password", "password")}
-          {this.renderButton("Login")}
-        </form>
+      <div className="login">
+        <div className="row">
+          <div className="col col-sm-6 col-offset-sm-3">
+            <h1>Login</h1>
+            <form onSubmit={this.handleSubmit}>
+              {this.renderInput("username", "Username")}
+              {this.renderInput("password", "Password", "password")}
+              {this.renderButton("Login")}
+            </form>
+          </div>
+        </div>
       </div>
     );
   }

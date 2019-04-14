@@ -22,7 +22,7 @@ class NavBar extends Component {
     const { user } = this.props;
     return (
       <React.Fragment>
-        {showNavBar && (
+        {showNavBar && user && (
           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <Link className="navbar-brand" to="/">
               <img src={"/images/logo_edufami.svg"} alt="Logo de Edufami" />

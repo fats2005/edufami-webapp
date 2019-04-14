@@ -1,6 +1,24 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/roboto/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+}
+
 body {
   background: $gray-dark;
   font-family: $font-family-sans-serif;
