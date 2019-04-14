@@ -7,7 +7,6 @@ import trainingService from "../../services/trainingService";
 
 class NavBar extends Component {
   state = {
-    user: "Usuario",
     showNavBar: true
   };
 
@@ -20,6 +19,7 @@ class NavBar extends Component {
 
   render() {
     const { showNavBar } = this.state;
+    const { user } = this.props;
     return (
       <React.Fragment>
         {showNavBar && (
@@ -52,7 +52,7 @@ class NavBar extends Component {
                 <Language />
               </div>
               <div className="navbar-nav">
-                <NavBarDropdown label={this.state.user} />
+                <NavBarDropdown label={user.username} />
               </div>
             </div>
           </nav>

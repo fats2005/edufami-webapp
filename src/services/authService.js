@@ -1,15 +1,17 @@
-import jwtDecode from "jwt-decode";
+// import jwtDecode from "jwt-decode";
 import http from "./httpService";
-import { apiUrl } from "../config.json";
 
-const apiEndpoint = apiUrl + "/auth";
 const tokenKey = "token";
+const userKey = "user";
 
-http.setJwt(getJwt());
+http.setToken(getToken());
 
-export async function login(email, password) {
-  const { data: jwt } = await http.post(apiEndpoint, { email, password });
-  localStorage.setItem(tokenKey, jwt);
+export async function login(username, password) {
+  const { data } = await http.post("/userAccounts/login", {
+    username,
+    password
+  });
+  setToken(data);
 }
 
 export function loginWithJwt(jwt) {
@@ -18,19 +20,38 @@ export function loginWithJwt(jwt) {
 
 export function logout() {
   localStorage.removeItem(tokenKey);
+  localStorage.removeItem(userKey);
+}
+
+export async function getUser() {
+  console.log("getUser");
+  const { userId } = getToken();
+  const { data: user } = await http.get("/UserAccounts/" + userId);
+  localStorage.setItem(userKey, JSON.stringify(user));
 }
 
 export function getCurrentUser() {
-  try {
+  // TODO - Implements JWT
+  /* try {
     const jwt = localStorage.getItem(tokenKey);
     return jwtDecode(jwt);
   } catch (ex) {
     return null;
-  }
+  } */
+  return JSON.parse(localStorage.getItem(userKey));
 }
 
 export function getJwt() {
   return localStorage.getItem(tokenKey);
+}
+
+function setToken(token) {
+  localStorage.setItem(tokenKey, JSON.stringify(token));
+  http.setToken(token.id);
+}
+
+export function getToken() {
+  return JSON.parse(localStorage.getItem(tokenKey));
 }
 
 export default {
@@ -38,5 +59,7 @@ export default {
   loginWithJwt,
   logout,
   getCurrentUser,
-  getJwt
+  getJwt,
+  getToken,
+  getUser
 };

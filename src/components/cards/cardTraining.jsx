@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Img from "../common/Img";
+import Img from "../common/img";
 
 import "./cardTraining.scss";
 

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { apiUrl } from "../config.json";
 
 axios.defaults.baseURL = apiUrl;
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 axios.interceptors.response.use(null, error => {
   const expectedError =
@@ -24,10 +25,15 @@ function setJwt(jwt) {
   axios.defaults.headers.common["x-auth-token"] = jwt;
 }
 
+function setToken(token) {
+  axios.defaults.headers.common["Authorization"] = token;
+}
+
 export default {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
-  setJwt
+  setJwt,
+  setToken
 };

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuestionInfo from "./questionInfo";
 import QuestionMultipleOptions from "./questionMultipleOptions";
 import QuestionPairs from "./questionPairs";
-import Modal from "../common/Modal";
+import Modal from "../common/modal";
 import trainingService from "../../services/trainingService";
 import "./questionBox.scss";
 
@@ -75,8 +75,8 @@ class QuestionBox extends Component {
     }
   }
   render() {
-    const { currentStep, onExit } = this.props;
-    const { totalQuestions, modalButtons } = this.state;
+    const { currentStep } = this.props;
+    const { totalQuestions } = this.state;
     return (
       <div className="row question-container">
         <div className="col-12">

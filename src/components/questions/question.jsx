@@ -3,7 +3,7 @@ import _ from "lodash";
 
 import trainingService from "../../services/trainingService";
 import Feedback from "./feedback";
-import Img from "../common/Img";
+import Img from "../common/img";
 
 class Question extends Component {
   state = {
