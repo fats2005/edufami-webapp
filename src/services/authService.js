@@ -6,7 +6,8 @@ const userKey = "user";
 
 http.setToken(getToken());
 
-export async function login(username, password) {
+async function login(username, password) {
+  console.log("login", username, password);
   const { data } = await http.post("/userAccounts/login", {
     username,
     password
@@ -14,23 +15,32 @@ export async function login(username, password) {
   setToken(data);
 }
 
-export function loginWithJwt(jwt) {
+function loginWithJwt(jwt) {
   localStorage.setItem(tokenKey, jwt);
 }
 
-export function logout() {
+function logout() {
   localStorage.removeItem(tokenKey);
   localStorage.removeItem(userKey);
 }
 
-export async function getUser() {
-  console.log("getUser");
-  const { userId } = getToken();
-  const { data: user } = await http.get("/UserAccounts/" + userId);
-  localStorage.setItem(userKey, JSON.stringify(user));
+async function register(user) {
+  return await http.post("/userAccounts", {
+    username: user.username,
+    password: user.password,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    email: user.email
+  });
 }
 
-export function getCurrentUser() {
+async function getUser() {
+  const { userId } = getToken();
+  const { data: user } = await http.get("/UserAccounts/" + userId);
+  setCurrentUser(user);
+}
+
+function getCurrentUser() {
   // TODO - Implements JWT
   /* try {
     const jwt = localStorage.getItem(tokenKey);
@@ -41,7 +51,11 @@ export function getCurrentUser() {
   return JSON.parse(localStorage.getItem(userKey));
 }
 
-export function getJwt() {
+function setCurrentUser(user) {
+  localStorage.setItem(userKey, JSON.stringify(user));
+}
+
+function getJwt() {
   return localStorage.getItem(tokenKey);
 }
 
@@ -50,7 +64,7 @@ function setToken(token) {
   http.setToken(token.id);
 }
 
-export function getToken() {
+function getToken() {
   return JSON.parse(localStorage.getItem(tokenKey));
 }
 
@@ -58,7 +72,9 @@ export default {
   login,
   loginWithJwt,
   logout,
+  register,
   getCurrentUser,
+  setCurrentUser,
   getJwt,
   getToken,
   getUser

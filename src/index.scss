@@ -205,3 +205,27 @@ footer {
 .secondary-text-color {
   color: $secondary-text-color !important;
 }
+
+/*Forms*/
+.form-group {
+  label {
+    margin-bottom: 0;
+  }
+  .form-control {
+    border-radius: 20px;
+    border: 1px solid $secondary;
+    background-color: $secondary;
+    color: $secondary-text-color;
+    text-align: center;
+    &:focus {
+      background-color: $secondary-light;
+      color: $secondary-text-color;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+/*Forms -END*/

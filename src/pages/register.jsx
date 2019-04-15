@@ -1,37 +1,54 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import Joi from "joi-browser";
+import { toast } from "react-toastify";
 import Form from "../components/common/form";
 import auth from "../services/authService";
 
-import "./login.scss";
-
-class Login extends Form {
+class Register extends Form {
   state = {
-    data: { username: "", password: "" },
+    data: {
+      username: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      email: ""
+    },
     errors: {}
   };
 
   schema = {
-    username: Joi.string()
+    firstName: Joi.string()
+      .min(3)
+      .max(30)
       .required()
-      .label("Usuario"),
+      .label("Nombre"),
+    lastName: Joi.string()
+      .min(3)
+      .max(30)
+      .required()
+      .label("Apellido"),
+    username: Joi.number()
+      .integer()
+      .min(0)
+      .required()
+      .label("Username"),
     password: Joi.string()
       .required()
-      .label("Contraseña")
+      .min(5)
+      .label("Password"),
+    email: Joi.string().email()
   };
 
   doSubmit = async () => {
     try {
-      const { data } = this.state;
-      await auth.login(data.username, data.password);
-      await auth.getUser();
-      const { state } = this.props.location;
-      window.location = state ? state.from.pathname : "/trainings";
+      const { data: user } = await auth.register(this.state.data);
+      console.log(user);
+      await auth.login(this.state.data.username, this.state.data.password);
+      auth.setCurrentUser(user);
+      window.location = "/";
     } catch (ex) {
-      console.log(ex.response.status);
+      console.log(ex);
       if (ex.response && ex.response.status === 400) {
         toast.error(ex.response.data, {
           position: toast.POSITION.BOTTOM_RIGHT
@@ -56,28 +73,23 @@ class Login extends Form {
             alt="Logo de Edufami"
           />
           <div className="box">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
             <form onSubmit={this.handleSubmit}>
               {this.renderInput(
                 "username",
                 null,
-                "Ingrese documeto o password"
+                "Ingrese el número de documento de identidad"
               )}
               {this.renderInput(
                 "password",
                 null,
-                "Ingrese su password",
+                "Ingrese su contraseña",
                 "password"
               )}
-              {this.renderButton("Ingresar")}
+              {this.renderInput("firstName", null, "Ingrese su nombre")}
+              {this.renderInput("lastName", null, "Ingrese su apellido")}
+              {this.renderInput("email", null, "Ingrese su email")}
+              {this.renderButton("Crear Cuenta")}
             </form>
-            <h6>¿No tienes cuenta?</h6>
-            <Link
-              to="/register"
-              className="btn btn-primary bg-primary-dark btn-sm"
-            >
-              Crear Cuenta
-            </Link>
           </div>
         </div>
       </div>
@@ -85,4 +97,4 @@ class Login extends Form {
   }
 }
 
-export default Login;
+export default Register;

@@ -20,6 +20,7 @@ import NavBar from "./components/common/navBar";
 import Footer from "./components/common/footer";
 import Login from "./pages/login";
 import Logout from "./pages/logout";
+import Register from "./pages/register";
 import Trainings from "./pages/trainings";
 import Training from "./pages/training";
 import Unit from "./pages/unit";
@@ -32,6 +33,7 @@ import NotFound from "./components/notFound";
 import ProtectedRoute from "./components/common/protectedRoute";
 
 import auth from "./services/authService";
+import trainingService from "./services/trainingService";
 
 import "./App.scss";
 
@@ -49,23 +51,28 @@ library.add(
 );
 
 class App extends Component {
-  state = {};
+  state = {
+    showNavs: true
+  };
 
   componentDidMount() {
     const user = auth.getCurrentUser();
-    this.setState({ user });
+    const isLessonInProgress = trainingService.isLessonInProgress();
+
+    this.setState({ showNavs: isLessonInProgress && user, user });
   }
 
   render() {
-    const { user } = this.state;
+    const { showNavs, user } = this.state;
     return (
       <div>
         <ToastContainer />
-        <NavBar user={user || ""} />
+        <NavBar show={showNavs} user={user || ""} />
         <div className="container">
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
+            <Route path="/register" component={Register} />
             <ProtectedRoute path="/step/:orderId(\d+)" component={Step} />
             <ProtectedRoute path="/lesson/end" component={LessonEnd} />
             <ProtectedRoute path="/lesson/:lessonId(\d+)" component={Lesson} />
@@ -81,7 +88,7 @@ class App extends Component {
             <Redirect path="/" exact to="/trainings" />
             <Redirect to="/not-found" />
           </Switch>
-          <Footer />
+          <Footer show={showNavs} />
         </div>
       </div>
     );
