@@ -59,13 +59,13 @@ class App extends Component {
     const user = auth.getCurrentUser();
     const isLessonInProgress = trainingService.isLessonInProgress();
 
-    this.setState({ showNavs: isLessonInProgress && user, user });
+    this.setState({ showNavs: !isLessonInProgress && user, user });
   }
 
   render() {
     const { showNavs, user } = this.state;
     return (
-      <div>
+      <div className={!user ? "public" : ""}>
         <ToastContainer />
         <NavBar show={showNavs} user={user || ""} />
         <div className="container">

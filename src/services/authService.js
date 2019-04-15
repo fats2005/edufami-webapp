@@ -7,7 +7,6 @@ const userKey = "user";
 http.setToken(getToken());
 
 async function login(username, password) {
-  console.log("login", username, password);
   const { data } = await http.post("/userAccounts/login", {
     username,
     password

@@ -2,9 +2,9 @@ import axios from "axios";
 import logger from "./logService";
 import { toast } from "react-toastify";
 
-import { apiUrl, apiUrlLocal } from "../config.json";
+import { apiUrl } from "../config.json"; // Can change between apiUrl and apiUrlLocal
 
-axios.defaults.baseURL = apiUrlLocal;
+axios.defaults.baseURL = apiUrl;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 axios.interceptors.response.use(null, error => {

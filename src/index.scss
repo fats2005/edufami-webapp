@@ -24,6 +24,10 @@ body {
   font-family: $font-family-sans-serif;
 }
 
+.public {
+  background-color: $primary !important;
+}
+
 h1,
 h2,
 h3,
