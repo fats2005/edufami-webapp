@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import trainingService from "../../../services/trainingService";
 import BoxAchievements from "../../../components/boxes/boxAchievements";
-import BoxLessons from "../../../components/boxes/boxLessons";
+import Box from "../../../components/common/Box/Box";
+import CardLesson from "../../../components/cards/CardLesson/CardLesson";
 
 class Unit extends Component {
   state = {
@@ -23,7 +24,16 @@ class Unit extends Component {
       <div className="trainings">
         <div className="row">
           <div className="col-12 col-lg-9">
-            <BoxLessons unit={unit} lessons={lessons} />
+            <Box label={unit.name + "/ Lecciones"}>
+              {lessons.map(item => (
+                <CardLesson
+                  key={item.id}
+                  trainingId={unit.trainingId}
+                  unitId={unit.id}
+                  lesson={item}
+                />
+              ))}
+            </Box>
           </div>
           <div className="col-12 col-lg-3">
             <BoxAchievements />
