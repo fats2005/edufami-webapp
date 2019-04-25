@@ -26,10 +26,10 @@ function logout() {
 async function register(user) {
   return await http.post("/userAccounts", {
     username: user.username,
-    password: user.password,
+    password: "abc12345",
     firstName: user.firstName,
     lastName: user.lastName,
-    email: user.email
+    terms: user.terms
   });
 }
 
