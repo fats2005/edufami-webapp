@@ -20,7 +20,6 @@ class Form extends Component {
   };
 
   validateProperty = input => {
-    console.log(input);
     const { name, value, checked, type } = input;
     const obj = type === "checkbox" ? { [name]: checked } : { [name]: value };
     const schema = { [name]: this.schema[name] };

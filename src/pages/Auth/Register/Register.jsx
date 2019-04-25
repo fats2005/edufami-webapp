@@ -7,7 +7,6 @@ import auth from "../../../services/authService";
 
 import Form from "../../../components/common/form";
 import classes from "../Auth.module.scss";
-import { truncate } from "fs";
 
 class Register extends Form {
   state = {

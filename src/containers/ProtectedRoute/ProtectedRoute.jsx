@@ -5,8 +5,22 @@ import NavBar from "../../components/common/navBar";
 import Footer from "../../components/common/footer";
 
 class ProtectedRoute extends Component {
+  state = {
+    user: {}
+  };
+  componentDidMount() {
+    const user = auth.getCurrentUser();
+    this.setState({ user });
+  }
   render() {
-    const { path, component: Component, render, ...rest } = this.props;
+    const {
+      path,
+      component: Component,
+      render,
+      hideNavBar,
+      ...rest
+    } = this.props;
+    const { user } = this.state;
     return (
       <Route
         {...rest}
@@ -24,11 +38,11 @@ class ProtectedRoute extends Component {
             );
           return Component ? (
             <React.Fragment>
-              <NavBar user={""} />
+              {!hideNavBar && <NavBar user={user} />}
               <div className="container">
                 <Component {...props} />
               </div>
-              <Footer />
+              {!hideNavBar && <Footer />}
             </React.Fragment>
           ) : (
             render(props)

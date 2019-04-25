@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import BoxAchievements from "../components/boxes/boxAchievements";
-import BoxUnits from "../components/boxes/boxUnits";
+import BoxAchievements from "../../../components/boxes/boxAchievements";
+import BoxUnits from "../../../components/boxes/boxUnits";
 
-import trainingService from "../services/trainingService";
+import trainingService from "../../../services/trainingService";
 
 class Training extends Component {
   state = {

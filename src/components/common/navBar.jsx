@@ -32,7 +32,7 @@ const NavBar = ({ user }) => {
           <Language />
         </div>
         <div className="navbar-nav">
-          <NavBarDropdown label={user.username} />
+          <NavBarDropdown label={user.firstName} />
         </div>
       </div>
     </nav>

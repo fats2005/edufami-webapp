@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import trainingService from "../services/trainingService";
+import trainingService from "../../services/trainingService";
 
-import BoxAchievements from "../components/boxes/boxAchievements";
-import BoxTrainings from "../components/boxes/boxTrainings";
+import BoxAchievements from "../../components/boxes/boxAchievements";
+import Box from "../../components/common/Box/Box";
+import CardTraining from "../../components/cards/CardTraining/CardTraining";
 
 class Trainings extends Component {
   state = {
@@ -10,7 +11,6 @@ class Trainings extends Component {
   };
 
   async componentDidMount() {
-    trainingService.finishLesson();
     await trainingService.getTrainingsData();
     const trainings = trainingService.getTrainings();
     this.setState({ trainings });
@@ -18,10 +18,14 @@ class Trainings extends Component {
   render() {
     const { trainings } = this.state;
     return (
-      <div className="trainings">
+      <div>
         <div className="row">
           <div className="col-12 col-lg-9">
-            <BoxTrainings trainings={trainings} />
+            <Box label="Mis Capacitaciones">
+              {trainings.map(item => (
+                <CardTraining key={item.id} col="4" data={item} />
+              ))}
+            </Box>
           </div>
           <div className="col col-lg-3">
             <BoxAchievements />

@@ -24,7 +24,8 @@ class QuestionBox extends Component {
       {
         label: "Salir",
         className: "btn btn-secondary",
-        onClick: onExit
+        onClick: onExit,
+        "data-dismiss": "modal"
       },
       {
         label: "Continuar",

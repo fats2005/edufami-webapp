@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import trainingService from "../services/trainingService";
-import QuestionBox from "../components/questions/questionBox";
+import trainingService from "../../../services/trainingService";
+import QuestionBox from "../../../components/questions/questionBox";
 
 class Step extends Component {
   state = {
@@ -23,16 +23,15 @@ class Step extends Component {
     return null;
   }
 
-  finishLesson() {
+  finishLesson = () => {
     trainingService.finishLesson();
-    window.location = "/lesson/end";
-  }
+    this.props.history.push("/lesson/end");
+  };
 
-  handleExit() {
-    console.log("handleExit");
+  handleExit = () => {
     trainingService.finishLesson();
-    window.location = "/";
-  }
+    this.props.history.push("/");
+  };
 
   handleGoNext = () => {
     const { nextStep } = this.state;

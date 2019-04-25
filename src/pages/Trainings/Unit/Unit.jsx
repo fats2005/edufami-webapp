@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import trainingService from "../services/trainingService";
-import BoxAchievements from "../components/boxes/boxAchievements";
-import BoxLessons from "../components/boxes/boxLessons";
+import trainingService from "../../../services/trainingService";
+import BoxAchievements from "../../../components/boxes/boxAchievements";
+import BoxLessons from "../../../components/boxes/boxLessons";
 
 class Unit extends Component {
   state = {
