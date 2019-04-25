@@ -1,11 +1,11 @@
-.card-unit {
+.Card {
   background-color: gray;
   height: 165px;
   border-radius: 5px 3rem;
   padding: 1rem;
   display: flex;
   margin-bottom: 10px;
-  .card-body {
+  .Body {
     border-radius: inherit;
     padding: 0rem;
     height: 100%;
@@ -14,20 +14,21 @@
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: center;
-    .card-text {
+    width: 100%;
+    .Text {
       width: 100%;
     }
-    .card-progress {
+    .CardProgress {
       width: 100%;
       padding-left: 1rem;
       font-size: 0.7rem;
-      .progress {
+      .Progress {
         width: 70%;
         margin-left: 15%;
       }
     }
   }
-  .card-img-left {
+  .Img {
     border-radius: inherit;
     height: 100%;
   }
