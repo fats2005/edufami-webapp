@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 
-import Question from "./question";
+import Question from "./QuestionBase/QuestionBase";
 
 class QuestionPairs extends Question {
   onOptionSelected(option) {

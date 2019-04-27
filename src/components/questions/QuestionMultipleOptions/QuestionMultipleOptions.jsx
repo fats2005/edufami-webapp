@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
 
-import Question from "./question";
+import Question from "../Question/Question";
 
 class QuestionMultipleOptions extends Question {
   onOptionSelected(option) {
@@ -10,7 +10,7 @@ class QuestionMultipleOptions extends Question {
 
     option["selected"] = option.selected ? !option.selected : true;
     options.splice(index, 1, option);
-    this.updateEvaluateBottom();
+    // this.updateEvaluateBottom();
     this.setState({ options });
   }
 
@@ -35,23 +35,11 @@ class QuestionMultipleOptions extends Question {
   };
 
   render() {
-    const { currentStep } = this.props;
     const { options } = this.state;
-
     return (
-      <div className="row">
-        <div className="col-12 col-md-4 col-lg-4">
-          {this.renderImage(currentStep.image, currentStep.text)}
-        </div>
-        <div className="col-12 col-md-8 col-lg-8">
-          <div className="question">
-            {this.renderQuestion(currentStep.question)}
-            {this.renderOptions(options)}
-            {this.renderEvaluate()}
-            {this.renderFeedback()}
-          </div>
-        </div>
-      </div>
+      <React.Fragment>
+        {this.renderQuestionBox(this.renderOptions(options), "Calificar")}
+      </React.Fragment>
     );
   }
 }

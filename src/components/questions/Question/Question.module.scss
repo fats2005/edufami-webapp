@@ -1,10 +1,11 @@
-.question-container {
+.Container {
   height: 100vh;
   align-items: center;
-  .question-box {
+
+  .Box {
     border-radius: 0 30px 0px 30px;
     position: relative;
-    .question-info {
+    .Info {
       width: 180px;
       position: absolute;
       top: -13px;
@@ -12,7 +13,7 @@
       padding: 13px 0;
       z-index: 10;
     }
-    .btn-exit {
+    .Exit {
       position: absolute;
       right: 0;
       top: 0;
@@ -21,10 +22,10 @@
       display: flex;
       justify-content: center;
     }
-    .question-body {
+    .Body {
       background-color: #fff;
       border-radius: inherit;
-      .instruction {
+      .Instruction {
         background-color: #eceeef;
         border-bottom-left-radius: inherit !important;
         border-top-right-radius: 30px;
@@ -37,21 +38,16 @@
         }
       }
 
-      .row {
+      .Row {
         margin: 0px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding: 5px 10px;
       }
-      .col {
-        padding-right: 10px;
-        padding-left: 10px;
-      }
-
-      .image {
-        display: flex;
+      .Col {
+        padding-right: 15px;
+        padding-left: 15px;
       }
 
-      .question {
+      .Question {
         background-color: #eceeef;
         border-radius: 10px;
         -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -67,8 +63,8 @@
         p {
           margin-bottom: 0.5rem;
         }
-        .options {
-          .option {
+        .Options {
+          .Option {
             width: 100%;
             margin-bottom: 0.5rem;
             height: 3.5rem;
@@ -121,17 +117,17 @@
       }
     }
 
-    .question-footer {
+    .Footer {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 60px;
       text-align: center;
-      .box-progress {
+      .BoxProgress {
         width: 90%;
         font-size: 0.75rem;
         color: #fff;
-        .progress {
+        .Progress {
           height: 14px;
         }
       }
@@ -140,34 +136,34 @@
 }
 
 @media (min-width: 768px) {
-  .question-container {
-    .question-box {
+  .Container {
+    .Box {
       border-radius: 0 50px 0px 100px;
-      .btn-exit {
+      .Exit {
         height: 50px;
         width: 50px;
       }
-      .question-body {
-        .instruction {
+      .Body {
+        .Instruction {
           border-top-right-radius: 50px;
         }
 
-        .row {
+        .Row {
           padding-top: 25px;
           padding-bottom: 25px;
         }
 
-        .question {
+        .Question {
           border-radius: 40px;
-          .options {
-            .option {
+          .Options {
+            .Option {
               width: 90%;
             }
           }
         }
       }
-      .question-footer {
-        .box-progress {
+      .Footer {
+        .BoxProgress {
           width: 350px;
         }
       }
@@ -176,21 +172,20 @@
 }
 
 @media (min-width: 996px) {
-  .question-container {
-    .question-box {
+  .Container {
+    .Box {
       border-top-right-radius: 95px;
-      .question-body {
-        .instruction {
+      .Body {
+        .Instruction {
           border-top-right-radius: 95px;
           height: 95px;
           h4 {
             font-size: 1.5rem;
           }
         }
-
-        .question {
-          .options {
-            .option {
+        .Question {
+          .Options {
+            .Option {
               width: 70%;
             }
           }

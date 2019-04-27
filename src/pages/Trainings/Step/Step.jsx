@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import trainingService from "../../../services/trainingService";
-import QuestionBox from "../../../components/questions/questionBox";
+import QuestionInfo from "../../../components/questions/QuestionInfo/QuestionInfo";
+import QuestionMultipleOptions from "../../../components/questions/QuestionMultipleOptions/QuestionMultipleOptions";
 
 class Step extends Component {
   state = {
@@ -10,15 +11,14 @@ class Step extends Component {
     orderId: 0
   };
 
-  componentDidMount() {}
-
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.match.params.orderId !== prevState.orderId) {
       const { orderId } = nextProps.match.params;
       const { currentStep, nextStep } = trainingService.getCurrentSteps(
         orderId
       );
-      return { currentStep, nextStep, orderId };
+      const totalQuestions = trainingService.getNumberOfStepsofCurrentLesson();
+      return { currentStep, nextStep, orderId, totalQuestions };
     }
     return null;
   }
@@ -40,17 +40,36 @@ class Step extends Component {
     this.finishLesson();
   };
 
+  chooseQuestion() {
+    const { currentStep, nextStep, totalQuestions } = this.state;
+    const option = parseInt(currentStep.type);
+    console.log(option);
+    if (option === 1)
+      return (
+        <QuestionInfo
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
+    else if (option === 3)
+      return (
+        <QuestionMultipleOptions
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
+  }
+
   render() {
-    const { currentStep, nextStep } = this.state;
+    const { currentStep } = this.state;
     if (!currentStep) return <Redirect to="/" />;
-    return (
-      <QuestionBox
-        currentStep={currentStep}
-        nextStep={nextStep}
-        onExit={this.handleExit}
-        onGoNext={this.handleGoNext}
-      />
-    );
+    return this.chooseQuestion();
   }
 }
 
