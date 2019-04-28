@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
+import Layout from "../../../containers/Layout/Layout";
 import Loader from "../../../components/common/Loader/Loader";
-import BoxAchievements from "../../../components/boxes/boxAchievements";
 import Box from "../../../components/common/Box/Box";
 import CardUnit from "../../../components/cards/CardUnit/CardUnit";
 
@@ -25,11 +25,11 @@ class Training extends Component {
   render() {
     const { training, units } = this.state;
     return (
-      <div className="trainings">
+      <React.Fragment>
         <Loader show={!units.length} />
-        <div className="row">
-          <div className="col-12 col-lg-9">
-            <Box label={training.name + " / Unidades"}>
+        <Layout>
+          <Box label={training.name + " / Unidades"} backgroundColor="#ffffff">
+            <div className="row">
               {units.map(item => (
                 <CardUnit
                   key={item.id}
@@ -39,13 +39,10 @@ class Training extends Component {
                   )}
                 />
               ))}
-            </Box>
-          </div>
-          <div className="col-12 col-lg-3">
-            <BoxAchievements />
-          </div>
-        </div>
-      </div>
+            </div>
+          </Box>
+        </Layout>
+      </React.Fragment>
     );
   }
 }

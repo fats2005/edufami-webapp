@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
+import Layout from "../../containers/Layout/Layout";
 import Loader from "../../components/common/Loader/Loader";
-import BoxAchievements from "../../components/boxes/boxAchievements";
 import Box from "../../components/common/Box/Box";
 import CardTraining from "../../components/cards/CardTraining/CardTraining";
 
@@ -20,21 +20,18 @@ class Trainings extends Component {
     const { trainings } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <Loader show={!trainings.length} />
-        <div className="row">
-          <div className="col-12 col-lg-9">
-            <Box label="Mis Capacitaciones">
+        <Layout>
+          <Box label="Mis Capacitaciones" backgroundColor="#ffffff">
+            <div className="row">
               {trainings.map(item => (
                 <CardTraining key={item.id} data={item} />
               ))}
-            </Box>
-          </div>
-          <div className="col col-lg-3">
-            <BoxAchievements />
-          </div>
-        </div>
-      </div>
+            </div>
+          </Box>
+        </Layout>
+      </React.Fragment>
     );
   }
 }

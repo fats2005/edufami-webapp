@@ -17,7 +17,7 @@ const CardTraining = props => {
         <div className={classes.Body + " bg-secondary"}>
           <p>{data.name}</p>
         </div>
-        <div className={classes.App}>
+        {/* <div className={classes.App}>
           <img
             src={`/images/${data.app}_small_logo.svg`}
             alt={data.app}
@@ -25,7 +25,7 @@ const CardTraining = props => {
           />
         </div>
         <div className={classes.Bottom + " bg-secondary-light"} />
-        <div className={classes.Bottom2 + " bg-secondary-dark"} />
+        <div className={classes.Bottom2 + " bg-secondary-dark"} /> */}
       </Link>
     </div>
   );

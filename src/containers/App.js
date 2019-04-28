@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Login from "../pages/Auth/Login/Login";
-import Logout from "../pages/logout";
+import Logout from "../pages/Auth/Logout/Logout";
 import Register from "../pages/Auth/Register/Register";
 import Trainings from "../pages/Trainings/Trainings";
 import Training from "../pages/Trainings/Training/Training";
@@ -52,7 +52,7 @@ const App = () => {
       <ToastContainer />
       <Switch>
         <PublicRoute path="/login" component={Login} />
-        <Route path="/logout" component={Logout} />
+        <ProtectedRoute path="/logout" component={Logout} />
         <PublicRoute path="/register" component={Register} />
         <ProtectedRoute
           path="/step/:orderId(\d+)"

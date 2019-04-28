@@ -1,10 +1,12 @@
 @import "../../../custom";
 .Box {
   color: $secondary-text-color;
+  border-radius: 0 0 0.25rem 3rem;
   margin-bottom: 15px;
   .Title {
     background-color: $secondary-light;
     color: $primary-text-color;
+    border-radius: inherit;
     .Background2 {
       background-color: $gray;
       border-radius: 0 0 0 2rem;

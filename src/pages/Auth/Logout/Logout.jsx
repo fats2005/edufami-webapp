@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import auth from "../services/authService";
+
+import Loader from "../../../components/common/Loader/Loader";
+import auth from "../../../services/authService";
 
 class Logout extends Component {
   componentDidMount() {
@@ -7,7 +9,7 @@ class Logout extends Component {
     window.location = "/";
   }
   render() {
-    return <p>Logout :)</p>;
+    return <Loader show={true} />;
   }
 }
 
