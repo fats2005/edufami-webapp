@@ -11,7 +11,6 @@ const isLessonInProgressKey = "lessonInProgress";
 const optionsKey = "options";
 
 export async function getData(endpoint) {
-  console.log("getData", endpoint);
   const versions = await getVersions();
   const localVersion = JSON.parse(localStorage.getItem(versionKey)) || {};
 
@@ -19,10 +18,16 @@ export async function getData(endpoint) {
     const data = JSON.parse(localStorage.getItem(endpoint));
     return _.orderBy(data, "created", "desc");
   } else {
+    console.log("getData", endpoint);
     const { data } = await http.get(`/${endpoint}`);
-    const dataFiltered = _.filter(data, t => t.status === "published");
-    localVersion[endpoint] = versions[endpoint];
+
+    let dataFiltered = data;
+    if (endpoint !== "options")
+      dataFiltered = _.filter(data, t => t.status === "published");
+
     localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+
+    localVersion[endpoint] = versions[endpoint];
     localStorage.setItem(versionKey, JSON.stringify(localVersion));
     return dataFiltered;
   }

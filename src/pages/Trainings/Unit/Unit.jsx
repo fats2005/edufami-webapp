@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import trainingService from "../../../services/trainingService";
+
+import Loader from "../../../components/common/Loader/Loader";
 import BoxAchievements from "../../../components/boxes/boxAchievements";
 import Box from "../../../components/common/Box/Box";
 import CardLesson from "../../../components/cards/CardLesson/CardLesson";
+
+import trainingService from "../../../services/trainingService";
 
 class Unit extends Component {
   state = {
@@ -21,6 +24,7 @@ class Unit extends Component {
     const { unit, lessons } = this.state;
     return (
       <div className="trainings">
+        <Loader show={!lessons.length} />
         <div className="row">
           <div className="col-12 col-lg-9">
             <Box label={unit.name + "/ Lecciones"}>

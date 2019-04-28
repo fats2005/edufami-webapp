@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import trainingService from "../../services/trainingService";
 
+import Loader from "../../components/common/Loader/Loader";
 import BoxAchievements from "../../components/boxes/boxAchievements";
 import Box from "../../components/common/Box/Box";
 import CardTraining from "../../components/cards/CardTraining/CardTraining";
+
+import trainingService from "../../services/trainingService";
 
 class Trainings extends Component {
   state = {
@@ -16,9 +18,10 @@ class Trainings extends Component {
   }
   render() {
     const { trainings } = this.state;
-    if (!trainings.length) return null;
+
     return (
       <div>
+        <Loader show={!trainings.length} />
         <div className="row">
           <div className="col-12 col-lg-9">
             <Box label="Mis Capacitaciones">
