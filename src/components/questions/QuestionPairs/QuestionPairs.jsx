@@ -1,7 +1,8 @@
 import React from "react";
 import _ from "lodash";
 
-import Question from "./QuestionBase/QuestionBase";
+import Question from "../Question/Question";
+import classes from "../Question/Question.module.scss";
 
 class QuestionPairs extends Question {
   onOptionSelected(option) {
@@ -52,26 +53,20 @@ class QuestionPairs extends Question {
   };
 
   render() {
-    const { currentStep } = this.props;
     const { options } = this.state;
     const columnA = _.filter(options, o => o.column === 0);
     const columnB = _.filter(options, o => o.column === 1);
 
     return (
-      <div className="row">
-        {this.renderImage(currentStep.image, currentStep.text)}
-        <div className="col col-lg-8">
-          <div className="question">
-            {this.renderQuestion(currentStep.question)}
-            <div className="pairs">
-              {this.renderOptions(columnA, true, "Columna A")}
-              {this.renderOptions(columnB, true, "Columna B")}
-            </div>
-            {this.renderEvaluate()}
-            {this.renderFeedback()}
-          </div>
-        </div>
-      </div>
+      <React.Fragment>
+        {this.renderQuestionBox(
+          <div className={classes.Pairs}>
+            {this.renderOptions(columnA, true, "Columna A")}
+            {this.renderOptions(columnB, true, "Columna B")}
+          </div>,
+          "Calificar"
+        )}
+      </React.Fragment>
     );
   }
 }

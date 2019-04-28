@@ -72,16 +72,16 @@
           }
         }
 
-        .pairs {
+        .Pairs {
           display: flex;
 
-          .options {
+          .Options {
             width: 50%;
             margin-bottom: 5px;
             &:first-child {
               border-right: 1px solid #7793a1;
             }
-            .option {
+            .Option {
               width: 85% !important;
             }
 
@@ -90,7 +90,7 @@
 
             @each $color in $colors-list {
               $i: index($colors-list, $color);
-              .order-#{$i} {
+              .Order#{$i} {
                 background-color: $color;
               }
             }
@@ -104,8 +104,8 @@
           background-color: #fff;
         }
 
-        .evaluate {
-          .btn {
+        .Evaluate {
+          .Btn {
             min-width: 150px;
           }
           img {

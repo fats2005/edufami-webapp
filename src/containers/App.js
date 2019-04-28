@@ -24,7 +24,7 @@ import Training from "../pages/Trainings/Training/Training";
 import Unit from "../pages/Trainings/Unit/Unit";
 import Lesson from "../pages/Trainings/Lesson/Lesson";
 import Step from "../pages/Trainings/Step/Step";
-import LessonEnd from "../pages/lessonEnd";
+import LessonEnd from "../pages/Trainings/LessonEnd/LessonEnd";
 import About from "../components/about";
 import Progress from "../components/progress";
 import NotFound from "../components/notFound";

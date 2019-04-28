@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import BoxAchievements from "../components/boxes/boxAchievements";
-import trainingService from "../services/trainingService";
+import BoxAchievements from "../../../components/boxes/boxAchievements";
+import trainingService from "../../../services/trainingService";
 
-import "./lessonEnd.scss";
+import classes from "./LessonEnd.module.scss";
 
 class LessonEnd extends Component {
   state = {
@@ -20,10 +20,10 @@ class LessonEnd extends Component {
     return (
       <React.Fragment>
         <div className="row">
-          <div className="col-9 lesson-end">
+          <div className={classes.LessonEnd + " col-9"}>
             <h4>¡Felicitaciones!</h4>
             <h5>
-              Completaste esta leección <br /> y obuviste una medalla
+              Completaste esta lección <br /> y obtuviste una medalla
             </h5>
             <img
               src={`/images/icons/medal_big.svg`}

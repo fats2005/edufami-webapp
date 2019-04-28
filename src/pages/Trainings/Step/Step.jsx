@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import trainingService from "../../../services/trainingService";
 import QuestionInfo from "../../../components/questions/QuestionInfo/QuestionInfo";
 import QuestionMultipleOptions from "../../../components/questions/QuestionMultipleOptions/QuestionMultipleOptions";
+import QuestionPairs from "../../../components/questions/QuestionPairs/QuestionPairs";
 
 class Step extends Component {
   state = {
@@ -75,6 +76,26 @@ class Step extends Component {
         />
       );
     else if (option === 4)
+      return (
+        <QuestionMultipleOptions
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
+    else if (option === 5)
+      return (
+        <QuestionPairs
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
+    else if (option === 6)
       return (
         <QuestionMultipleOptions
           currentStep={currentStep}

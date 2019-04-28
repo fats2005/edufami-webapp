@@ -141,7 +141,7 @@ class Question extends Component {
               classes.Option +
               " btn btn-primary bg-primary-light " +
               (option.selected ? "active " : " ") +
-              ("order-" + option.order)
+              classes["Order" + option.order]
             }
             onClick={() => this.onOptionSelected(option)}
             disabled={isPair && option.selected}
@@ -155,9 +155,12 @@ class Question extends Component {
 
   renderEvaluate(label = "Calificar") {
     return (
-      <div className="evaluate">
+      <div className={classes.Evaluate}>
         <button
-          className="btn btn-secondary bg-secondary-dark secondary-text-color"
+          className={
+            classes.Btn +
+            " btn btn-secondary bg-secondary-dark secondary-text-color"
+          }
           onClick={this.handleEvaluate}
           disabled={!this.state.canEvaluate}
         >
