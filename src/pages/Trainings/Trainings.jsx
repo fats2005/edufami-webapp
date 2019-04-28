@@ -11,19 +11,19 @@ class Trainings extends Component {
   };
 
   async componentDidMount() {
-    await trainingService.getTrainingsData();
-    const trainings = trainingService.getTrainings();
+    const trainings = await trainingService.getData("trainings");
     this.setState({ trainings });
   }
   render() {
     const { trainings } = this.state;
+    if (!trainings.length) return null;
     return (
       <div>
         <div className="row">
           <div className="col-12 col-lg-9">
             <Box label="Mis Capacitaciones">
               {trainings.map(item => (
-                <CardTraining key={item.id} col="4" data={item} />
+                <CardTraining key={item.id} data={item} />
               ))}
             </Box>
           </div>

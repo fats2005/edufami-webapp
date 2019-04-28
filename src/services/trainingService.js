@@ -10,27 +10,22 @@ const stepsOfLessonKey = "stepsOfLesson";
 const isLessonInProgressKey = "lessonInProgress";
 const optionsKey = "options";
 
-export async function getTrainingsData() {
+export async function getData(endpoint) {
+  console.log("getData", endpoint);
   const versions = await getVersions();
-  console.log(versions);
-  const localVersion = JSON.parse(localStorage.getItem(versionKey));
+  const localVersion = JSON.parse(localStorage.getItem(versionKey)) || {};
 
-  const endpoints = ["trainings", "units", "lessons", "steps", "options"];
-
-  await endpoints.forEach(async endpoint => {
-    if (!(localVersion && versions[endpoint] === localVersion[endpoint])) {
-      console.log("Download " + endpoint);
-      const { data } = await http.get(`/${endpoint}`);
-      if (endpoint === "options") {
-        localStorage.setItem(endpoint, JSON.stringify(data));
-      } else {
-        const dataFiltered = _.filter(data, t => t.status === "published");
-        localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
-      }
-    }
-  });
-
-  localStorage.setItem(versionKey, JSON.stringify(versions));
+  if (localVersion && localVersion[endpoint] === versions[endpoint]) {
+    const data = JSON.parse(localStorage.getItem(endpoint));
+    return _.orderBy(data, "created", "desc");
+  } else {
+    const { data } = await http.get(`/${endpoint}`);
+    const dataFiltered = _.filter(data, t => t.status === "published");
+    localVersion[endpoint] = versions[endpoint];
+    localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+    localStorage.setItem(versionKey, JSON.stringify(localVersion));
+    return dataFiltered;
+  }
 }
 
 async function getVersions() {
@@ -48,7 +43,8 @@ export function getTraining(id) {
   return _.filter(trainings, t => t.id === parseInt(id))[0];
 }
 
-export function getUnitsByTraining(id) {
+export async function getUnitsByTraining(id) {
+  await getData("units");
   const trainings = JSON.parse(localStorage.getItem(unitsKey));
   return _.filter(trainings, t => t.trainingId === parseInt(id));
 }
@@ -63,7 +59,8 @@ export function getLesson(id) {
   return _.filter(lesson, l => l.id === parseInt(id))[0];
 }
 
-export function getLessonsByUnit(id) {
+export async function getLessonsByUnit(id) {
+  await getData("lessons");
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
   return _.filter(lessons, l => l.unitId === parseInt(id));
 }
@@ -72,7 +69,9 @@ export function getNumberOfLessonsByUnit(id) {
   return getLessonsByUnit(id).length;
 }
 
-export function getStepsByLesson(id) {
+export async function getStepsByLesson(id) {
+  await getData("steps");
+  await getData("options");
   const steps = JSON.parse(localStorage.getItem(stepsKey));
   const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id));
   const stepsOrdered = _.orderBy(stepsFiltered, "order", "asc");
@@ -117,7 +116,7 @@ export function isLessonInProgress() {
 }
 
 export default {
-  getTrainingsData,
+  getData,
   getTrainings,
   getTraining,
   getUnitsByTraining,

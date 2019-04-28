@@ -13,8 +13,7 @@ class Unit extends Component {
   async componentDidMount() {
     const unitId = this.props.match.params.unitId;
     const unit = trainingService.getUnit(unitId);
-    const lessons = trainingService.getLessonsByUnit(unitId);
-
+    const lessons = await trainingService.getLessonsByUnit(unitId);
     this.setState({ unit, lessons });
   }
 

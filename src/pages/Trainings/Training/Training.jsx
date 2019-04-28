@@ -15,7 +15,7 @@ class Training extends Component {
   async componentDidMount() {
     const id = this.props.match.params.trainingId;
     const training = trainingService.getTraining(id);
-    const units = trainingService.getUnitsByTraining(id);
+    const units = await trainingService.getUnitsByTraining(id);
     this.setState({ training, units });
   }
 
