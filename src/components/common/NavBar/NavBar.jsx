@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBarLink from "./navBarLink";
-import NavBarDropdown from "./navBarDropdown";
-import Language from "../Language";
+import NavBarLink from "../navBarLink";
+import NavBarDropdown from "../navBarDropdown";
+// import Language from "../../Language";
 
 const NavBar = ({ user }) => {
   return (
@@ -25,12 +25,10 @@ const NavBar = ({ user }) => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <div className="navbar-nav mr-auto">
           <NavBarLink label="Mis capacitaciones" to="/trainings" />
-          <NavBarLink label="Mi progreso" to="/progress" />
-          <NavBarLink label="¿Qué es Edufami?" to="/about" />
+          {/* <NavBarLink label="Mi progreso" to="/progress" />
+          <NavBarLink label="¿Qué es Edufami?" to="/about" /> */}
         </div>
-        <div className="navbar-nav">
-          <Language />
-        </div>
+        <div className="navbar-nav">{/* <Language /> */}</div>
         <div className="navbar-nav">
           <NavBarDropdown label={user.firstName} />
         </div>

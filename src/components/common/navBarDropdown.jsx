@@ -18,13 +18,13 @@ const NavBarDropdown = ({ label }) => {
         className="dropdown-menu dropdown-menu-lg-right"
         aria-labelledby="profileDropdown"
       >
-        <NavBarLink className="dropdown-item" label="Mi Perfil" to="/profile" />
+        {/* <NavBarLink className="dropdown-item" label="Mi Perfil" to="/profile" />
         <NavBarLink
           className="dropdown-item"
           label="Configuración"
           to="/settings"
-        />
-        <div className="dropdown-divider" />
+        /> */}
+        {/* <div className="dropdown-divider" /> */}
         <NavBarLink
           className="dropdown-item"
           label="Cerrar Sesión"

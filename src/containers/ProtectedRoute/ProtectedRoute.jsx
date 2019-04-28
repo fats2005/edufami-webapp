@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
 import auth from "../../services/authService";
-import NavBar from "../../components/common/navBar";
+import NavBar from "../../components/common/NavBar/NavBar";
 import Footer from "../../components/common/footer";
 
 class ProtectedRoute extends Component {
