@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Feedback.module.scss";
+import classes from "./Feedback.module.scss";
 
 class Feedback extends Component {
   state = {
@@ -49,7 +49,13 @@ class Feedback extends Component {
     const { timerPosition, disabledButton } = this.state;
 
     return (
-      <div className={"feedback bg-primary-light " + (show ? "isVisible" : "")}>
+      <div
+        className={
+          classes.Feedback +
+          " bg-primary-light " +
+          (show ? classes.IsVisible : "")
+        }
+      >
         <h5>{status && this.state[status].label}</h5>
         <p>{text}</p>
         <img

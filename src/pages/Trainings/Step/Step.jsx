@@ -54,6 +54,16 @@ class Step extends Component {
           totalQuestions={totalQuestions}
         />
       );
+    else if (option === 2)
+      return (
+        <QuestionMultipleOptions
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
     else if (option === 3)
       return (
         <QuestionMultipleOptions
@@ -64,6 +74,17 @@ class Step extends Component {
           totalQuestions={totalQuestions}
         />
       );
+    else if (option === 4)
+      return (
+        <QuestionMultipleOptions
+          currentStep={currentStep}
+          nextStep={nextStep}
+          onExit={this.handleExit}
+          onGoNext={this.handleGoNext}
+          totalQuestions={totalQuestions}
+        />
+      );
+    else return this.handleGoNext();
   }
 
   render() {

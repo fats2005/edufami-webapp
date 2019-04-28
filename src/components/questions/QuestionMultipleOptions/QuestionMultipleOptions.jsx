@@ -10,7 +10,7 @@ class QuestionMultipleOptions extends Question {
 
     option["selected"] = option.selected ? !option.selected : true;
     options.splice(index, 1, option);
-    // this.updateEvaluateBottom();
+    this.updateEvaluateBottom();
     this.setState({ options });
   }
 
@@ -30,7 +30,6 @@ class QuestionMultipleOptions extends Question {
     );
     // Parse to boolean
     const feedback = this.updateFeedback(!Boolean(wrongAnswers));
-
     this.setState({ feedback });
   };
 

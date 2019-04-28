@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from "lodash";
 
-import Feedback from "../Feedback/feedback";
+import Feedback from "../Feedback/Feedback";
 import Img from "../../common/img";
 import Modal from "../../common/modal";
 
@@ -27,17 +27,6 @@ class Question extends Component {
     seconds: 5,
     instance: null
   };
-
-  componentDidMount() {
-    this.startTimer();
-  }
-
-  componentDidUpdate(prevProps) {
-    // console.log("componentDidUpdate");
-    if (prevProps.currentStep !== this.props.currentStep) {
-      this.startTimer();
-    }
-  }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     // console.log("getDerived");
@@ -114,6 +103,7 @@ class Question extends Component {
                   {/* TODO -- Add audio and icon */}
                   {content}
                   {this.renderEvaluate(labelEvaluate)}
+                  {this.renderFeedback()}
                 </div>
               </div>
             </div>

@@ -3,6 +3,15 @@ import React from "react";
 import QuestionBase from "../Question/Question";
 
 class QuestionInfo extends QuestionBase {
+  componentDidMount() {
+    this.startTimer();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentStep !== this.props.currentStep) {
+      this.startTimer();
+    }
+  }
   render() {
     const { timerPosition } = this.state;
     const { phase, seconds } = this.timer;
