@@ -14,6 +14,8 @@ class Training extends Component {
   };
 
   async componentDidMount() {
+    await trainingService.getData("units");
+    await trainingService.getData("lessons");
     const id = this.props.match.params.trainingId;
     const training = trainingService.getTraining(id);
     const units = await trainingService.getUnitsByTraining(id);
@@ -27,7 +29,7 @@ class Training extends Component {
         <Loader show={!units.length} />
         <div className="row">
           <div className="col-12 col-lg-9">
-            <Box label={training.name + "/ Unidades"}>
+            <Box label={training.name + " / Unidades"}>
               {units.map(item => (
                 <CardUnit
                   key={item.id}

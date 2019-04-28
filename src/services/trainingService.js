@@ -48,8 +48,7 @@ export function getTraining(id) {
   return _.filter(trainings, t => t.id === parseInt(id))[0];
 }
 
-export async function getUnitsByTraining(id) {
-  await getData("units");
+export function getUnitsByTraining(id) {
   const trainings = JSON.parse(localStorage.getItem(unitsKey));
   return _.filter(trainings, t => t.trainingId === parseInt(id));
 }
@@ -64,8 +63,7 @@ export function getLesson(id) {
   return _.filter(lesson, l => l.id === parseInt(id))[0];
 }
 
-export async function getLessonsByUnit(id) {
-  await getData("lessons");
+export function getLessonsByUnit(id) {
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
   return _.filter(lessons, l => l.unitId === parseInt(id));
 }
