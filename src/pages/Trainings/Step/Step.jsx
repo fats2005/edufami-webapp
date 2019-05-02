@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import trainingService from "../../../services/trainingService";
-import QuestionInfo from "../../../components/questions/QuestionInfo/QuestionInfo";
-import QuestionMultipleOptions from "../../../components/questions/QuestionMultipleOptions/QuestionMultipleOptions";
-import QuestionPairs from "../../../components/questions/QuestionPairs/QuestionPairs";
+import QuestionInfo from "../../../components/Questions/QuestionInfo/QuestionInfo";
+import QuestionMultipleOptions from "../../../components/Questions/QuestionMultipleOptions/QuestionMultipleOptions";
+import QuestionPairs from "../../../components/Questions/QuestionPairs/QuestionPairs";
+import QuestionOrder from "../../../components/Questions/QuestionOrder/QuestionOrder";
 
 class Step extends Component {
   state = {
@@ -97,7 +98,7 @@ class Step extends Component {
       );
     else if (option === 6)
       return (
-        <QuestionMultipleOptions
+        <QuestionOrder
           currentStep={currentStep}
           nextStep={nextStep}
           onExit={this.handleExit}

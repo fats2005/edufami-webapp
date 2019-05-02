@@ -25,6 +25,10 @@
     .Body {
       background-color: #fff;
       border-radius: inherit;
+
+      .Img {
+        width: 100%;
+      }
       .Instruction {
         background-color: #eceeef;
         border-bottom-left-radius: inherit !important;

@@ -8,7 +8,7 @@ class QuestionMultipleOptions extends Question {
     let options = [...this.state.options];
     const index = _.findIndex(options, option);
 
-    option["selected"] = option.selected ? !option.selected : true;
+    option["selected"] = !option.selected;
     options.splice(index, 1, option);
     this.updateEvaluateBottom();
     this.setState({ options });
@@ -16,9 +16,11 @@ class QuestionMultipleOptions extends Question {
 
   updateEvaluateBottom() {
     const { options } = this.state;
-    const { true: correctOptions } = _.countBy(options, rec => rec.isCorrect);
+    const { true: correctOptions } = _.countBy(options, rec =>
+      Boolean(rec.isCorrect)
+    );
     const { true: selectedOptions } = _.countBy(options, rec => rec.selected);
-    const canEvaluate = correctOptions === selectedOptions ? true : false;
+    const canEvaluate = correctOptions === selectedOptions;
     this.setState({ canEvaluate });
   }
 
@@ -26,7 +28,7 @@ class QuestionMultipleOptions extends Question {
     const { options } = this.state;
     const { false: wrongAnswers } = _.countBy(
       options,
-      op => op.isCorrect === (op.selected ? true : false)
+      op => Boolean(op.isCorrect) === (op.selected ? true : false)
     );
     // Parse to boolean
     const feedback = this.updateFeedback(!Boolean(wrongAnswers));

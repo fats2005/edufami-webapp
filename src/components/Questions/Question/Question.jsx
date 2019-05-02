@@ -73,7 +73,10 @@ class Question extends Component {
 
   updateFeedback = isOk => {
     const { options } = this.state;
-    const filtered = _.filter(options, o => o.isCorrect === isOk && o.selected);
+    const filtered = _.filter(
+      options,
+      o => Boolean(o.isCorrect) === isOk && o.selected
+    );
 
     let feedback = {
       show: true,
@@ -117,7 +120,7 @@ class Question extends Component {
   renderImage(image, alt) {
     return (
       <div className={classes.Col + " col-12 col-lg-4"}>
-        <Img src={image} className="card-img-left" alt={alt} />
+        <Img src={image} className={classes.Img} alt={alt} />
       </div>
     );
   }

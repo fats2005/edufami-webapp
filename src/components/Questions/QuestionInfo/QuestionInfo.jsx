@@ -1,8 +1,8 @@
 import React from "react";
 
-import QuestionBase from "../Question/Question";
+import Question from "../Question/Question";
 
-class QuestionInfo extends QuestionBase {
+class QuestionInfo extends Question {
   componentDidMount() {
     this.startTimer();
   }
