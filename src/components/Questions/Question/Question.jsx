@@ -4,7 +4,7 @@ import _ from "lodash";
 
 import Feedback from "../Feedback/Feedback";
 import Img from "../../common/img";
-import Modal from "../../common/modal";
+import Modal from "../../common/Modal/Modal";
 
 import trainingService from "../../../services/trainingService";
 import classes from "../Question/Question.module.scss";
@@ -92,11 +92,11 @@ class Question extends Component {
     const { currentStep } = this.props;
     return (
       <div className={classes.Container}>
-        <div className={classes.Box + " bg-primary"}>
+        <div className={classes.Box + " bg-primary"} id="questionBox">
           {this.renderModalExit()}
           <div className={classes.Body}>
             <div className={classes.Instruction + " bg-secondary-light"}>
-              <h4>{currentStep.instruction}</h4>
+              <h4 id="questionInstruction">{currentStep.instruction}</h4>
             </div>
             <div className={classes.Row + " row"}>
               {this.renderImage(currentStep.image, currentStep.text)}
@@ -209,6 +209,7 @@ class Question extends Component {
           <FontAwesomeIcon icon="times" />
         </button>
         <Modal
+          id="modalExit"
           title={"¿Está seguro de salir?"}
           text={"Si sale perderá el progreso"}
           closeButton={false}

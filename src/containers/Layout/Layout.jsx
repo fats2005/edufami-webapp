@@ -1,6 +1,6 @@
 import React from "react";
 
-import Achievements from "../../components/common/Achievements/achievements";
+import Achievements from "../../components/common/Achievements/Achievements";
 import Box from "../../components/common/Box/Box";
 
 const layout = props => {

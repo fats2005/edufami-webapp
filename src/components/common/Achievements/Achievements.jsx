@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import classes from "./Achivements.module.scss";
 
-const BoxAchievements = props => {
+const Achievements = props => {
   return (
     <div className={classes.Achivements}>
       <div className={classes.Section}>
@@ -100,4 +100,4 @@ const BoxAchievements = props => {
   );
 };
 
-export default BoxAchievements;
+export default Achievements;

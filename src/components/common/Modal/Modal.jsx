@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ title, text, buttons, closeButton }) => {
+const modal = ({ title, text, buttons, closeButton }) => {
   return (
     <div
       className="modal fade"
@@ -41,4 +41,4 @@ const Modal = ({ title, text, buttons, closeButton }) => {
   );
 };
 
-export default Modal;
+export default modal;
