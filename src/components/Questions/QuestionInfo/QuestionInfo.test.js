@@ -7,7 +7,6 @@ configure({ adapter: new Adapter() });
 import QuestionInfo from "./QuestionInfo";
 import Modal from "../../common/Modal/Modal";
 
-import classes from "../Question/Question.module.scss";
 import Img from "../../common/img";
 
 describe("<QuestionInfo />", () => {
