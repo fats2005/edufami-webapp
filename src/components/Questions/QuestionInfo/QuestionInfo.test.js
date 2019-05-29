@@ -6,8 +6,8 @@ configure({ adapter: new Adapter() });
 
 import QuestionInfo from "./QuestionInfo";
 import Modal from "../../common/Modal/Modal";
-
 import Img from "../../common/img";
+import Feedback from "../Feedback/Feedback";
 
 describe("<QuestionInfo />", () => {
   let wrapper;
@@ -38,8 +38,28 @@ describe("<QuestionInfo />", () => {
     expect(wrapper.find(Img)).toHaveLength(1);
   });
 
-  // Render question (It should be the html content of the question)
-  // render Feedback
-  // Render a progress bar
-  // Render button continuar
+  it("should render a question text", () => {
+    expect(wrapper.find("#questionText")).toHaveLength(1);
+  });
+
+  it("shouldn't render a <Feedback /> component", () => {
+    expect(wrapper.find(Feedback)).toHaveLength(0);
+  });
+
+  it("should render a progress bar", () => {
+    expect(wrapper.find(".progress-info")).toHaveLength(1);
+  });
+
+  it("should render a button 'Continuar' and setted as disabled", () => {
+    const button = wrapper.find("button#evaluateButton");
+    expect(button.text()).toBe("Continuar");
+    expect(button.props().disabled).toBe(true);
+  });
+
+  it("should enable the button 'Continuar' when the this.state.canEvaluate is true", () => {
+    wrapper.setState({ canEvaluate: true }, () => {
+      const button = wrapper.find("button#evaluateButton");
+      expect(button.props().disabled).toBe(false);
+    });
+  });
 });

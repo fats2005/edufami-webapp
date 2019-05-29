@@ -88,7 +88,7 @@ class Question extends Component {
   };
 
   // Render methods
-  renderQuestionBox(content, labelEvaluate) {
+  renderQuestionBox(content, labelEvaluate, hasFeedback = true) {
     const { currentStep } = this.props;
     return (
       <div className={classes.Container}>
@@ -106,7 +106,7 @@ class Question extends Component {
                   {/* TODO -- Add audio and icon */}
                   {content}
                   {this.renderEvaluate(labelEvaluate)}
-                  {this.renderFeedback()}
+                  {hasFeedback && this.renderFeedback()}
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ class Question extends Component {
 
   renderQuestion(text) {
     return (
-      <div className="question-text">
+      <div id="questionText">
         <p>{text}</p>
       </div>
     );
@@ -166,6 +166,7 @@ class Question extends Component {
           }
           onClick={this.handleEvaluate}
           disabled={!this.state.canEvaluate}
+          id="evaluateButton"
         >
           {label}
           <img src={`/images/icons/evaluate.svg`} height="25px" alt="." />

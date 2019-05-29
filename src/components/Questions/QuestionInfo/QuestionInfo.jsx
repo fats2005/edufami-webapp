@@ -30,7 +30,8 @@ class QuestionInfo extends Question {
               aria-valuemax="100"
             />
           </div>,
-          "Continuar"
+          "Continuar", // Label to show in the evaluate bottom
+          false // To avoid rendering the Feedback
         )}
       </React.Fragment>
     );
