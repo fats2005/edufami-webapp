@@ -15,13 +15,13 @@ class QuestionMultipleOptions extends Question {
   }
 
   updateEvaluateBottom() {
-    // const { options } = this.state;
-    // const { true: correctOptions } = _.countBy(options, rec =>
-    //   Boolean(rec.isCorrect)
-    // );
-    // const { true: selectedOptions } = _.countBy(options, rec => rec.selected);
-    // const canEvaluate = correctOptions === selectedOptions;
-    const canEvaluate = true;
+    const { options } = this.state;
+    const { true: correctOptions } = _.countBy(options, rec =>
+      Boolean(rec.isCorrect)
+    );
+    const { true: selectedOptions } = _.countBy(options, rec => rec.selected);
+    const canEvaluate = correctOptions === selectedOptions;
+    //const canEvaluate = true;
     this.setState({ canEvaluate });
   }
 
