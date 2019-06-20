@@ -3,7 +3,7 @@
   align-items: center;
   .Box {
     width: 100%;
-    border-radius: 0 15px 0px 15px;
+    border-radius: 0 30px 0px 30px;
     position: relative;
     .Info {
       width: 180px;
@@ -25,39 +25,35 @@
     .Body {
       background-color: #fff;
       border-radius: inherit;
-      margin-top: 5px;
 
-      .Row {
-        margin: 0px;
-        padding: 10px;
-        display: flex;
-        // justify-content: center;
-        align-items: center;
-        flex-direction: column;
+      .Img {
+        width: 100%;
       }
-
       .Instruction {
         background-color: #eceeef;
         border-bottom-left-radius: inherit !important;
-        border-top-right-radius: 15px;
+        border-top-right-radius: 30px;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
-        text-align: center;
         h4 {
-          font-size: 0.8rem;
+          font-size: 1rem;
         }
       }
-      .Img {
-        height: 180px;
-        margin-bottom: 10px;
+
+      .Row {
+        margin: 0px;
+        padding: 5px 10px;
+      }
+      .Col {
+        padding-right: 15px;
+        padding-left: 15px;
       }
 
       .Question {
         background-color: #eceeef;
-        border-radius: 5px;
+        border-radius: 10px;
         -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
         -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -66,7 +62,7 @@
         flex-direction: column;
         justify-content: space-between;
         text-align: center;
-        padding: 10px 5px;
+        padding: 0.5rem;
         position: relative;
         p {
           margin-bottom: 0.5rem;
@@ -74,12 +70,9 @@
         .Options {
           .Option {
             width: 100%;
-            margin-bottom: 10px;
-            height: 55px;
-            font-size: 0.8rem;
-            border-radius: 5px;
-            padding: 5px;
-            line-height: 1;
+            margin-bottom: 0.5rem;
+            height: 3.5rem;
+            font-size: 0.9rem;
           }
         }
 
@@ -87,22 +80,13 @@
           display: flex;
 
           .Options {
-            width: 70%;
-            padding: 5px;
-
-            h6 {
-              font-size: 0.9rem;
-            }
-
-            &:first-child {
-              width: 30%;
-            }
+            width: 50%;
             margin-bottom: 5px;
             &:first-child {
               border-right: 1px solid #7793a1;
             }
             .Option {
-              width: 100% !important;
+              width: 85% !important;
             }
 
             $colors-list: #ff47ff #47cdff #ffff6e #ffc947 #47ffc0 #ae52d4
@@ -141,14 +125,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 40px;
+      height: 60px;
       text-align: center;
       .BoxProgress {
         width: 90%;
         font-size: 0.75rem;
         color: #fff;
         .Progress {
-          height: 10px;
+          height: 14px;
         }
       }
     }

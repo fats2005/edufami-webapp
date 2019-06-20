@@ -98,16 +98,14 @@ class Question extends Component {
             <div className={classes.Instruction + " bg-secondary-light"}>
               <h4 id="questionInstruction">{currentStep.instruction}</h4>
             </div>
-            <div className={classes.Row + " row"}>
+            <div className={classes.Row}>
               {this.renderImage(currentStep.image, currentStep.text)}
-              <div className={classes.Col + " col-12 col-lg-8"}>
-                <div className={classes.Question}>
-                  {this.renderQuestion(currentStep.question)}
-                  {/* TODO -- Add audio and icon */}
-                  {content}
-                  {this.renderEvaluate(labelEvaluate)}
-                  {hasFeedback && this.renderFeedback()}
-                </div>
+              <div className={classes.Question}>
+                {this.renderQuestion(currentStep.question)}
+                {/* TODO -- Add audio and icon */}
+                {content}
+                {this.renderEvaluate(labelEvaluate)}
+                {hasFeedback && this.renderFeedback()}
               </div>
             </div>
           </div>
@@ -118,11 +116,7 @@ class Question extends Component {
   }
 
   renderImage(image, alt) {
-    return (
-      <div className={classes.Col + " col-12 col-lg-4"}>
-        <Img src={image} className={classes.Img} alt={alt} />
-      </div>
-    );
+    return <Img src={image} className={classes.Img} alt={alt} />;
   }
 
   renderQuestion(text) {
