@@ -7,7 +7,7 @@ const userKey = "user";
 http.setToken(getToken());
 
 async function login(username, password) {
-  const { data } = await http.post("/userAccounts/login", {
+  const { data } = await http.post("/AppUsers/login", {
     username,
     password
   });
@@ -24,7 +24,7 @@ function logout() {
 }
 
 async function register(user) {
-  return await http.post("/userAccounts", {
+  return await http.post("/AppUsers", {
     username: user.username,
     password: "abc12345",
     firstName: user.firstName,
@@ -35,7 +35,7 @@ async function register(user) {
 
 async function getUser() {
   const { userId } = getToken();
-  const { data: user } = await http.get("/UserAccounts/" + userId);
+  const { data: user } = await http.get("/AppUsers/" + userId);
   setCurrentUser(user);
 }
 
