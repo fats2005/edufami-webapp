@@ -1,19 +1,21 @@
 .Feedback {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
   border-radius: inherit;
   visibility: hidden;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   &.IsVisible {
     visibility: visible;
   }
-  h5,
+  h5 {
+    margin-top: 3rem;
+  }
   p {
     margin-bottom: 0 !important;
   }
@@ -26,5 +28,37 @@
 
   .Btn {
     width: 300px;
+    margin-bottom: 3rem;
   }
 }
+
+// .Feedback {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   left: 0;
+//   top: 0;
+//   border-radius: inherit;
+//   visibility: hidden;
+//   padding: 1rem 1rem 0.5rem 1rem;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: column;
+//   &.IsVisible {
+//     visibility: visible;
+//   }
+//   h5,
+//   p {
+//     margin-bottom: 0 !important;
+//   }
+
+//   .Progress {
+//     width: 60%;
+//     margin: 0 20%;
+//     height: 5px;
+//   }
+
+//   .Btn {
+//     width: 300px;
+//   }
+// }

@@ -79,7 +79,7 @@ class Feedback extends Component {
         </div>
         <div>
           <button
-            className="btn btn-secondary bg-secondary-dark"
+            className={classes.Btn + " btn btn-secondary bg-secondary-dark"}
             onClick={buttonAction}
             disabled={disabledButton}
           >
