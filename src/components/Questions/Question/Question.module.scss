@@ -81,6 +81,9 @@
             border-radius: 5px;
             padding: 5px;
             line-height: 1;
+            &:last-child {
+              margin-bottom: 0px;
+            }
           }
         }
 
@@ -229,7 +232,6 @@
           .Options {
             .Option {
               width: 90%;
-              margin-bottom: 1rem;
               height: 4.2rem;
               font-size: 1rem;
               border-radius: 5px;
@@ -253,7 +255,7 @@
         }
       }
       .Footer {
-        height: 4rem;
+        height: 40px;
         .BoxProgress {
           width: 60%;
           font-size: 0.9rem;
@@ -269,34 +271,41 @@
 @media (min-width: 992px) {
   .Container {
     display: flex;
-    .Box {
-      .Body {
-        .Row {
-          padding: 1.5rem;
-        }
+  }
+  .Container .Box {
+    height: 600px;
+  }
 
-        .Instruction {
-          height: 4.5rem;
-          h4 {
-            font-size: 1.1rem;
-          }
-        }
-        .Question {
-          margin-left: 2rem;
-          padding-left: 2rem;
-          padding-right: 2rem;
-          p {
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-          }
-          .Options {
-            .Option {
-              width: 70%;
-              border-radius: 1rem;
-            }
-          }
-        }
-      }
+  .Container .Box .Body .Row {
+    height: 490px;
+    padding: 1rem;
+  }
+
+  .Container .Box .Body .Instruction {
+    height: 60px;
+    h4 {
+      font-size: 1.1rem;
+      padding: 0 2rem;
+    }
+  }
+
+  .Container .Box .Footer {
+    height: 50px;
+  }
+
+  .Container .Box .Body .Question {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    p {
+      font-size: 1rem;
+      margin-bottom: 0px;
+    }
+    .Options .Option {
+      width: 90%;
+      border-radius: 1rem;
+      height: 4rem;
+      margin-bottom: 5px;
     }
   }
 }
