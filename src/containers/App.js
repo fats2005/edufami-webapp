@@ -54,18 +54,11 @@ const App = () => {
         <PublicRoute path="/login" component={Login} />
         <ProtectedRoute path="/logout" component={Logout} />
         <PublicRoute path="/register" component={Register} />
-        <ProtectedRoute
-          path="/step/:orderId(\d+)"
-          component={Step}
-          hideNavBar={true}
-        />
+        <ProtectedRoute path="/step/:orderId(\d+)" component={Step} hideNavBar={true} />
         <ProtectedRoute path="/lesson/end" component={LessonEnd} />
         <ProtectedRoute path="/lesson/:lessonId(\d+)" component={Lesson} />
         <ProtectedRoute path="/unit/:unitId(\d+)" component={Unit} />
-        <ProtectedRoute
-          path="/trainings/:trainingId(\d+)"
-          component={Training}
-        />
+        <ProtectedRoute path="/trainings/:trainingId(\d+)" component={Training} />
         <ProtectedRoute path="/trainings" component={Trainings} />
         <Route path="/about" component={About} />
         <ProtectedRoute path="/progress" component={Progress} />

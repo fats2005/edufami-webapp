@@ -3,7 +3,7 @@ const initialState = {
   text: "text Redux"
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState) => {
   return state;
 };
 
