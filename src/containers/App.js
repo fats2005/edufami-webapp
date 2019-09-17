@@ -16,12 +16,13 @@ import {
   faRedo
 } from "@fortawesome/free-solid-svg-icons";
 
+import UnitPage from "../units/unitsPage";
+
 import Login from "../pages/Auth/Login/Login";
 import Logout from "../pages/Auth/Logout/Logout";
 import Register from "../pages/Auth/Register/Register";
 import Trainings from "../pages/Trainings/Trainings";
 import Training from "../pages/Trainings/Training/Training";
-import Unit from "../pages/Trainings/Unit/Unit";
 import Lesson from "../pages/Trainings/Lesson/Lesson";
 import Step from "../pages/Trainings/Step/Step";
 import LessonEnd from "../pages/Trainings/LessonEnd/LessonEnd";
@@ -61,7 +62,7 @@ const App = () => {
         />
         <ProtectedRoute path="/lesson/end" component={LessonEnd} />
         <ProtectedRoute path="/lesson/:lessonId(\d+)" component={Lesson} />
-        <ProtectedRoute path="/unit/:unitId(\d+)" component={Unit} />
+        <ProtectedRoute path="/unit/:unitId(\d+)" component={UnitPage} />
         <ProtectedRoute
           path="/trainings/:trainingId(\d+)"
           component={Training}
