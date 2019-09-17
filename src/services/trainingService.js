@@ -1,5 +1,5 @@
-import http from "./httpService";
 import _ from "lodash";
+import http from "./httpService";
 
 const versionKey = "version";
 const trainingKey = "trainings";
@@ -10,6 +10,11 @@ const stepsOfLessonKey = "stepsOfLesson";
 const isLessonInProgressKey = "lessonInProgress";
 const optionsKey = "options";
 
+async function getVersions() {
+  const { data } = await http.get("/versions/1");
+  return data;
+}
+
 export async function getData(endpoint) {
   const versions = await getVersions();
   const localVersion = JSON.parse(localStorage.getItem(versionKey)) || {};
@@ -18,12 +23,10 @@ export async function getData(endpoint) {
     const data = JSON.parse(localStorage.getItem(endpoint));
     return _.orderBy(data, "created", "desc");
   } else {
-    console.log("getData", endpoint);
     const { data } = await http.get(`/${endpoint}`);
 
     let dataFiltered = data;
-    if (endpoint !== "options")
-      dataFiltered = _.filter(data, t => t.status === "published");
+    if (endpoint !== "options") dataFiltered = _.filter(data, t => t.status === "published");
 
     localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
 
@@ -31,11 +34,6 @@ export async function getData(endpoint) {
     localStorage.setItem(versionKey, JSON.stringify(localVersion));
     return dataFiltered;
   }
-}
-
-async function getVersions() {
-  const { data } = await http.get("/versions/1");
-  return data;
 }
 
 export function getTrainings() {
