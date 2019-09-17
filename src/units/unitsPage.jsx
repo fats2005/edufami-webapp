@@ -12,10 +12,10 @@ function UnitPage() {
   const [unit, setUnit] = useState([]);
 
   // Similar to componentDidMount and componentDidUpdate:
-  useEffect(async () => {
+  useEffect(() => {
     const unitId = this.props.match.params.unitId;
     const unit = trainingService.getUnit(unitId);
-    const lessons = await trainingService.getLessonsByUnit(unitId);
+    const lessons = trainingService.getLessonsByUnit(unitId);
     // this.setState({ unit, lessons });
     setLessons(lessons);
     setUnit(unit);
