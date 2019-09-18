@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import useReactRouter from "use-react-router";
-
 import Loader from "../components/common/Loader/Loader";
 import Box from "../components/common/Box/Box";
 import CardLesson from "../components/cards/CardLesson/CardLesson";
@@ -8,14 +6,12 @@ import CardLesson from "../components/cards/CardLesson/CardLesson";
 import trainingService from "../services/trainingService";
 import Layout from "../containers/Layout/Layout";
 
-function UnitPage() {
+function UnitPage({ match }) {
   const [lessons, setLessons] = useState([]);
   const [unit, setUnit] = useState({});
-  // const { match } = useReactRouter();
 
-  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    const unitId = 11;
+    const { unitId } = match.params;
     async function fetchData() {
       const unitRespone = await trainingService.getUnit(unitId);
       const lessonsResponse = await trainingService.getLessonsByUnit(unitId);
@@ -23,7 +19,7 @@ function UnitPage() {
       setLessons(lessonsResponse);
     }
     fetchData();
-  }, []);
+  }, [match.params]);
 
   return (
     <>
