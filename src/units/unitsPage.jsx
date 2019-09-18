@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import useReactRouter from "use-react-router";
 
 import Loader from "../components/common/Loader/Loader";
 import Box from "../components/common/Box/Box";
@@ -8,24 +9,27 @@ import trainingService from "../services/trainingService";
 import Layout from "../containers/Layout/Layout";
 
 function UnitPage() {
-  const [lessons, setLessons] = useState({});
-  const [unit, setUnit] = useState([]);
+  const [lessons, setLessons] = useState([]);
+  const [unit, setUnit] = useState({});
+  // const { match } = useReactRouter();
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    const unitId = this.props.match.params.unitId;
-    const unit = trainingService.getUnit(unitId);
-    const lessons = trainingService.getLessonsByUnit(unitId);
-    // this.setState({ unit, lessons });
-    setLessons(lessons);
-    setUnit(unit);
-  });
+    const unitId = 11;
+    async function fetchData() {
+      const unitRespone = await trainingService.getUnit(unitId);
+      const lessonsResponse = await trainingService.getLessonsByUnit(unitId);
+      setUnit(unitRespone);
+      setLessons(lessonsResponse);
+    }
+    fetchData();
+  }, []);
 
   return (
-    <React.Fragment>
+    <>
       <Loader show={!lessons.length} />
       <Layout>
-        <Box label={unit.name + "/ Lecciones"}>
+        <Box label={`${unit.name} / Lecciones`}>
           <div className="row">
             {lessons.map(item => (
               <CardLesson
@@ -38,7 +42,7 @@ function UnitPage() {
           </div>
         </Box>
       </Layout>
-    </React.Fragment>
+    </>
   );
 }
 

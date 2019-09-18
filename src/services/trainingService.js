@@ -51,7 +51,7 @@ export function getUnitsByTraining(id) {
   return _.filter(trainings, t => t.trainingId === parseInt(id));
 }
 
-export function getUnit(id) {
+function getUnit(id) {
   const units = JSON.parse(localStorage.getItem(unitsKey));
   return _.filter(units, u => u.id === parseInt(id))[0];
 }
@@ -61,7 +61,7 @@ export function getLesson(id) {
   return _.filter(lesson, l => l.id === parseInt(id))[0];
 }
 
-export function getLessonsByUnit(id) {
+function getLessonsByUnit(id) {
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
   return _.filter(lessons, l => l.unitId === parseInt(id));
 }
