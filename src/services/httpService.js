@@ -1,6 +1,6 @@
 import axios from "axios";
-import logger from "./logService";
 import { toast } from "react-toastify";
+import logger from "./logService";
 
 import { apiUrl } from "../config.json"; // Can change between apiUrl and apiUrlLocal
 
@@ -9,9 +9,7 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 
 axios.interceptors.response.use(null, error => {
   const expectedError =
-    error.response &&
-    error.response.status >= 400 &&
-    error.response.status < 500;
+    error.response && error.response.status >= 400 && error.response.status < 500;
 
   if (!expectedError) {
     logger.log(error);
