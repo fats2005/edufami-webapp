@@ -19,7 +19,7 @@
     "popper.js": "^1.14.7",
     "query-string": "^6.1.0",
     "react": "^16.9.0",
-    "react-dom": "^16.8.3",
+    "react-dom": "^16.9.0",
     "react-loader-spinner": "^2.3.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^4.3.1",
