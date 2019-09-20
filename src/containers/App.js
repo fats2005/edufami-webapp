@@ -21,7 +21,7 @@ import UnitPage from "../units/unitsPage";
 import Login from "../pages/Auth/Login/Login";
 import Logout from "../pages/Auth/Logout/Logout";
 import Register from "../pages/Auth/Register/Register";
-import Trainings from "../pages/Trainings/Trainings";
+import TrainingsPage from "../trainings/trainingsPage";
 import Training from "../pages/Trainings/Training/Training";
 import Lesson from "../pages/Trainings/Lesson/Lesson";
 import Step from "../pages/Trainings/Step/Step";
@@ -49,25 +49,25 @@ library.add(
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <ToastContainer />
       <Switch>
         <PublicRoute path="/login" component={Login} />
         <ProtectedRoute path="/logout" component={Logout} />
         <PublicRoute path="/register" component={Register} />
-        <ProtectedRoute path="/step/:orderId(\d+)" component={Step} hideNavBar={true} />
+        <ProtectedRoute path="/step/:orderId(\d+)" component={Step} hideNavBar />
         <ProtectedRoute path="/lesson/end" component={LessonEnd} />
         <ProtectedRoute path="/lesson/:lessonId(\d+)" component={Lesson} />
         <ProtectedRoute path="/unit/:unitId(\d+)" component={UnitPage} />
         <ProtectedRoute path="/trainings/:trainingId(\d+)" component={Training} />
-        <ProtectedRoute path="/trainings" component={Trainings} />
+        <ProtectedRoute path="/trainings" component={TrainingsPage} />
         <Route path="/about" component={About} />
         <ProtectedRoute path="/progress" component={Progress} />
         <Route path="/not-found" component={NotFound} />
         <Redirect path="/" exact to="/trainings" />
         <Redirect to="/not-found" />
       </Switch>
-    </React.Fragment>
+    </>
   );
 };
 

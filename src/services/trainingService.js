@@ -15,25 +15,24 @@ async function getVersions() {
   return data;
 }
 
-export async function getData(endpoint) {
+async function getData(endpoint) {
   const versions = await getVersions();
   const localVersion = JSON.parse(localStorage.getItem(versionKey)) || {};
 
   if (localVersion && localVersion[endpoint] === versions[endpoint]) {
     const data = JSON.parse(localStorage.getItem(endpoint));
     return _.orderBy(data, "created", "desc");
-  } else {
-    const { data } = await http.get(`/${endpoint}`);
-
-    let dataFiltered = data;
-    if (endpoint !== "options") dataFiltered = _.filter(data, t => t.status === "published");
-
-    localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
-
-    localVersion[endpoint] = versions[endpoint];
-    localStorage.setItem(versionKey, JSON.stringify(localVersion));
-    return dataFiltered;
   }
+  const { data } = await http.get(`/${endpoint}`);
+
+  let dataFiltered = data;
+  if (endpoint !== "options") dataFiltered = _.filter(data, t => t.status === "published");
+
+  localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
+
+  localVersion[endpoint] = versions[endpoint];
+  localStorage.setItem(versionKey, JSON.stringify(localVersion));
+  return dataFiltered;
 }
 
 export function getTrainings() {
