@@ -5,7 +5,7 @@ import Joi from "joi-browser";
 
 import auth from "../../../services/authService";
 
-import Form from "../../../components/common/form";
+import Form from "../../../common/form";
 import classes from "../Auth.module.scss";
 
 class Register extends Form {
@@ -55,12 +55,9 @@ class Register extends Form {
         });
       }
       if (ex.response && ex.response.status === 422) {
-        toast.error(
-          "El número de usuario ya existe! Eliga otro e inténtelo de nuevo",
-          {
-            position: toast.POSITION.BOTTOM_RIGHT
-          }
-        );
+        toast.error("El número de usuario ya existe! Eliga otro e inténtelo de nuevo", {
+          position: toast.POSITION.BOTTOM_RIGHT
+        });
       }
     }
   };
@@ -78,11 +75,7 @@ class Register extends Form {
             />
             <div className={classes.Box}>
               <form onSubmit={this.handleSubmit}>
-                {this.renderInput(
-                  "username",
-                  null,
-                  "Ingrese el número de documento de identidad"
-                )}
+                {this.renderInput("username", null, "Ingrese el número de documento de identidad")}
 
                 {this.renderInput("firstName", null, "Ingrese su nombre")}
                 {this.renderInput("lastName", null, "Ingrese su apellido")}

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Achievements from "../../components/common/Achievements/Achievements";
-import Box from "../../components/common/Box/Box";
+// import Achievements from "../common/Achievements/Achievements";
+// import Box from "../common/Box/Box";
 
 const layout = props => {
   const { children } = props;
@@ -9,9 +9,9 @@ const layout = props => {
     <div className="row">
       <div className="col-12 col-lg-9">{children}</div>
       <div className="col col-lg-3">
-        <Box label="Logros" backgroundColor="#7793a1" padding="0">
+        {/* <Box label="Logros" backgroundColor="#7793a1" padding="0">
           <Achievements />
-        </Box>
+        </Box> */}
       </div>
     </div>
   );
