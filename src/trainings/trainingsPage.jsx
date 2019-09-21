@@ -6,7 +6,7 @@ import { TRAININGS_FETCH_REQUEST } from "./trainingsActions";
 import Layout from "../common/layout";
 import Loader from "../common/loader";
 import Box from "../common/box";
-import CardTraining from "../components/cards/CardTraining/CardTraining";
+import CardTraining from "../common/CardTraining";
 
 const Trainings = () => {
   const { trainings, fetching } = useSelector(state => state.trainings);
@@ -19,12 +19,10 @@ const Trainings = () => {
     <>
       <Loader show={fetching} />
       <Layout>
-        <Box label="Mis Capacitaciones" backgroundColor="#ffffff">
-          <div className="row">
-            {trainings.map(item => (
-              <CardTraining key={item.id} data={item} />
-            ))}
-          </div>
+        <Box label="Mis Capacitaciones">
+          {trainings.map(item => (
+            <CardTraining key={item.id} data={item} />
+          ))}
         </Box>
       </Layout>
     </>
