@@ -1,25 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { TRAININGS_FETCH_REQUEST } from "./trainingsActions";
 
 import Layout from "../containers/Layout/Layout";
 import Loader from "../components/common/Loader/Loader";
 import Box from "../components/common/Box/Box";
 import CardTraining from "../components/cards/CardTraining/CardTraining";
 
-import trainingService from "../services/trainingService";
-
 const Trainings = () => {
-  const [trainings, setTrainings] = useState([]);
+  const { trainings, fetching } = useSelector(state => state.trainings);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetchData() {
-      const trainingsData = await trainingService.getData("trainings");
-      setTrainings(trainingsData);
-    }
-    fetchData();
-  }, []);
+    dispatch({ type: TRAININGS_FETCH_REQUEST });
+  }, [dispatch]);
   return (
     <>
-      <Loader show={!trainings.length} />
+      <Loader show={fetching} />
       <Layout>
         <Box label="Mis Capacitaciones" backgroundColor="#ffffff">
           <div className="row">
