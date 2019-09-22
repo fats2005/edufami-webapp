@@ -3,6 +3,25 @@ import styled from "styled-components";
 
 import { Colors } from "../styles";
 
+const Progress = ({ value, max, color }) => (
+  <ProgressStyled>
+    <ProgressBar
+      role="progressbar"
+      style={{
+        width: `${(value / max) * 100}%`
+      }}
+      aria-valuenow="0"
+      aria-valuemin="0"
+      aria-valuemax={max}
+      color={color}
+    >
+      <ProgressText>{`${parseInt((value / max) * 100, 10)}%`}</ProgressText>
+    </ProgressBar>
+  </ProgressStyled>
+);
+
+export default Progress;
+
 const ProgressStyled = styled.div`
   width: 70%;
   margin-left: 15%;
@@ -28,22 +47,3 @@ const ProgressBar = styled.div`
 const ProgressText = styled.span`
   display: none;
 `;
-
-const Progress = ({ value, max, color }) => (
-  <ProgressStyled>
-    <ProgressBar
-      role="progressbar"
-      style={{
-        width: `${(value / max) * 100}%`
-      }}
-      aria-valuenow="0"
-      aria-valuemin="0"
-      aria-valuemax={max}
-      color={color}
-    >
-      <ProgressText>{`${parseInt((value / max) * 100, 10)}%`}</ProgressText>
-    </ProgressBar>
-  </ProgressStyled>
-);
-
-export default Progress;
