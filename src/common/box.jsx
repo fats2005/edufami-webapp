@@ -33,5 +33,5 @@ const Title = styled.div`
 
 const Body = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 `;

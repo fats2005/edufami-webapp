@@ -28,6 +28,15 @@ const StyledLink = styled(Link)`
   border: none;
   position: relative;
   cursor: pointer;
+  box-sizing: border-box;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    width: 45%;
+  }
+  @media (min-width: 992px) {
+    width: 28%;
+  }
 `;
 
 const StyledImg = styled(Img)`
