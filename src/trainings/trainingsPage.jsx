@@ -6,7 +6,7 @@ import { TRAININGS_FETCH_REQUEST } from "./trainingsActions";
 import Layout from "../common/layout";
 import Loader from "../common/loader";
 import Box from "../common/box";
-import CardTraining from "../common/CardTraining";
+import CardTraining from "../common/cardTraining";
 
 const Trainings = () => {
   const { trainings, fetching } = useSelector(state => state.trainings);

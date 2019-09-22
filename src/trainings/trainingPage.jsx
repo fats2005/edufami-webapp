@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../common/layout";
 import Loader from "../common/loader";
 import Box from "../common/box";
-import CardUnit from "../components/cards/CardUnit/CardUnit";
+import CardUnit from "../common/cardUnit";
 
 import trainingService from "../services/trainingService";
 
@@ -26,16 +26,14 @@ const TrainingPage = props => {
     <>
       <Loader show={!units.length} />
       <Layout>
-        <Box label={`${training.name} / Unidades`} backgroundColor="#ffffff">
-          <div className="row">
-            {units.map(item => (
-              <CardUnit
-                key={item.id}
-                unit={item}
-                numberOfLessons={trainingService.getNumberOfLessonsByUnit(item.id)}
-              />
-            ))}
-          </div>
+        <Box label={`${training.name} / Unidades`}>
+          {units.map(item => (
+            <CardUnit
+              key={item.id}
+              unit={item}
+              numberOfLessons={trainingService.getNumberOfLessonsByUnit(item.id)}
+            />
+          ))}
         </Box>
       </Layout>
     </>
