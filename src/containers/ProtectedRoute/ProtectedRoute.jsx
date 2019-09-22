@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
 import auth from "../../services/authService";
-import NavBar from "../../components/common/NavBar/NavBar";
-import Footer from "../../components/common/footer";
+import NavBar from "../../common/NavBar/NavBar";
+import Footer from "../../common/footer";
 
 class ProtectedRoute extends Component {
   state = {
@@ -13,13 +13,7 @@ class ProtectedRoute extends Component {
     this.setState({ user });
   }
   render() {
-    const {
-      path,
-      component: Component,
-      render,
-      hideNavBar,
-      ...rest
-    } = this.props;
+    const { path, component: Component, render, hideNavBar, ...rest } = this.props;
     const { user } = this.state;
     return (
       <Route

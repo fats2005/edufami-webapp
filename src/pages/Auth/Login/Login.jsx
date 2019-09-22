@@ -1,9 +1,8 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import Joi from "joi-browser";
-import Form from "../../../components/common/form";
+import Form from "../../../common/form";
 import auth from "../../../services/authService";
 
 import classes from "../Auth.module.scss";
@@ -57,18 +56,11 @@ class Login extends Form {
             <div className={classes.Box}>
               <h4>¡Aprenda Jugando con Edufami!</h4>
               <form onSubmit={this.handleSubmit}>
-                {this.renderInput(
-                  "username",
-                  null,
-                  "Ingrese número de usuario"
-                )}
+                {this.renderInput("username", null, "Ingrese número de usuario")}
                 {this.renderButton("Ingresar")}
               </form>
               <h6>¿No tienes cuenta?</h6>
-              <Link
-                to="/register"
-                className="btn btn-primary bg-primary-dark btn-sm"
-              >
+              <Link to="/register" className="btn btn-primary bg-primary-dark btn-sm">
                 Crear Cuenta
               </Link>
             </div>

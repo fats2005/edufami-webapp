@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from "lodash";
 
 import Feedback from "../Feedback/Feedback";
-import Img from "../../common/img";
-import Modal from "../../common/Modal/Modal";
+import Img from "../../../common/img";
+import Modal from "../../../common/Modal/Modal";
 
 import trainingService from "../../../services/trainingService";
 import classes from "../Question/Question.module.scss";
@@ -31,9 +31,7 @@ class Question extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     // console.log("getDerived");
     if (prevState.state === "initial") {
-      const options = trainingService.getOptionsByStep(
-        nextProps.currentStep.id
-      );
+      const options = trainingService.getOptionsByStep(nextProps.currentStep.id);
       return {
         options,
         state: "process",
@@ -73,10 +71,7 @@ class Question extends Component {
 
   updateFeedback = isOk => {
     const { options } = this.state;
-    const filtered = _.filter(
-      options,
-      o => Boolean(o.isCorrect) === isOk && o.selected
-    );
+    const filtered = _.filter(options, o => Boolean(o.isCorrect) === isOk && o.selected);
 
     let feedback = {
       show: true,
@@ -154,10 +149,7 @@ class Question extends Component {
     return (
       <div className={classes.Evaluate}>
         <button
-          className={
-            classes.Btn +
-            " btn btn-secondary bg-secondary-dark secondary-text-color"
-          }
+          className={classes.Btn + " btn btn-secondary bg-secondary-dark secondary-text-color"}
           onClick={this.handleEvaluate}
           disabled={!this.state.canEvaluate}
           id="evaluateButton"
@@ -170,12 +162,7 @@ class Question extends Component {
   }
 
   renderFeedback() {
-    return (
-      <Feedback
-        feedback={this.state.feedback}
-        buttonAction={this.handleFeedbackButton}
-      />
-    );
+    return <Feedback feedback={this.state.feedback} buttonAction={this.handleFeedbackButton} />;
   }
 
   renderModalExit() {

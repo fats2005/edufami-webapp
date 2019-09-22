@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Loader from "../components/common/Loader/Loader";
-import Box from "../components/common/Box/Box";
+import Loader from "../common/loader";
+import Box from "../common/box";
 import CardLesson from "../components/cards/CardLesson/CardLesson";
 
 import trainingService from "../services/trainingService";
-import Layout from "../containers/Layout/Layout";
+import Layout from "../common/layout";
 
 function UnitPage({ match }) {
   const [lessons, setLessons] = useState([]);

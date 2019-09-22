@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import trainingService from "../../../services/trainingService";
 
 import classes from "./LessonEnd.module.scss";
-import Layout from "../../../containers/Layout/Layout";
+import Layout from "../../../common/layout";
 
 class LessonEnd extends Component {
   state = {
@@ -25,11 +25,7 @@ class LessonEnd extends Component {
             <h5>
               Completaste esta lección <br /> y obtuviste una medalla
             </h5>
-            <img
-              src={`/images/icons/medal_big.svg`}
-              height="190px"
-              alt="Medal"
-            />
+            <img src={`/images/icons/medal_big.svg`} height="190px" alt="Medal" />
             <h5>
               Recuerda que para obtener tu diploma debes completar
               <br /> todos los módulos de la unidad

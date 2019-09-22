@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import Layout from "../../../containers/Layout/Layout";
-import Loader from "../../../components/common/Loader/Loader";
-import Box from "../../../components/common/Box/Box";
+import Layout from "../../../common/layout";
+import Loader from "../../../common/loader";
+import Box from "../../../common/box";
 import CardUnit from "../../../components/cards/CardUnit/CardUnit";
 
 import trainingService from "../../../services/trainingService";
@@ -34,9 +34,7 @@ class Training extends Component {
                 <CardUnit
                   key={item.id}
                   unit={item}
-                  numberOfLessons={trainingService.getNumberOfLessonsByUnit(
-                    item.id
-                  )}
+                  numberOfLessons={trainingService.getNumberOfLessonsByUnit(item.id)}
                 />
               ))}
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Loader from "../../../components/common/Loader/Loader";
+import Loader from "../../../common/loader";
 import auth from "../../../services/authService";
 
 class Logout extends Component {
