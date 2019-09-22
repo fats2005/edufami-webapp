@@ -6,6 +6,24 @@ import Img from "./img";
 import Progress from "./progress";
 import { Colors, FontSizes } from "../styles";
 
+const CardUnit = props => {
+  const { unit, numberOfLessons } = props;
+  return (
+    <StyledLink to={`/unit/${unit.id}`}>
+      <StyledImg src={unit.image} alt={unit.name} />
+      <Body>
+        <p>{unit.name}</p>
+        <UnitAdvance>
+          <span>{`0 / ${numberOfLessons}`}</span>
+          <Progress value={0} max={numberOfLessons} color={Colors.yellow} />
+        </UnitAdvance>
+      </Body>
+    </StyledLink>
+  );
+};
+
+export default CardUnit;
+
 const StyledLink = styled(Link)`
   background-color: ${Colors.secondary};
   height: 10rem;
@@ -47,21 +65,3 @@ const UnitAdvance = styled.div`
   padding-left: 1rem;
   font-size: ${FontSizes.f2};
 `;
-
-const CardUnit = props => {
-  const { unit, numberOfLessons } = props;
-  return (
-    <StyledLink to={`/unit/${unit.id}`}>
-      <StyledImg src={unit.image} alt={unit.name} />
-      <Body>
-        <p>{unit.name}</p>
-        <UnitAdvance>
-          <span>{`0 / ${numberOfLessons}`}</span>
-          <Progress value={0} max={numberOfLessons} color={Colors.yellow} />
-        </UnitAdvance>
-      </Body>
-    </StyledLink>
-  );
-};
-
-export default CardUnit;
