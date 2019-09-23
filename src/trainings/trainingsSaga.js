@@ -3,9 +3,9 @@ import type { Saga } from "redux-saga";
 import _ from "lodash";
 
 import {
-  TRAININGS_FETCH_REQUEST,
-  TRAININGS_FETCH_SUCCEEDED,
-  TRAININGS_FETCH_FAILED
+  FETCH_TRAININGS_REQUEST,
+  FETCH_TRAININGS_SUCCESS,
+  FETCH_TRAININGS_FAILURE
 } from "./trainingsActions";
 import TrainingsApi from "./trainingsApi";
 
@@ -17,14 +17,14 @@ function* fetchTrainings() {
     }
     const dataFiltered = _.filter(data, t => t.status === "published"); // TODO Alejandro - Manage this in the Server :)
     const dataOrdered = _.orderBy(dataFiltered, "created", "desc");
-    yield put({ type: TRAININGS_FETCH_SUCCEEDED, data: dataOrdered });
+    yield put({ type: FETCH_TRAININGS_SUCCESS, data: dataOrdered });
   } catch (e) {
-    yield put({ type: TRAININGS_FETCH_FAILED, message: e.message });
+    yield put({ type: FETCH_TRAININGS_FAILURE, message: e.message });
   }
 }
 
 function* trainingsSaga(): Saga<void> {
-  yield [yield takeLatest(TRAININGS_FETCH_REQUEST, fetchTrainings)];
+  yield [yield takeLatest(FETCH_TRAININGS_REQUEST, fetchTrainings)];
 }
 
 export default trainingsSaga;

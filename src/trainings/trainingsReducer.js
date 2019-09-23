@@ -1,7 +1,7 @@
 import {
-  TRAININGS_FETCH_REQUEST,
-  TRAININGS_FETCH_FAILED,
-  TRAININGS_FETCH_SUCCEEDED
+  FETCH_TRAININGS_REQUEST,
+  FETCH_TRAININGS_FAILURE,
+  FETCH_TRAININGS_SUCCESS
 } from "./trainingsActions";
 
 const initialState = {
@@ -11,18 +11,18 @@ const initialState = {
 
 const trainingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TRAININGS_FETCH_REQUEST:
+    case FETCH_TRAININGS_REQUEST:
       return {
         ...state,
         fetching: true
       };
-    case TRAININGS_FETCH_SUCCEEDED:
+    case FETCH_TRAININGS_SUCCESS:
       return {
         ...state,
         fetching: false,
         trainings: action.data
       };
-    case TRAININGS_FETCH_FAILED:
+    case FETCH_TRAININGS_FAILURE:
       return {
         ...state,
         fetching: false,

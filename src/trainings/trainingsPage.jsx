@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { TRAININGS_FETCH_REQUEST } from "./trainingsActions";
+import { FETCH_TRAININGS_REQUEST } from "./trainingsActions";
 
 import Layout from "../common/layout";
 import Loader from "../common/loader";
@@ -13,7 +13,7 @@ const Trainings = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: TRAININGS_FETCH_REQUEST });
+    dispatch({ type: FETCH_TRAININGS_REQUEST });
   }, [dispatch]);
   return (
     <>
