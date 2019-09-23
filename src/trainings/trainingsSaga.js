@@ -5,7 +5,10 @@ import _ from "lodash";
 import {
   FETCH_TRAININGS_REQUEST,
   FETCH_TRAININGS_SUCCESS,
-  FETCH_TRAININGS_FAILURE
+  FETCH_TRAININGS_FAILURE,
+  FETCH_TRAINING_REQUEST,
+  FETCH_TRAINING_SUCCESS,
+  FETCH_TRAINING_FAILURE
 } from "./trainingsActions";
 import TrainingsApi from "./trainingsApi";
 
@@ -23,8 +26,36 @@ function* fetchTrainings() {
   }
 }
 
+function* fetchTrainingById({ id }) {
+  try {
+    const training = yield call(TrainingsApi.fetchTraining, { id });
+
+    if (training.Errors) {
+      throw training.Errors;
+    }
+
+    const units = yield call(TrainingsApi.fetchTrainingUnits, { id });
+
+    units.map(e => {
+      // TODO Alejandro - Calculate this in the server
+      e.lessons = 5;
+      return e;
+    });
+
+    if (training.Errors) {
+      throw training.Errors;
+    }
+    yield put({ type: FETCH_TRAINING_SUCCESS, training, units });
+  } catch (e) {
+    yield put({ type: FETCH_TRAINING_FAILURE, message: e.message });
+  }
+}
+
 function* trainingsSaga(): Saga<void> {
-  yield [yield takeLatest(FETCH_TRAININGS_REQUEST, fetchTrainings)];
+  yield [
+    yield takeLatest(FETCH_TRAININGS_REQUEST, fetchTrainings),
+    yield takeLatest(FETCH_TRAINING_REQUEST, fetchTrainingById)
+  ];
 }
 
 export default trainingsSaga;

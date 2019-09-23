@@ -7,15 +7,15 @@ import Progress from "./progress";
 import { Colors, FontSizes } from "../styles";
 
 const CardUnit = props => {
-  const { unit, numberOfLessons } = props;
+  const { unit } = props;
   return (
     <StyledLink to={`/unit/${unit.id}`}>
       <StyledImg src={unit.image} alt={unit.name} />
       <Body>
         <p>{unit.name}</p>
         <UnitAdvance>
-          <span>{`0 / ${numberOfLessons}`}</span>
-          <Progress value={0} max={numberOfLessons} color={Colors.yellow} />
+          <span>{`0 / ${unit.lessons}`}</span>
+          <Progress value={0} max={unit.lessons} color={Colors.yellow} />
         </UnitAdvance>
       </Body>
     </StyledLink>
