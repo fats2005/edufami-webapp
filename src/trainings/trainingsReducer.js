@@ -1,28 +1,51 @@
 import {
-  TRAININGS_FETCH_REQUEST,
-  TRAININGS_FETCH_FAILED,
-  TRAININGS_FETCH_SUCCEEDED
+  FETCH_TRAININGS_REQUEST,
+  FETCH_TRAININGS_FAILURE,
+  FETCH_TRAININGS_SUCCESS,
+  FETCH_TRAINING_REQUEST,
+  FETCH_TRAINING_FAILURE,
+  FETCH_TRAINING_SUCCESS
 } from "./trainingsActions";
 
 const initialState = {
   fetching: false,
-  trainings: []
+  trainings: [],
+  training: {},
+  units: []
 };
 
 const trainingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case TRAININGS_FETCH_REQUEST:
+    case FETCH_TRAININGS_REQUEST:
       return {
         ...state,
         fetching: true
       };
-    case TRAININGS_FETCH_SUCCEEDED:
+    case FETCH_TRAININGS_SUCCESS:
       return {
         ...state,
         fetching: false,
         trainings: action.data
       };
-    case TRAININGS_FETCH_FAILED:
+    case FETCH_TRAININGS_FAILURE:
+      return {
+        ...state,
+        fetching: false,
+        error: action.message
+      };
+    case FETCH_TRAINING_REQUEST:
+      return {
+        ...state,
+        fetching: true
+      };
+    case FETCH_TRAINING_SUCCESS:
+      return {
+        ...state,
+        fetching: false,
+        training: action.training,
+        units: action.units
+      };
+    case FETCH_TRAINING_FAILURE:
       return {
         ...state,
         fetching: false,

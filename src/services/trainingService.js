@@ -35,19 +35,19 @@ async function getData(endpoint) {
   return dataFiltered;
 }
 
-export function getTrainings() {
+function getTrainings() {
   const trainings = JSON.parse(localStorage.getItem(trainingKey));
   return _.orderBy(trainings, "created", "desc");
 }
 
-export function getTraining(id) {
+function getTraining(id) {
   const trainings = JSON.parse(localStorage.getItem(trainingKey));
-  return _.filter(trainings, t => t.id === parseInt(id))[0];
+  return _.filter(trainings, t => t.id === parseInt(id, 10))[0];
 }
 
-export function getUnitsByTraining(id) {
+function getUnitsByTraining(id) {
   const trainings = JSON.parse(localStorage.getItem(unitsKey));
-  return _.filter(trainings, t => t.trainingId === parseInt(id));
+  return _.filter(trainings, t => t.trainingId === parseInt(id, 10));
 }
 
 function getUnit(id) {
@@ -55,7 +55,7 @@ function getUnit(id) {
   return _.filter(units, u => u.id === parseInt(id))[0];
 }
 
-export function getLesson(id) {
+function getLesson(id) {
   const lesson = JSON.parse(localStorage.getItem(lessonsKey));
   return _.filter(lesson, l => l.id === parseInt(id))[0];
 }
@@ -65,7 +65,7 @@ function getLessonsByUnit(id) {
   return _.filter(lessons, l => l.unitId === parseInt(id));
 }
 
-export function getNumberOfLessonsByUnit(id) {
+function getNumberOfLessonsByUnit(id) {
   return getLessonsByUnit(id).length;
 }
 

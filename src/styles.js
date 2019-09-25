@@ -9,7 +9,8 @@ export const Colors = {
   secondaryDark: "#203b47",
   secondaryText: "#ffffff",
   gray: "#eceeef",
-  grayDark: "#dddddd"
+  grayDark: "#dddddd",
+  yellow: "#ffc107"
 };
 
 export const FontSizes = {

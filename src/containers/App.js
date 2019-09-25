@@ -22,7 +22,7 @@ import Login from "../pages/Auth/Login/Login";
 import Logout from "../pages/Auth/Logout/Logout";
 import Register from "../pages/Auth/Register/Register";
 import TrainingsPage from "../trainings/trainingsPage";
-import Training from "../pages/Trainings/Training/Training";
+import TrainingPage from "../trainings/trainingPage";
 import Lesson from "../pages/Trainings/Lesson/Lesson";
 import Step from "../pages/Trainings/Step/Step";
 import LessonEnd from "../pages/Trainings/LessonEnd/LessonEnd";
@@ -59,7 +59,7 @@ const App = () => {
         <ProtectedRoute path="/lesson/end" component={LessonEnd} />
         <ProtectedRoute path="/lesson/:lessonId(\d+)" component={Lesson} />
         <ProtectedRoute path="/unit/:unitId(\d+)" component={UnitPage} />
-        <ProtectedRoute path="/trainings/:trainingId(\d+)" component={Training} />
+        <ProtectedRoute path="/trainings/:trainingId(\d+)" component={TrainingPage} />
         <ProtectedRoute path="/trainings" component={TrainingsPage} />
         <Route path="/about" component={About} />
         <ProtectedRoute path="/progress" component={Progress} />
