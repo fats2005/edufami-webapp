@@ -24,7 +24,7 @@ function setJwt(jwt) {
 }
 
 function setToken(token) {
-  axios.defaults.headers.common["Authorization"] = token;
+  axios.defaults.headers.common.Authorization = token;
 }
 
 export default {
