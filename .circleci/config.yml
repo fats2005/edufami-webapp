@@ -1,6 +1,15 @@
 version: 2
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/ruby:2.3.6-node-browsers
+      environment:
+        POSTGRES_HOST: 127.0.0.1
+        POSTGRES_USER: postgres
+        RAILS_ENV: test
 jobs:
   build:
+    <<: *defaults
     working_directory: ~/edufami-webapp
     docker:
       - image: circleci/node:8
@@ -19,6 +28,7 @@ jobs:
           paths:
             - ~/.cache/yarn
   prettier-check:
+    <<: *defaults
     steps:
       - checkout
       - attach_workspace:
@@ -28,6 +38,7 @@ jobs:
           command: yarn prettier
 
   eslint-check:
+    <<: *defaults
     steps:
       - checkout
       - attach_workspace:
