@@ -1,6 +1,5 @@
 version: 2
-docker:
-  - image: 'miyajan/prettier:1.15.3'
+
 commands:
   prettier_list_different:
     description: |
@@ -27,7 +26,7 @@ executors:
   prettier:
     docker:
       - image: miyajan/prettier:1.15.3
-      
+
 jobs:
   build:
     working_directory: ~/edufami-webapp
