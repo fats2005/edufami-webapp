@@ -6,7 +6,7 @@ import { FETCH_UNIT_REQUEST } from "./unitActions";
 import Layout from "../common/layout";
 import Loader from "../common/loader";
 import Box from "../common/box";
-import CardLesson from "../components/cards/CardLesson/CardLesson";
+import CardLesson from "../common/cardLesson";
 
 function UnitPage({ match }) {
   const { unit, lessons, fetching } = useSelector(state => state.unit);

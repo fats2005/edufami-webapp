@@ -2,18 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Img from "../../../common/img";
-import { Colors, FontSizes } from "../../../styles";
-
-import classes from "./CardLesson.module.scss";
+import Img from "./img";
+import Button from "./button";
+import { Colors, FontSizes } from "../styles";
 
 const cardLesson = props => {
   const { lesson } = props;
   return (
     <StyledLink to={`/lesson/${lesson.id}`}>
       <StyledImg src={lesson.image} alt={lesson.name} />
-      <Body className={classes.Title}>{lesson.name}</Body>
-      <button className="btn btn-primary bg-primary-dark  secondary-text-color">Iniciar</button>
+      <Title>{lesson.name}</Title>
+      <ButtonContainer>
+        <Button>Iniciar</Button>
+      </ButtonContainer>
     </StyledLink>
   );
 };
@@ -25,24 +26,26 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-content: space-around;
-
+  align-items: center;
+  text-align: center;
   word-wrap: break-word;
   background-color: ${Colors.gray};
-
-  height: 15rem;
+  height: 12rem;
   width: 100%;
   border-radius: 3rem 5px 5px 5px;
-  text-align: center;
+  position: relative;
 `;
 
 const StyledImg = styled(Img)`
   width: 7rem;
 `;
 
-const Body = styled.div`
-  height: 82px;
-  display: flex;
-  align-items: center;
-  margin: 0;
+const Title = styled.div`
   font-size: ${FontSizes.f4};
+  color: ${Colors.secondaryDark};
+`;
+
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: -1rem;
 `;
