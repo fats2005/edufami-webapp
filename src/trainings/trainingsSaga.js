@@ -36,15 +36,16 @@ function* fetchTrainingById({ id }) {
 
     const units = yield call(TrainingsApi.fetchTrainingUnits, { id });
 
+    if (units.Errors) {
+      throw units.Errors;
+    }
+
     units.map(e => {
       // TODO Alejandro - Calculate this in the server
       e.lessons = 5;
       return e;
     });
 
-    if (training.Errors) {
-      throw training.Errors;
-    }
     yield put({ type: FETCH_TRAINING_SUCCESS, training, units });
   } catch (e) {
     yield put({ type: FETCH_TRAINING_FAILURE, message: e.message });

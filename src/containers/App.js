@@ -16,7 +16,7 @@ import {
   faRedo
 } from "@fortawesome/free-solid-svg-icons";
 
-import UnitPage from "../units/unitsPage";
+import UnitPage from "../unit/unitPage";
 
 import Login from "../pages/Auth/Login/Login";
 import Logout from "../pages/Auth/Logout/Logout";
