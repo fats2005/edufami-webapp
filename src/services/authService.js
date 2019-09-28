@@ -4,6 +4,19 @@ import http from "./httpService";
 const tokenKey = "token";
 const userKey = "user";
 
+function setToken(token) {
+  localStorage.setItem(tokenKey, JSON.stringify(token));
+  http.setToken(token.id);
+}
+
+function getToken() {
+  return JSON.parse(localStorage.getItem(tokenKey));
+}
+
+function setCurrentUser(user) {
+  localStorage.setItem(userKey, JSON.stringify(user));
+}
+
 http.setToken(getToken());
 
 async function login(username, password) {
@@ -24,7 +37,7 @@ function logout() {
 }
 
 async function register(user) {
-  return await http.post("/AppUsers", {
+  return http.post("/AppUsers", {
     username: user.username,
     password: "abc12345",
     firstName: user.firstName,
@@ -35,7 +48,7 @@ async function register(user) {
 
 async function getUser() {
   const { userId } = getToken();
-  const { data: user } = await http.get("/AppUsers/" + userId);
+  const { data: user } = await http.get(`/AppUsers/${userId}`);
   setCurrentUser(user);
 }
 
@@ -50,21 +63,8 @@ function getCurrentUser() {
   return JSON.parse(localStorage.getItem(userKey));
 }
 
-function setCurrentUser(user) {
-  localStorage.setItem(userKey, JSON.stringify(user));
-}
-
 function getJwt() {
   return localStorage.getItem(tokenKey);
-}
-
-function setToken(token) {
-  localStorage.setItem(tokenKey, JSON.stringify(token));
-  http.setToken(token.id);
-}
-
-function getToken() {
-  return JSON.parse(localStorage.getItem(tokenKey));
 }
 
 export default {

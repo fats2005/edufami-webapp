@@ -52,17 +52,17 @@ function getUnitsByTraining(id) {
 
 function getUnit(id) {
   const units = JSON.parse(localStorage.getItem(unitsKey));
-  return _.filter(units, u => u.id === parseInt(id))[0];
+  return _.filter(units, u => u.id === parseInt(id, 10))[0];
 }
 
 function getLesson(id) {
   const lesson = JSON.parse(localStorage.getItem(lessonsKey));
-  return _.filter(lesson, l => l.id === parseInt(id))[0];
+  return _.filter(lesson, l => l.id === parseInt(id, 10))[0];
 }
 
 function getLessonsByUnit(id) {
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
-  return _.filter(lessons, l => l.unitId === parseInt(id));
+  return _.filter(lessons, l => l.unitId === parseInt(id, 10));
 }
 
 function getNumberOfLessonsByUnit(id) {
@@ -73,7 +73,7 @@ export async function getStepsByLesson(id) {
   await getData("steps");
   await getData("options");
   const steps = JSON.parse(localStorage.getItem(stepsKey));
-  const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id));
+  const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id, 10));
   const stepsOrdered = _.orderBy(stepsFiltered, "order", "asc");
   localStorage.setItem(stepsOfLessonKey, JSON.stringify(stepsOrdered));
   localStorage.setItem("currentLesson", JSON.stringify(getLesson(id)));
@@ -90,14 +90,14 @@ export function getCurrentLesson() {
 
 export function getCurrentSteps(orderId) {
   const steps = JSON.parse(localStorage.getItem(stepsOfLessonKey));
-  const currentStep = _.filter(steps, s => s.order === parseInt(orderId))[0];
-  const nextStep = _.filter(steps, s => s.order === parseInt(orderId) + 1)[0];
+  const currentStep = _.filter(steps, s => s.order === parseInt(orderId, 10))[0];
+  const nextStep = _.filter(steps, s => s.order === parseInt(orderId, 10) + 1)[0];
   return { currentStep, nextStep };
 }
 
 export function getOptionsByStep(stepId) {
   const options = JSON.parse(localStorage.getItem(optionsKey));
-  const optionsFiltered = _.filter(options, o => o.stepId === parseInt(stepId));
+  const optionsFiltered = _.filter(options, o => o.stepId === parseInt(stepId, 10));
   return optionsFiltered;
 }
 
