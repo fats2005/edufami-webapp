@@ -7,7 +7,7 @@ import Img from "../../../common/img";
 import Modal from "../../../common/Modal/Modal";
 
 import trainingService from "../../../services/trainingService";
-import classes from "../Question/Question.module.scss";
+import classes from "./Question.module.scss";
 
 class Question extends Component {
   state = {
