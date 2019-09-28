@@ -1,6 +1,6 @@
 version: 2
 defaults: &defaults
-  working_directory: ~/repo
+  working_directory: ~/edufami-webapp
   docker:
     - image: circleci/ruby:2.3.6-node-browsers
       environment:
