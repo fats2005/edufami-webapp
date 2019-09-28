@@ -46,3 +46,15 @@ jobs:
       - run:
           name: Run eslint check
           command: yarn eslint
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+      - prettier-check:
+          requires:
+            - build
+      - eslint-check:
+          requires:
+            - build
