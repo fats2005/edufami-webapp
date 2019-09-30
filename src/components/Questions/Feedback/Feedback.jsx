@@ -40,6 +40,7 @@ class Feedback extends Component {
       }
     }, miliseconds);
   }
+
   render() {
     const {
       feedback: { show, status, text },
@@ -49,13 +50,7 @@ class Feedback extends Component {
     const { timerPosition, disabledButton } = this.state;
 
     return (
-      <div
-        className={
-          classes.Feedback +
-          " bg-primary-light " +
-          (show ? classes.IsVisible : "")
-        }
-      >
+      <div className={classes.Feedback + " bg-primary-light " + (show ? classes.IsVisible : "")}>
         <h5>{status && this.state[status].label}</h5>
         <p>{text}</p>
         <img
@@ -84,9 +79,7 @@ class Feedback extends Component {
             disabled={disabledButton}
           >
             {status && this.state[status].buttonText}{" "}
-            {status && (
-              <FontAwesomeIcon icon={this.state[status].iconButton} size="lg" />
-            )}
+            {status && <FontAwesomeIcon icon={this.state[status].iconButton} size="lg" />}
           </button>
         </div>
       </div>
