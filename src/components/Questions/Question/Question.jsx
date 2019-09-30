@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import _ from "lodash";
@@ -7,7 +8,7 @@ import Img from "../../../common/img";
 import Modal from "../../../common/Modal/Modal";
 
 import trainingService from "../../../services/trainingService";
-import classes from "../Question/Question.module.scss";
+import classes from "./Question.module.scss";
 
 class Question extends Component {
   state = {
@@ -153,9 +154,10 @@ class Question extends Component {
           onClick={this.handleEvaluate}
           disabled={!this.state.canEvaluate}
           id="evaluateButton"
+          type="button"
         >
           {label}
-          <img src={`/images/icons/evaluate.svg`} height="25px" alt="." />
+          <img src="/images/icons/evaluate.svg" height="25px" alt="." />
         </button>
       </div>
     );
@@ -181,7 +183,7 @@ class Question extends Component {
       }
     ];
     return (
-      <React.Fragment>
+      <>
         <button
           type="button"
           className={classes.Exit + " btn btn-secondary"}
@@ -192,12 +194,12 @@ class Question extends Component {
         </button>
         <Modal
           id="modalExit"
-          title={"¿Está seguro de salir?"}
-          text={"Si sale perderá el progreso"}
+          title="¿Está seguro de salir?"
+          text="Si sale perderá el progreso"
           closeButton={false}
           buttons={modalButtons}
         />
-      </React.Fragment>
+      </>
     );
   }
 

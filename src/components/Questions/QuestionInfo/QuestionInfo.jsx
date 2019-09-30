@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 import Question from "../Question/Question";
@@ -15,8 +16,9 @@ class QuestionInfo extends Question {
   render() {
     const { timerPosition } = this.state;
     const { phase, seconds } = this.timer;
+
     return (
-      <React.Fragment>
+      <>
         {this.renderQuestionBox(
           <div className="progress progress-info">
             <div
@@ -33,7 +35,7 @@ class QuestionInfo extends Question {
           "Continuar", // Label to show in the evaluate bottom
           false // To avoid rendering the Feedback
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 // import Raven from "raven-js";
 
 function init() {

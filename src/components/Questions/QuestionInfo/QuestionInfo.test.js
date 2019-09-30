@@ -2,24 +2,22 @@ import React from "react";
 import { configure, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
-configure({ adapter: new Adapter() });
-
 import QuestionInfo from "./QuestionInfo";
-import Modal from "../../common/Modal/Modal";
-import Img from "../../common/img";
+import Modal from "../../../common/Modal/Modal";
+import Img from "../../../common/img";
 import Feedback from "../Feedback/Feedback";
+
+configure({ adapter: new Adapter() });
 
 describe("<QuestionInfo />", () => {
   let wrapper;
-  let currentStep = {
+  const currentStep = {
     id: 10
   };
-  let nextStep = {};
+  const nextStep = {};
 
   beforeEach(() => {
-    wrapper = shallow(
-      <QuestionInfo currentStep={currentStep} nextStep={nextStep} />
-    );
+    wrapper = shallow(<QuestionInfo currentStep={currentStep} nextStep={nextStep} />);
   });
 
   it("shoudl render a questionBox id selector", () => {

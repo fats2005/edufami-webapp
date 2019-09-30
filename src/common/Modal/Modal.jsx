@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 const modal = ({ title, text, buttons, closeButton }) => {
@@ -17,12 +18,7 @@ const modal = ({ title, text, buttons, closeButton }) => {
               {title}
             </h5>
             {closeButton && (
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             )}
