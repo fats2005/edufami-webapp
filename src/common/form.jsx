@@ -4,18 +4,25 @@ import Input from "./input";
 import Select from "./select";
 
 class Form extends Component {
-  state = {
-    data: {},
-    errors: {}
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {},
+      errors: {}
+    };
+  }
 
   validate = () => {
+    const { data } = this.state;
     const options = { abortEarly: false };
-    const { error } = Joi.validate(this.state.data, this.schema, options);
+
+    const { error } = Joi.validate(data, this.schema, options);
     if (!error) return null;
 
     const errors = {};
-    for (let item of error.details) errors[item.path[0]] = item.message;
+    // for (let item of error.details) {
+    //   errors[item.path[0]] = item.message;
+    // }
     return errors;
   };
 
@@ -38,12 +45,10 @@ class Form extends Component {
   };
 
   handleChange = ({ currentTarget: input }) => {
-    const errors = { ...this.state.errors };
+    const { errors, data } = this.state;
     const erroMessage = this.validateProperty(input);
     if (erroMessage) errors[input.name] = erroMessage;
     else delete errors[input.name];
-
-    const data = { ...this.state.data };
 
     data[input.name] = input.type === "checkbox" ? input.checked : input.value;
     this.setState({ data, errors });
@@ -51,7 +56,7 @@ class Form extends Component {
 
   renderButton(label) {
     return (
-      <button disabled={this.validate()} className="btn btn-primary">
+      <button disabled={this.validate()} className="btn btn-primary" type="button">
         {label}
       </button>
     );
@@ -90,8 +95,6 @@ class Form extends Component {
 
   renderCheckbox(name, label) {
     const { data, errors } = this.state;
-
-    console.log(data[name]);
 
     return (
       <Input

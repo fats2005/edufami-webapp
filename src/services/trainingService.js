@@ -69,7 +69,7 @@ function getNumberOfLessonsByUnit(id) {
   return getLessonsByUnit(id).length;
 }
 
-export async function getStepsByLesson(id) {
+async function getStepsByLesson(id) {
   await getData("steps");
   await getData("options");
   const steps = JSON.parse(localStorage.getItem(stepsKey));
@@ -80,38 +80,38 @@ export async function getStepsByLesson(id) {
   return stepsOrdered;
 }
 
-export function getNumberOfStepsofCurrentLesson() {
+function getNumberOfStepsofCurrentLesson() {
   return JSON.parse(localStorage.getItem(stepsOfLessonKey)).length;
 }
 
-export function getCurrentLesson() {
+function getCurrentLesson() {
   return JSON.parse(localStorage.getItem("currentLesson"));
 }
 
-export function getCurrentSteps(orderId) {
+function getCurrentSteps(orderId) {
   const steps = JSON.parse(localStorage.getItem(stepsOfLessonKey));
   const currentStep = _.filter(steps, s => s.order === parseInt(orderId, 10))[0];
   const nextStep = _.filter(steps, s => s.order === parseInt(orderId, 10) + 1)[0];
   return { currentStep, nextStep };
 }
 
-export function getOptionsByStep(stepId) {
+function getOptionsByStep(stepId) {
   const options = JSON.parse(localStorage.getItem(optionsKey));
   const optionsFiltered = _.filter(options, o => o.stepId === parseInt(stepId, 10));
   return optionsFiltered;
 }
 
-export function startLesson() {
+function startLesson() {
   localStorage.setItem(isLessonInProgressKey, true);
 }
 
-export function finishLesson() {
+function finishLesson() {
   localStorage.removeItem(isLessonInProgressKey);
 
   localStorage.removeItem(stepsOfLessonKey);
 }
 
-export function isLessonInProgress() {
+function isLessonInProgress() {
   return localStorage.getItem(isLessonInProgressKey);
 }
 

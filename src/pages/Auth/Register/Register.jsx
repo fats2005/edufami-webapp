@@ -43,12 +43,10 @@ class Register extends Form {
   doSubmit = async () => {
     try {
       const { data: user } = await auth.register(this.state.data);
-      console.log(user);
       await auth.login(this.state.data.username, "abc12345");
       auth.setCurrentUser(user);
       window.location = "/";
     } catch (ex) {
-      console.log(ex);
       if (ex.response && ex.response.status === 400) {
         toast.error(ex.response.data, {
           position: toast.POSITION.BOTTOM_RIGHT
@@ -66,13 +64,9 @@ class Register extends Form {
     if (auth.getCurrentUser()) return <Redirect to="/" />;
     return (
       <div className={classes.Auth}>
-        <div className={"row " + classes.Container}>
+        <div className={`row ${classes.Container}`}>
           <div className="col offset-sm-2 col-sm-8 offset-lg-3 col-lg-6">
-            <img
-              className="mx-auto d-block"
-              src={"/images/logo_edufami.svg"}
-              alt="Logo de Edufami"
-            />
+            <img className="mx-auto d-block" src="/images/logo_edufami.svg" alt="Logo de Edufami" />
             <div className={classes.Box}>
               <form onSubmit={this.handleSubmit}>
                 {this.renderInput("username", null, "Ingrese el número de documento de identidad")}

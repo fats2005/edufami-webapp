@@ -46,13 +46,9 @@ class Login extends Form {
     if (auth.getCurrentUser()) return <Redirect to="/" />;
     return (
       <div className={classes.Auth}>
-        <div className={"row " + classes.Container}>
+        <div className={`row ${classes.Container}`}>
           <div className="col offset-sm-2 col-sm-8 offset-lg-3 col-lg-6">
-            <img
-              className="mx-auto d-block"
-              src={"/images/logo_edufami.svg"}
-              alt="Logo de Edufami"
-            />
+            <img className="mx-auto d-block" src="/images/logo_edufami.svg" alt="Logo de Edufami" />
             <div className={classes.Box}>
               <h4>¡Aprenda Jugando con Edufami!</h4>
               <form onSubmit={this.handleSubmit}>

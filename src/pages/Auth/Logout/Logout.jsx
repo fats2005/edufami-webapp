@@ -8,8 +8,9 @@ class Logout extends Component {
     auth.logout();
     window.location = "/";
   }
+
   render() {
-    return <Loader show={true} />;
+    return <Loader show />;
   }
 }
 

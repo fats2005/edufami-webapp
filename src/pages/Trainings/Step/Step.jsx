@@ -2,23 +2,24 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import trainingService from "../../../services/trainingService";
 import QuestionInfo from "../../../components/Questions/QuestionInfo/QuestionInfo";
-import QuestionMultipleOptions from "../../../components/Questions/QuestionMultipleOptions/QuestionMultipleOptions";
-import QuestionPairs from "../../../components/Questions/QuestionPairs/QuestionPairs";
-import QuestionOrder from "../../../components/Questions/QuestionOrder/QuestionOrder";
+// import QuestionMultipleOptions from "../../../components/Questions/QuestionMultipleOptions/QuestionMultipleOptions";
+// import QuestionPairs from "../../../components/Questions/QuestionPairs/QuestionPairs";
+// import QuestionOrder from "../../../components/Questions/QuestionOrder/QuestionOrder";
 
 class Step extends Component {
-  state = {
-    currentStep: {},
-    nextStep: {},
-    orderId: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentStep: {},
+      nextStep: {},
+      orderId: 0
+    };
+  }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.match.params.orderId !== prevState.orderId) {
       const { orderId } = nextProps.match.params;
-      const { currentStep, nextStep } = trainingService.getCurrentSteps(
-        orderId
-      );
+      const { currentStep, nextStep } = trainingService.getCurrentSteps(orderId);
       const totalQuestions = trainingService.getNumberOfStepsofCurrentLesson();
       return { currentStep, nextStep, orderId, totalQuestions };
     }
@@ -26,87 +27,95 @@ class Step extends Component {
   }
 
   finishLesson = () => {
+    const { history } = this.props;
     trainingService.finishLesson();
-    this.props.history.push("/lesson/end");
+    history.push("/lesson/end");
   };
 
   handleExit = () => {
+    const { history } = this.props;
     trainingService.finishLesson();
-    this.props.history.push("/");
+    history.push("/");
   };
 
   handleGoNext = () => {
     const { nextStep } = this.state;
-    if (nextStep) return this.props.history.push(`/step/${nextStep.order}`);
-
+    const { history } = this.props;
+    if (nextStep) return history.push(`/step/${nextStep.order}`);
     this.finishLesson();
+    return null;
   };
 
   chooseQuestion() {
     const { currentStep, nextStep, totalQuestions } = this.state;
-    const option = parseInt(currentStep.type);
-    console.log(option);
-    if (option === 1)
-      return (
-        <QuestionInfo
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else if (option === 2)
-      return (
-        <QuestionMultipleOptions
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else if (option === 3)
-      return (
-        <QuestionMultipleOptions
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else if (option === 4)
-      return (
-        <QuestionMultipleOptions
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else if (option === 5)
-      return (
-        <QuestionPairs
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else if (option === 6)
-      return (
-        <QuestionOrder
-          currentStep={currentStep}
-          nextStep={nextStep}
-          onExit={this.handleExit}
-          onGoNext={this.handleGoNext}
-          totalQuestions={totalQuestions}
-        />
-      );
-    else return this.handleGoNext();
+    const option = parseInt(currentStep.type, 10);
+    switch (option) {
+      case 1:
+        return (
+          <QuestionInfo
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+      default:
+        return this.handleGoNext();
+    }
+    // if (option === 1)
+
+    // else if (option === 2)
+    //   return (
+    //     <QuestionMultipleOptions
+    //       currentStep={currentStep}
+    //       nextStep={nextStep}
+    //       onExit={this.handleExit}
+    //       onGoNext={this.handleGoNext}
+    //       totalQuestions={totalQuestions}
+    //     />
+    //   );
+    // else if (option === 3)
+    //   return (
+    //     <QuestionMultipleOptions
+    //       currentStep={currentStep}
+    //       nextStep={nextStep}
+    //       onExit={this.handleExit}
+    //       onGoNext={this.handleGoNext}
+    //       totalQuestions={totalQuestions}
+    //     />
+    //   );
+    // else if (option === 4)
+    //   return (
+    //     <QuestionMultipleOptions
+    //       currentStep={currentStep}
+    //       nextStep={nextStep}
+    //       onExit={this.handleExit}
+    //       onGoNext={this.handleGoNext}
+    //       totalQuestions={totalQuestions}
+    //     />
+    //   );
+    // else if (option === 5)
+    //   return (
+    //     <QuestionPairs
+    //       currentStep={currentStep}
+    //       nextStep={nextStep}
+    //       onExit={this.handleExit}
+    //       onGoNext={this.handleGoNext}
+    //       totalQuestions={totalQuestions}
+    //     />
+    //   );
+    // else if (option === 6)
+    //   return (
+    //     <QuestionOrder
+    //       currentStep={currentStep}
+    //       nextStep={nextStep}
+    //       onExit={this.handleExit}
+    //       onGoNext={this.handleGoNext}
+    //       totalQuestions={totalQuestions}
+    //     />
+    //   );
+    // else
   }
 
   render() {
