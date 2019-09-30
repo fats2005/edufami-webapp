@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import _ from "lodash";
 
@@ -45,9 +46,7 @@ class QuestionPairs extends Question {
     const columnAOrdered = _.orderBy(columnAMapped, "order", "asc");
     const columnBOrdered = _.orderBy(columnBMapped, "order", "asc");
 
-    const feedback = this.updateFeedback(
-      _.isEqual(columnAOrdered, columnBOrdered)
-    );
+    const feedback = this.updateFeedback(_.isEqual(columnAOrdered, columnBOrdered));
 
     this.setState({ feedback });
   };

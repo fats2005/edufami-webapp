@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import trainingService from "../../../services/trainingService";
 import QuestionInfo from "../../../components/Questions/QuestionInfo/QuestionInfo";
-// import QuestionMultipleOptions from "../../../components/Questions/QuestionMultipleOptions/QuestionMultipleOptions";
-// import QuestionPairs from "../../../components/Questions/QuestionPairs/QuestionPairs";
-// import QuestionOrder from "../../../components/Questions/QuestionOrder/QuestionOrder";
+import QuestionMultipleOptions from "../../../components/Questions/QuestionMultipleOptions/QuestionMultipleOptions";
+import QuestionPairs from "../../../components/Questions/QuestionPairs/QuestionPairs";
+import QuestionOrder from "../../../components/Questions/QuestionOrder/QuestionOrder";
 
 class Step extends Component {
   constructor(props) {
@@ -60,62 +60,62 @@ class Step extends Component {
             totalQuestions={totalQuestions}
           />
         );
+      case 2:
+        return (
+          <QuestionMultipleOptions
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+
+      case 3:
+        return (
+          <QuestionMultipleOptions
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+
+      case 4:
+        return (
+          <QuestionMultipleOptions
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+      case 5:
+        return (
+          <QuestionPairs
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+      case 6:
+        return (
+          <QuestionOrder
+            currentStep={currentStep}
+            nextStep={nextStep}
+            onExit={this.handleExit}
+            onGoNext={this.handleGoNext}
+            totalQuestions={totalQuestions}
+          />
+        );
+
       default:
         return this.handleGoNext();
     }
-    // if (option === 1)
-
-    // else if (option === 2)
-    //   return (
-    //     <QuestionMultipleOptions
-    //       currentStep={currentStep}
-    //       nextStep={nextStep}
-    //       onExit={this.handleExit}
-    //       onGoNext={this.handleGoNext}
-    //       totalQuestions={totalQuestions}
-    //     />
-    //   );
-    // else if (option === 3)
-    //   return (
-    //     <QuestionMultipleOptions
-    //       currentStep={currentStep}
-    //       nextStep={nextStep}
-    //       onExit={this.handleExit}
-    //       onGoNext={this.handleGoNext}
-    //       totalQuestions={totalQuestions}
-    //     />
-    //   );
-    // else if (option === 4)
-    //   return (
-    //     <QuestionMultipleOptions
-    //       currentStep={currentStep}
-    //       nextStep={nextStep}
-    //       onExit={this.handleExit}
-    //       onGoNext={this.handleGoNext}
-    //       totalQuestions={totalQuestions}
-    //     />
-    //   );
-    // else if (option === 5)
-    //   return (
-    //     <QuestionPairs
-    //       currentStep={currentStep}
-    //       nextStep={nextStep}
-    //       onExit={this.handleExit}
-    //       onGoNext={this.handleGoNext}
-    //       totalQuestions={totalQuestions}
-    //     />
-    //   );
-    // else if (option === 6)
-    //   return (
-    //     <QuestionOrder
-    //       currentStep={currentStep}
-    //       nextStep={nextStep}
-    //       onExit={this.handleExit}
-    //       onGoNext={this.handleGoNext}
-    //       totalQuestions={totalQuestions}
-    //     />
-    //   );
-    // else
   }
 
   render() {

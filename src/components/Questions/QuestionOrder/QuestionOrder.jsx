@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 import _ from "lodash";
@@ -27,8 +28,7 @@ class QuestionOrder extends Question {
       option.selectedOrder = null;
       options.splice(index, 1, option);
       options.map(o => {
-        if (o.selectedOrder > optionDeselected)
-          return (o.selectedOrder = o.selectedOrder - 1);
+        if (o.selectedOrder > optionDeselected) return (o.selectedOrder = o.selectedOrder - 1);
         else return o.selectedOrder;
       });
     }
@@ -79,11 +79,7 @@ class QuestionOrder extends Question {
   };
   render() {
     const { options } = this.state;
-    return (
-      <React.Fragment>
-        {this.renderQuestionBox(this.renderOptions(options))}
-      </React.Fragment>
-    );
+    return <React.Fragment>{this.renderQuestionBox(this.renderOptions(options))}</React.Fragment>;
   }
 }
 
