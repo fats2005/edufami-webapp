@@ -60,7 +60,8 @@ function getCurrentUser() {
   } catch (ex) {
     return null;
   } */
-  return JSON.parse(localStorage.getItem(userKey));
+  // return JSON.parse(localStorage.getItem(userKey));
+  return true;
 }
 
 function getJwt() {
