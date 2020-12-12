@@ -2,7 +2,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/edufami-webapp
   docker:
-    - image: cimg/node:15.4.0
+    - image: cimg/node:15.0.1
       steps:
         - checkout
         - run: node --version
