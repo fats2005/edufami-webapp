@@ -14,30 +14,16 @@ class Register extends Form {
       username: "",
       firstName: "",
       lastName: "",
-      terms: false
+      terms: false,
     },
-    errors: {}
+    errors: {},
   };
 
   schema = {
-    firstName: Joi.string()
-      .min(3)
-      .max(30)
-      .required()
-      .label("Nombre"),
-    lastName: Joi.string()
-      .min(3)
-      .max(30)
-      .required()
-      .label("Apellido"),
-    username: Joi.number()
-      .integer()
-      .min(0)
-      .required()
-      .label("Username"),
-    terms: Joi.boolean()
-      .valid(true)
-      .label("Términos")
+    firstName: Joi.string().min(3).max(30).required().label("Nombre"),
+    lastName: Joi.string().min(3).max(30).required().label("Apellido"),
+    username: Joi.number().integer().min(0).required().label("Username"),
+    terms: Joi.boolean().valid(true).label("Términos"),
   };
 
   doSubmit = async () => {
@@ -49,12 +35,12 @@ class Register extends Form {
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         toast.error(ex.response.data, {
-          position: toast.POSITION.BOTTOM_RIGHT
+          position: toast.POSITION.BOTTOM_RIGHT,
         });
       }
       if (ex.response && ex.response.status === 422) {
         toast.error("El número de usuario ya existe! Eliga otro e inténtelo de nuevo", {
-          position: toast.POSITION.BOTTOM_RIGHT
+          position: toast.POSITION.BOTTOM_RIGHT,
         });
       }
     }

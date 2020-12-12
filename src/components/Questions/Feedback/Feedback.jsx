@@ -10,17 +10,17 @@ class Feedback extends Component {
       buttonText: "Continuar",
       icon: "step_correct.svg",
       isGood: true,
-      iconButton: "angle-right"
+      iconButton: "angle-right",
     },
     bad: {
       label: "!Intenta de nuevo! respuesta incorrecta",
       buttonText: "Volver a Intentar",
       icon: "step_incorrect.svg",
       isGood: false,
-      iconButton: "redo"
+      iconButton: "redo",
     },
     timerPosition: 0,
-    disabledButton: true
+    disabledButton: true,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -45,7 +45,7 @@ class Feedback extends Component {
   render() {
     const {
       feedback: { show, status, text },
-      buttonAction
+      buttonAction,
     } = this.props;
 
     const { timerPosition, disabledButton } = this.state;
@@ -65,7 +65,7 @@ class Feedback extends Component {
               className="progress-bar bg-primary"
               role="progressbar"
               style={{
-                width: (timerPosition / 50) * 100 + "%"
+                width: (timerPosition / 50) * 100 + "%",
               }}
               aria-valuenow={(timerPosition / 50) * 100}
               aria-valuemin="0"

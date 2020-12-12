@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, FontSizes } from "../styles";
 
-const Box = props => {
+const Box = (props) => {
   const { label, children } = props;
   return (
     <BoxTile>

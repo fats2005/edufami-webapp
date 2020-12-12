@@ -10,15 +10,11 @@ import classes from "../Auth.module.scss";
 class Login extends Form {
   state = {
     data: { username: "" },
-    errors: {}
+    errors: {},
   };
 
   schema = {
-    username: Joi.number()
-      .integer()
-      .min(0)
-      .required()
-      .label("Usuario")
+    username: Joi.number().integer().min(0).required().label("Usuario"),
   };
 
   doSubmit = async () => {
@@ -31,12 +27,12 @@ class Login extends Form {
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         toast.error(ex.response.data, {
-          position: toast.POSITION.BOTTOM_RIGHT
+          position: toast.POSITION.BOTTOM_RIGHT,
         });
       }
       if (ex.response && ex.response.status === 401) {
         toast.error("El Usuario no existe!", {
-          position: toast.POSITION.BOTTOM_RIGHT
+          position: toast.POSITION.BOTTOM_RIGHT,
         });
       }
     }

@@ -27,7 +27,7 @@ class QuestionOrder extends Question {
       const optionDeselected = option.selectedOrder;
       option.selectedOrder = null;
       options.splice(index, 1, option);
-      options.map(o => {
+      options.map((o) => {
         if (o.selectedOrder > optionDeselected) return (o.selectedOrder = o.selectedOrder - 1);
         else return o.selectedOrder;
       });
@@ -43,7 +43,7 @@ class QuestionOrder extends Question {
     const { options } = this.state;
     const { false: wrongAnswers } = _.countBy(
       options,
-      op => Boolean(op.isCorrect) === (op.selected ? true : false)
+      (op) => Boolean(op.isCorrect) === (op.selected ? true : false)
     );
     // Parse to boolean
     const feedback = this.updateFeedback(!Boolean(wrongAnswers));
@@ -52,15 +52,15 @@ class QuestionOrder extends Question {
 
   updateEvaluateBottom() {
     const { options } = this.state;
-    const { true: selectedOptions } = _.countBy(options, rec => rec.selected);
+    const { true: selectedOptions } = _.countBy(options, (rec) => rec.selected);
     const canEvaluate = options.length === selectedOptions;
     this.setState({ canEvaluate });
   }
 
-  renderOptions = options => {
+  renderOptions = (options) => {
     return (
       <div className={classes.Options}>
-        {options.map(option => (
+        {options.map((option) => (
           <button
             key={option.id}
             className={

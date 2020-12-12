@@ -6,7 +6,7 @@ import Img from "./img";
 import Progress from "./progress";
 import { Colors, FontSizes } from "../styles";
 
-const CardUnit = props => {
+const CardUnit = (props) => {
   const { unit } = props;
   return (
     <StyledLink to={`/unit/${unit.id}`}>

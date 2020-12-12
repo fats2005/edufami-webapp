@@ -12,7 +12,7 @@ configure({ adapter: new Adapter() });
 describe("<QuestionInfo />", () => {
   let wrapper;
   const currentStep = {
-    id: 10
+    id: 10,
   };
   const nextStep = {};
 

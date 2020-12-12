@@ -8,7 +8,7 @@ const Progress = ({ value, max, color }) => (
     <ProgressBar
       role="progressbar"
       style={{
-        width: `${(value / max) * 100}%`
+        width: `${(value / max) * 100}%`,
       }}
       aria-valuenow="0"
       aria-valuemin="0"
@@ -40,7 +40,7 @@ const ProgressBar = styled.div`
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: ${props => props.color || "#007bff"};
+  background-color: ${(props) => props.color || "#007bff"};
   transition: width 0.6s ease;
 `;
 

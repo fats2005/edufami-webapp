@@ -10,7 +10,7 @@ export const Colors = {
   secondaryText: "#ffffff",
   gray: "#eceeef",
   grayDark: "#dddddd",
-  yellow: "#ffc107"
+  yellow: "#ffc107",
 };
 
 export const FontSizes = {
@@ -20,12 +20,12 @@ export const FontSizes = {
   f4: "16px",
   f5: "20px",
   f6: "24px",
-  f7: "28px"
+  f7: "28px",
 };
 
 const styles = {
   Colors,
-  FontSizes
+  FontSizes,
 };
 
 export default styles;

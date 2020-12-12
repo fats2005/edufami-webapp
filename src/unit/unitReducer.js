@@ -3,7 +3,7 @@ import { FETCH_UNIT_REQUEST, FETCH_UNIT_FAILURE, FETCH_UNIT_SUCCESS } from "./un
 const initialState = {
   fetching: false,
   unit: {},
-  lessons: []
+  lessons: [],
 };
 
 const unitReducer = (state = initialState, action) => {
@@ -11,20 +11,20 @@ const unitReducer = (state = initialState, action) => {
     case FETCH_UNIT_REQUEST:
       return {
         ...state,
-        fetching: true
+        fetching: true,
       };
     case FETCH_UNIT_SUCCESS:
       return {
         ...state,
         fetching: false,
         unit: action.unit,
-        lessons: action.lessons
+        lessons: action.lessons,
       };
     case FETCH_UNIT_FAILURE:
       return {
         ...state,
         fetching: false,
-        error: action.message
+        error: action.message,
       };
     default:
       return state;

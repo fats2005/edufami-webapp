@@ -8,7 +8,7 @@ class Form extends Component {
     super(props);
     this.state = {
       data: {},
-      errors: {}
+      errors: {},
     };
   }
 
@@ -26,7 +26,7 @@ class Form extends Component {
     return errors;
   };
 
-  validateProperty = input => {
+  validateProperty = (input) => {
     const { name, value, checked, type } = input;
     const obj = type === "checkbox" ? { [name]: checked } : { [name]: value };
     const schema = { [name]: this.schema[name] };
@@ -34,7 +34,7 @@ class Form extends Component {
     return error ? error.details[0].message : null;
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     const errors = this.validate({});

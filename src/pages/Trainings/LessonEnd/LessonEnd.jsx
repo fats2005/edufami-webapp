@@ -11,7 +11,7 @@ class LessonEnd extends Component {
   constructor() {
     super();
     this.state = {
-      lesson: {}
+      lesson: {},
     };
   }
 

@@ -10,17 +10,15 @@
     "bootstrap": "^4.3.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
-    "i": "^0.3.6",
     "joi-browser": "^13.4.0",
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.11.0",
-    "npm": "^6.9.0",
+    "node-sass": "^4.14.1",
     "popper.js": "^1.14.7",
     "query-string": "^6.1.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-loader-spinner": "^2.3.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^4.3.1",
@@ -31,15 +29,14 @@
     "styled-components": "^5.0.0-beta.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3030 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "yarn create-config",
     "create-config": "cp -n src/sample_config.json src/config.json|| true",
     "eslint": "./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc",
-    "format": "prettier-eslint --write \"src/**/*.js\"",
-    "prettier": "./node_modules/.bin/prettier-eslint --list-different src/**/*.js",
+    "prettier": "prettier --check .",
     "check-flow": "./node_modules/.bin/flow check",
     "check-all": "yarn check-prettier && yarn check-flow && yarn test && yarn check-eslint"
   },
@@ -53,15 +50,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
-    "prettier": "^1.18.2",
-    "prettier-eslint-cli": "^5.0.0"
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-json": "^2.1.2",
+    "flow-bin": "^0.140.0",
+    "prettier": "^2.2.1"
   }
 }

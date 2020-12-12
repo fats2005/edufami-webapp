@@ -4,14 +4,14 @@ import {
   FETCH_TRAININGS_SUCCESS,
   FETCH_TRAINING_REQUEST,
   FETCH_TRAINING_FAILURE,
-  FETCH_TRAINING_SUCCESS
+  FETCH_TRAINING_SUCCESS,
 } from "./trainingsActions";
 
 const initialState = {
   fetching: false,
   trainings: [],
   training: {},
-  units: []
+  units: [],
 };
 
 const trainingsReducer = (state = initialState, action) => {
@@ -19,37 +19,37 @@ const trainingsReducer = (state = initialState, action) => {
     case FETCH_TRAININGS_REQUEST:
       return {
         ...state,
-        fetching: true
+        fetching: true,
       };
     case FETCH_TRAININGS_SUCCESS:
       return {
         ...state,
         fetching: false,
-        trainings: action.data
+        trainings: action.data,
       };
     case FETCH_TRAININGS_FAILURE:
       return {
         ...state,
         fetching: false,
-        error: action.message
+        error: action.message,
       };
     case FETCH_TRAINING_REQUEST:
       return {
         ...state,
-        fetching: true
+        fetching: true,
       };
     case FETCH_TRAINING_SUCCESS:
       return {
         ...state,
         fetching: false,
         training: action.training,
-        units: action.units
+        units: action.units,
       };
     case FETCH_TRAINING_FAILURE:
       return {
         ...state,
         fetching: false,
-        error: action.message
+        error: action.message,
       };
     default:
       return state;

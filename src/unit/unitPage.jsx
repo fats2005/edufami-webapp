@@ -9,7 +9,7 @@ import Box from "../common/box";
 import CardLesson from "../common/cardLesson";
 
 function UnitPage({ match }) {
-  const { unit, lessons, fetching } = useSelector(state => state.unit);
+  const { unit, lessons, fetching } = useSelector((state) => state.unit);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function UnitPage({ match }) {
       <Loader show={fetching} />
       <Layout>
         <Box label={`${unit.name} / Lecciones`}>
-          {lessons.map(item => (
+          {lessons.map((item) => (
             <CardLesson key={item.id} trainingId={unit.trainingId} unitId={unit.id} lesson={item} />
           ))}
         </Box>

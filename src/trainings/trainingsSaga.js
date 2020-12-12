@@ -8,7 +8,7 @@ import {
   FETCH_TRAININGS_FAILURE,
   FETCH_TRAINING_REQUEST,
   FETCH_TRAINING_SUCCESS,
-  FETCH_TRAINING_FAILURE
+  FETCH_TRAINING_FAILURE,
 } from "./trainingsActions";
 import TrainingsApi from "./trainingsApi";
 
@@ -18,7 +18,7 @@ function* fetchTrainings() {
     if (data.Errors) {
       throw data.Errors;
     }
-    const dataFiltered = _.filter(data, t => t.status === "published"); // TODO Alejandro - Manage this in the Server :)
+    const dataFiltered = _.filter(data, (t) => t.status === "published"); // TODO Alejandro - Manage this in the Server :)
     const dataOrdered = _.orderBy(dataFiltered, "created", "desc");
     yield put({ type: FETCH_TRAININGS_SUCCESS, data: dataOrdered });
   } catch (e) {
@@ -40,7 +40,7 @@ function* fetchTrainingById({ id }) {
       throw units.Errors;
     }
 
-    units.map(e => {
+    units.map((e) => {
       // TODO Alejandro - Calculate this in the server
       e.lessons = 5;
       return e;
@@ -55,7 +55,7 @@ function* fetchTrainingById({ id }) {
 function* trainingsSaga(): Saga<void> {
   yield [
     yield takeLatest(FETCH_TRAININGS_REQUEST, fetchTrainings),
-    yield takeLatest(FETCH_TRAINING_REQUEST, fetchTrainingById)
+    yield takeLatest(FETCH_TRAINING_REQUEST, fetchTrainingById),
   ];
 }
 

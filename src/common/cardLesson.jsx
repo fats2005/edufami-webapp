@@ -6,7 +6,7 @@ import Img from "./img";
 import Button from "./button";
 import { Colors, FontSizes } from "../styles";
 
-const cardLesson = props => {
+const cardLesson = (props) => {
   const { lesson } = props;
   return (
     <StyledLink to={`/lesson/${lesson.id}`}>

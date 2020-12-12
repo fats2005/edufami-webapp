@@ -26,20 +26,20 @@ class QuestionPairs extends Question {
 
   updateEvaluateBottom() {
     const { options } = this.state;
-    const { true: selectedOptions } = _.countBy(options, rec => rec.selected);
+    const { true: selectedOptions } = _.countBy(options, (rec) => rec.selected);
     const canEvaluate = selectedOptions === options.length ? true : false;
     this.setState({ canEvaluate });
   }
 
   handleEvaluate = () => {
     const { options } = this.state;
-    const columnA = _.filter(options, o => o.column === 0);
-    const columnB = _.filter(options, o => o.column === 1);
+    const columnA = _.filter(options, (o) => o.column === 0);
+    const columnB = _.filter(options, (o) => o.column === 1);
 
-    const columnAMapped = _.map(columnA, item => {
+    const columnAMapped = _.map(columnA, (item) => {
       return { order: item.order, pair: item.pair };
     });
-    const columnBMapped = _.map(columnB, item => {
+    const columnBMapped = _.map(columnB, (item) => {
       return { order: item.order, pair: item.pair };
     });
 
@@ -53,8 +53,8 @@ class QuestionPairs extends Question {
 
   render() {
     const { options } = this.state;
-    const columnA = _.filter(options, o => o.column === 0);
-    const columnB = _.filter(options, o => o.column === 1);
+    const columnA = _.filter(options, (o) => o.column === 0);
+    const columnB = _.filter(options, (o) => o.column === 1);
 
     return (
       <React.Fragment>

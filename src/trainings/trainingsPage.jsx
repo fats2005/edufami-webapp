@@ -9,7 +9,7 @@ import Box from "../common/box";
 import CardTraining from "../common/cardTraining";
 
 const Trainings = () => {
-  const { trainings, fetching } = useSelector(state => state.trainings);
+  const { trainings, fetching } = useSelector((state) => state.trainings);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Trainings = () => {
       <Loader show={fetching} />
       <Layout>
         <Box label="Mis Capacitaciones">
-          {trainings.map(item => (
+          {trainings.map((item) => (
             <CardTraining key={item.id} data={item} />
           ))}
         </Box>

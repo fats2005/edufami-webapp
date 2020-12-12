@@ -5,7 +5,7 @@ import UnitReducer from "../unit/unitReducer";
 
 const rootReducer = combineReducers({
   trainings: TrainingsReducer,
-  unit: UnitReducer
+  unit: UnitReducer,
 });
 
 export default rootReducer;
