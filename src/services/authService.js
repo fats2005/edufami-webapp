@@ -60,7 +60,13 @@ function getCurrentUser() {
   } catch (ex) {
     return null;
   } */
-  return JSON.parse(localStorage.getItem(userKey));
+  return {
+    username: "user",
+    password: "abc12345",
+    firstName: "User",
+    lastName: "LastName",
+    terms: true
+  };
 }
 
 function getJwt() {
