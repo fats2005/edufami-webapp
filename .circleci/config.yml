@@ -2,10 +2,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/edufami-webapp
   docker:
-    - image: cimg/base:2020.01
-      steps:
-        - checkout
-        - run: node --version
+    - image: cimg/ruby:2.7.1-node-browsers
 jobs:
   build:
     <<: *defaults
@@ -33,7 +30,7 @@ jobs:
           at: ~/edufami-webapp
       - run:
           name: Run prettier check
-          command: yarn prettier
+          command: ./node_modules/.bin/prettier-eslint --list-different src/**/*.js
 
   eslint-check:
     <<: *defaults
@@ -46,7 +43,7 @@ jobs:
           command: yarn postinstall
       - run:
           name: Run eslint check
-          command: yarn eslint
+          command: ./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc
 
 workflows:
   version: 2
