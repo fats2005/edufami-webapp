@@ -33,7 +33,7 @@ jobs:
           at: ~/edufami-webapp
       - run:
           name: Run prettier check
-          command: ./node_modules/.bin/prettier-eslint --list-different src/**/*.js
+          command: yarn prettier
 
   eslint-check:
     <<: *defaults
@@ -46,7 +46,7 @@ jobs:
           command: yarn postinstall
       - run:
           name: Run eslint check
-          command: ./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc
+          command: yarn eslint
 
 workflows:
   version: 2
