@@ -4,8 +4,8 @@ defaults: &defaults
   docker:
     - image: cimg/node:15.4.0
       steps:
-      - checkout
-      - run: node --version
+        - checkout
+        - run: node --version
 jobs:
   build:
     <<: *defaults
