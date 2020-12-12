@@ -7,7 +7,7 @@ import Footer from "../../common/footer";
 
 class ProtectedRoute extends Component {
   state = {
-    user: {}
+    user: {},
   };
 
   componentDidMount() {
@@ -21,15 +21,15 @@ class ProtectedRoute extends Component {
     return (
       <Route
         {...rest}
-        render={props => {
+        render={(props) => {
           if (!auth.getCurrentUser())
             return (
               <Redirect
                 to={{
                   pathname: "/login",
                   state: {
-                    from: props.location
-                  }
+                    from: props.location,
+                  },
                 }}
               />
             );

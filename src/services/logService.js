@@ -1,4 +1,3 @@
-/* eslint-disable */
 // import Raven from "raven-js";
 
 function init() {
@@ -15,5 +14,5 @@ function log(error) {
 
 export default {
   init,
-  log
+  log,
 };

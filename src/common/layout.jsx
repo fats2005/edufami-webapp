@@ -3,7 +3,7 @@ import React from "react";
 // import Achievements from "../common/Achievements/Achievements";
 // import Box from "../common/Box/Box";
 
-const layout = props => {
+const layout = (props) => {
   const { children } = props;
   return (
     <div className="row">

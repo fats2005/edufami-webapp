@@ -9,7 +9,7 @@ import Box from "../common/box";
 import CardUnit from "../common/cardUnit";
 
 const TrainingPage = ({ match }) => {
-  const { training, units, fetching } = useSelector(state => state.trainings);
+  const { training, units, fetching } = useSelector((state) => state.trainings);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const TrainingPage = ({ match }) => {
       <Loader show={fetching} />
       <Layout>
         <Box label={`${training.name} / Unidades`}>
-          {units.map(item => (
+          {units.map((item) => (
             <CardUnit key={item.id} unit={item} />
           ))}
         </Box>

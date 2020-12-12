@@ -38,8 +38,7 @@
     "postinstall": "yarn create-config",
     "create-config": "cp -n src/sample_config.json src/config.json|| true",
     "eslint": "./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc",
-    "format": "prettier-eslint --write \"src/**/*.js\"",
-    "prettier": "./node_modules/.bin/prettier-eslint --list-different src/**/*.js",
+    "prettier": "prettier --check .",
     "check-flow": "./node_modules/.bin/flow check",
     "check-all": "yarn check-prettier && yarn check-flow && yarn test && yarn check-eslint"
   },
@@ -53,15 +52,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.2.0",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^2.5.1",
-    "prettier": "^1.19.1",
-    "prettier-eslint-cli": "^5.0.0"
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-json": "^2.1.2",
+    "flow-bin": "^0.140.0",
+    "prettier": "^2.2.1"
   }
 }

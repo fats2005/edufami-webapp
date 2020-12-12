@@ -1,5 +1,10 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": [
+    "@react-native-community",
+    "plugin:json/recommended",
+    "prettier",
+    "prettier/flowtype"
+  ],
   "plugins": ["prettier", "react-hooks"],
   "rules": {
     "react/jsx-filename-extension": [
@@ -8,10 +13,6 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "react/prop-types": 0,
-    "no-underscore-dangle": 0,
-    "import/imports-first": ["error", "absolute-first"],
-    "import/newline-after-import": "error",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   },

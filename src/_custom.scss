@@ -42,14 +42,13 @@ $theme-colors: (
   primary: $primary,
   secondary: $secondary,
   gray: $gray,
-  gray-dark: $gray-dark
+  gray-dark: $gray-dark,
 );
 
-$font-family-sans-serif: "Roboto", -apple-system, system-ui, BlinkMacSystemFont,
-  "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: "Roboto", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
-  "Courier New", monospace !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base: $font-family-sans-serif !default;
-$font-family-second: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont,
-  "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-second: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Arial, sans-serif !default;

@@ -13,7 +13,7 @@ import {
   faTimes,
   faClipboardCheck,
   faAngleRight,
-  faRedo
+  faRedo,
 } from "@fortawesome/free-solid-svg-icons";
 
 import UnitPage from "../unit/unitPage";

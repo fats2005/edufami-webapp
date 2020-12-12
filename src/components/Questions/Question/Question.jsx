@@ -19,14 +19,14 @@ class Question extends Component {
     timerPosition: 0,
 
     feedback: {
-      show: false
-    }
+      show: false,
+    },
   };
 
   timer = {
     phase: 200,
     seconds: 5,
-    instance: null
+    instance: null,
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -37,7 +37,7 @@ class Question extends Component {
         options,
         state: "process",
         canEvaluate: false,
-        columnCounter: [0, 0]
+        columnCounter: [0, 0],
       };
     }
     return null;
@@ -70,14 +70,14 @@ class Question extends Component {
     this.setState({ feedback });
   };
 
-  updateFeedback = isOk => {
+  updateFeedback = (isOk) => {
     const { options } = this.state;
-    const filtered = _.filter(options, o => Boolean(o.isCorrect) === isOk && o.selected);
+    const filtered = _.filter(options, (o) => Boolean(o.isCorrect) === isOk && o.selected);
 
     let feedback = {
       show: true,
       text: filtered[0].feedback,
-      status: isOk ? "good" : "bad"
+      status: isOk ? "good" : "bad",
     };
 
     return feedback;
@@ -127,7 +127,7 @@ class Question extends Component {
     return (
       <div className={classes.Options}>
         {label && <h6>{label}</h6>}
-        {options.map(option => (
+        {options.map((option) => (
           <button
             key={option.id}
             className={
@@ -174,13 +174,13 @@ class Question extends Component {
         label: "Salir",
         className: "btn btn-secondary",
         onClick: onExit,
-        "data-dismiss": "modal"
+        "data-dismiss": "modal",
       },
       {
         label: "Continuar",
         className: "btn btn-primary",
-        "data-dismiss": "modal"
-      }
+        "data-dismiss": "modal",
+      },
     ];
     return (
       <>
@@ -214,7 +214,7 @@ class Question extends Component {
               className="progress-bar bg-secondary"
               role="progressbar"
               style={{
-                width: (currentStep.order / totalQuestions) * 100 + "%"
+                width: (currentStep.order / totalQuestions) * 100 + "%",
               }}
               aria-valuenow={currentStep.order}
               aria-valuemin="0"

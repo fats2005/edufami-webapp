@@ -25,7 +25,7 @@ class QuestionInfo extends Question {
               className="progress-bar bg-primary-light"
               role="progressbar"
               style={{
-                width: (timerPosition / ((1000 / phase) * seconds)) * 100 + "%"
+                width: (timerPosition / ((1000 / phase) * seconds)) * 100 + "%",
               }}
               aria-valuenow={timerPosition}
               aria-valuemin="0"

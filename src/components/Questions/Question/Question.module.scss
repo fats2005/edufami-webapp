@@ -109,8 +109,7 @@
               width: 100% !important;
             }
 
-            $colors-list: #ff47ff #47cdff #ffff6e #ffc947 #47ffc0 #ae52d4
-              #7793a1 #9d726c;
+            $colors-list: #ff47ff #47cdff #ffff6e #ffc947 #47ffc0 #ae52d4 #7793a1 #9d726c;
 
             @each $color in $colors-list {
               $i: index($colors-list, $color);

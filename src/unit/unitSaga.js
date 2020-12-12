@@ -18,7 +18,7 @@ function* fetchUnit({ id }) {
       throw lessons.Errors;
     }
 
-    lessons.map(e => {
+    lessons.map((e) => {
       // TODO Alejandro - Calculate this in the server
       e.lessons = 5;
       return e;

@@ -8,7 +8,7 @@ class PublicRoute extends Component {
     return (
       <Route
         {...rest}
-        render={props => {
+        render={(props) => {
           return Component ? (
             <div className="public">
               <div className="container">

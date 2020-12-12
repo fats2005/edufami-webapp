@@ -12,7 +12,7 @@ class Step extends Component {
     this.state = {
       currentStep: {},
       nextStep: {},
-      orderId: 0
+      orderId: 0,
     };
   }
 

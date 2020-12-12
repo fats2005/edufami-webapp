@@ -22,7 +22,7 @@ http.setToken(getToken());
 async function login(username, password) {
   const { data } = await http.post("/AppUsers/login", {
     username,
-    password
+    password,
   });
   setToken(data);
 }
@@ -42,7 +42,7 @@ async function register(user) {
     password: "abc12345",
     firstName: user.firstName,
     lastName: user.lastName,
-    terms: user.terms
+    terms: user.terms,
   });
 }
 
@@ -65,7 +65,7 @@ function getCurrentUser() {
     password: "abc12345",
     firstName: "User",
     lastName: "LastName",
-    terms: true
+    terms: true,
   };
 }
 
@@ -82,5 +82,5 @@ export default {
   setCurrentUser,
   getJwt,
   getToken,
-  getUser
+  getUser,
 };

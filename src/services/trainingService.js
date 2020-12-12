@@ -26,7 +26,7 @@ async function getData(endpoint) {
   const { data } = await http.get(`/${endpoint}`);
 
   let dataFiltered = data;
-  if (endpoint !== "options") dataFiltered = _.filter(data, t => t.status === "published");
+  if (endpoint !== "options") dataFiltered = _.filter(data, (t) => t.status === "published");
 
   localStorage.setItem(endpoint, JSON.stringify(dataFiltered));
 
@@ -42,27 +42,27 @@ function getTrainings() {
 
 function getTraining(id) {
   const trainings = JSON.parse(localStorage.getItem(trainingKey));
-  return _.filter(trainings, t => t.id === parseInt(id, 10))[0];
+  return _.filter(trainings, (t) => t.id === parseInt(id, 10))[0];
 }
 
 function getUnitsByTraining(id) {
   const trainings = JSON.parse(localStorage.getItem(unitsKey));
-  return _.filter(trainings, t => t.trainingId === parseInt(id, 10));
+  return _.filter(trainings, (t) => t.trainingId === parseInt(id, 10));
 }
 
 function getUnit(id) {
   const units = JSON.parse(localStorage.getItem(unitsKey));
-  return _.filter(units, u => u.id === parseInt(id, 10))[0];
+  return _.filter(units, (u) => u.id === parseInt(id, 10))[0];
 }
 
 function getLesson(id) {
   const lesson = JSON.parse(localStorage.getItem(lessonsKey));
-  return _.filter(lesson, l => l.id === parseInt(id, 10))[0];
+  return _.filter(lesson, (l) => l.id === parseInt(id, 10))[0];
 }
 
 function getLessonsByUnit(id) {
   const lessons = JSON.parse(localStorage.getItem(lessonsKey));
-  return _.filter(lessons, l => l.unitId === parseInt(id, 10));
+  return _.filter(lessons, (l) => l.unitId === parseInt(id, 10));
 }
 
 function getNumberOfLessonsByUnit(id) {
@@ -73,7 +73,7 @@ async function getStepsByLesson(id) {
   await getData("steps");
   await getData("options");
   const steps = JSON.parse(localStorage.getItem(stepsKey));
-  const stepsFiltered = _.filter(steps, s => s.lessonId === parseInt(id, 10));
+  const stepsFiltered = _.filter(steps, (s) => s.lessonId === parseInt(id, 10));
   const stepsOrdered = _.orderBy(stepsFiltered, "order", "asc");
   localStorage.setItem(stepsOfLessonKey, JSON.stringify(stepsOrdered));
   localStorage.setItem("currentLesson", JSON.stringify(getLesson(id)));
@@ -90,14 +90,14 @@ function getCurrentLesson() {
 
 function getCurrentSteps(orderId) {
   const steps = JSON.parse(localStorage.getItem(stepsOfLessonKey));
-  const currentStep = _.filter(steps, s => s.order === parseInt(orderId, 10))[0];
-  const nextStep = _.filter(steps, s => s.order === parseInt(orderId, 10) + 1)[0];
+  const currentStep = _.filter(steps, (s) => s.order === parseInt(orderId, 10))[0];
+  const nextStep = _.filter(steps, (s) => s.order === parseInt(orderId, 10) + 1)[0];
   return { currentStep, nextStep };
 }
 
 function getOptionsByStep(stepId) {
   const options = JSON.parse(localStorage.getItem(optionsKey));
-  const optionsFiltered = _.filter(options, o => o.stepId === parseInt(stepId, 10));
+  const optionsFiltered = _.filter(options, (o) => o.stepId === parseInt(stepId, 10));
   return optionsFiltered;
 }
 
@@ -130,5 +130,5 @@ export default {
   getOptionsByStep,
   startLesson,
   finishLesson,
-  isLessonInProgress
+  isLessonInProgress,
 };

@@ -5,7 +5,7 @@ import { Colors, FontSizes } from "../styles";
 
 import Img from "./img";
 
-const CardTraining = props => {
+const CardTraining = (props) => {
   const { data } = props;
   return (
     <StyledLink to={`/trainings/${data.id}`}>

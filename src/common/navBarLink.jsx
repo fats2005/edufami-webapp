@@ -10,7 +10,7 @@ const NavBarLink = ({ label, to, className }) => {
 };
 
 NavBarLink.defaultProps = {
-  className: "nav-item nav-link"
+  className: "nav-item nav-link",
 };
 
 export default NavBarLink;
