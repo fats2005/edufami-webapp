@@ -2,11 +2,10 @@ version: 2
 defaults: &defaults
   working_directory: ~/edufami-webapp
   docker:
-    - image: circleci/ruby:2.3.6-node-browsers
-      environment:
-        POSTGRES_HOST: 127.0.0.1
-        POSTGRES_USER: postgres
-        RAILS_ENV: test
+    - image: cimg/node:15.4.0
+      steps:
+      - checkout
+      - run: node --version
 jobs:
   build:
     <<: *defaults
