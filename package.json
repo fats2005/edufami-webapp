@@ -35,6 +35,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "postinstall": "yarn create-config",
+    "create-config": "cp -n src/sample_config.json src/config.json|| true",
     "eslint": "./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc",
     "format": "prettier-eslint --write \"src/**/*.js\"",
     "prettier": "./node_modules/.bin/prettier-eslint --list-different src/**/*.js",

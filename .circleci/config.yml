@@ -43,6 +43,9 @@ jobs:
       - attach_workspace:
           at: ~/edufami-webapp
       - run:
+          name: Run post-install
+          command: yarn postinstall
+      - run:
           name: Run eslint check
           command: ./node_modules/.bin/eslint src/**/*.js src/**/*.jsx -c ./.eslintrc
 
